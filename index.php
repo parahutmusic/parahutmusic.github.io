@@ -1,0 +1,481 @@
+<?php include "admin/dblink.php"; ?>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PARAHUT MUSIC</title>
+
+	<meta name="description" content="Heera HTML5 Template by Jewel Theme" >
+
+	<meta name="author" content="Jewel Theme">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+	<!-- Bootstrap  -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- icon fonts font Awesome -->
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Import Magnific Pop Up Styles -->
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+	<!-- Import Custom Styles -->
+	<link href="assets/css/style.css" rel="stylesheet">
+
+	<!-- Import Animate Styles -->
+	<link href="assets/css/animate.min.css" rel="stylesheet">
+
+	<!-- Import owl.carousel Styles -->
+	<link href="assets/css/owl.carousel.css" rel="stylesheet">
+
+	<!-- Import Custom Responsive Styles -->
+	<link href="assets/css/responsive.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Kanit:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Questrial|Yellowtail" rel="stylesheet">
+    
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+	<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  		<![endif]-->
+
+  	</head>
+  	<body class="header-fixed-top">
+	<?php include "wg/menu.php" ?>
+
+<?php {
+		$sql_1 = "SELECT * FROM slide order by ad_idimg desc LIMIT 0,1 "; 
+		$link_query_1 = mysqli_query($link, $sql_1);
+		$rs1 = mysqli_fetch_array($link_query_1);
+	$ad_img1 = $rs1['ad_img1'];
+	$sql_2 = "SELECT * FROM slide order by ad_idimg desc LIMIT 1,1 "; 
+		$link_query_2 = mysqli_query($link, $sql_2);
+		$rs2 = mysqli_fetch_array($link_query_2);
+	$ad_img2 = $rs2['ad_img1'];
+	
+	$sql_3 = "SELECT * FROM slide order by ad_idimg desc LIMIT 2,1 "; 
+	
+		$link_query_3 = mysqli_query($link, $sql_3);
+		$rs3 = mysqli_fetch_array($link_query_3);
+	
+	$ad_img3 = $rs3['ad_img1'];
+	
+	$sql_4 = "SELECT * FROM slide order by ad_idimg desc LIMIT 3,1 "; 
+
+		$link_query_4 = mysqli_query($link, $sql_4);
+		$rs4 = mysqli_fetch_array($link_query_4);
+	
+	$ad_img4 = $rs4['ad_img1'];
+	
+	$sql_5 = "SELECT * FROM slide order by ad_idimg desc LIMIT 4,1 "; 
+		
+		$link_query_5 = mysqli_query($link, $sql_5);
+		$rs5 = mysqli_fetch_array($link_query_5);
+	
+	$ad_img5 = $rs5['ad_img1'];
+
+	?>
+  <section id="main-slider" class="main-slider carousel slide" data-ride="carousel">
+   <!-- Wrapper for slides -->
+   <div class="carousel-inner" role="listbox">
+    <div class="item item-1 active">
+      <img src="admin/<?=$ad_img1;?>" width="3000" height="651">      
+   </div>
+   <div class="item item-2">
+    <img src="admin/<?=$ad_img2;?>" width="3000" height="651">   
+  </div>
+  <div class="item item-3">
+    <img src="admin/<?=$ad_img3;?>" width="3000" height="651">   
+  </div>
+  <div class="item item-4">
+    <img src="admin/<?=$ad_img4;?>" width="3000" height="651">   
+  </div>
+  <div class="item item-5">
+    <img src="admin/<?=$ad_img5;?>" width="3000" height="651">   
+  </div>
+</div>
+
+<!-- Controls -->
+<a class="left carousel-control" href="#main-slider" role="button" data-slide="prev">
+  <i class="fa fa-angle-left"></i>
+</a>
+<a class="right carousel-control" href="#main-slider" role="button" data-slide="next">
+  <i class="fa fa-angle-right"></i>
+</a>
+
+</section>	<?php } ?><!-- /#main-slider -->
+
+
+
+<?php {
+		$sql_1 = "SELECT * FROM photonews order by photo_id desc LIMIT 0,1 "; 	
+		$link_query_1 = mysqli_query($link, $sql_1);
+		$rs1 = mysqli_fetch_array($link_query_1);
+	
+	$photo_name1 = $rs1['photo_name'];
+	
+	$sql_2 = "SELECT * FROM photonews order by photo_id desc LIMIT 1,1 "; 	
+		$link_query_2 = mysqli_query($link, $sql_2);
+		$rs2 = mysqli_fetch_array($link_query_2);
+	
+	$photo_name2 = $rs2['photo_name'];
+	
+	$sql_3 = "SELECT * FROM photonews order by photo_id desc LIMIT 2,1 "; 		
+		$link_query_3 = mysqli_query($link, $sql_3);
+		$rs3 = mysqli_fetch_array($link_query_3);
+	
+	$photo_name3 = $rs3['photo_name'];
+	
+	$sql_4 = "SELECT * FROM news order by news_id desc LIMIT 0,1 "; 	
+		$link_query_4 = mysqli_query($link, $sql_4);
+		$rs4 = mysqli_fetch_array($link_query_4);
+		
+	$news_id4 = $rs4['news_id'];
+	$news_name4 = $rs4['news_name'];
+	$news_detail4 = $rs4['news_detail'];
+	$news_date4 = $rs4['news_date'];
+	
+	$sql_5 = "SELECT * FROM news order by news_id desc LIMIT 1,1 "; 	
+		$link_query_5 = mysqli_query($link, $sql_5);
+		$rs5 = mysqli_fetch_array($link_query_5);
+	
+	$news_id5 = $rs5['news_id'];
+	$news_name5 = $rs5['news_name'];
+	$news_detail5 = $rs5['news_detail'];
+	$news_date5 = $rs5['news_date'];
+	
+	$sql_6 = "SELECT * FROM news order by news_id desc LIMIT 2,1 "; 	
+		$link_query_6 = mysqli_query($link, $sql_6);
+		$rs6 = mysqli_fetch_array($link_query_6);
+		
+	$news_id6 = $rs6['news_id'];
+	$news_detail6 = $rs6['news_detail'];
+	$news_name6 = $rs6['news_name'];
+	$news_date6 = $rs6['news_date'];
+	
+	?>
+	<?php {
+	
+		$sql_1 = "SELECT * FROM photonews order by photo_id desc "; 
+		
+		$link_query_1 = mysqli_query($link, $sql_1);
+			
+		$sql_2 = "SELECT * FROM news order by news_id desc "; 
+			
+		$link_query_2 = mysqli_query($link, $sql_2);
+		$num_rows  = mysqli_num_rows($link_query_2);	
+	?>
+<section id="latest-post" class="latest-post">
+  <div class="container th">
+    <div class="post-area">
+      <div class="post-area-top text-center">
+        <h2 class="post-area-title">ข่าวสาร พาราฮัท</h2>
+        <p class="title-description">ข่าวสารประชาสัมพันธ์ กิจกรรม จากพาราฮัท</p>
+      </div><!-- /.post-area-top -->
+
+      <div class="row">
+        <div class="latest-posts">
+          <div class="col-sm-6">
+            <div class="item">
+              <article class="post type-post">
+                <div class="post-top">
+                  <div class="post-thumbnail">
+                    <img src="admin/<?=$photo_name1;?>" alt="parahut">
+                  </div><!-- /.post-thumbnail -->  
+                  <div class="post-meta">
+                    <div class="entry-meta">
+                      <span class="entry-date">
+                        <time datetime="2015-01-15"><i class="glyphicon glyphicon-time"></i> <?php echo $news_date4;?></time>
+                      </span>
+                    </div><!-- /.entry-meta -->
+                  </div><!-- /.post-meta -->
+                </div><!-- /.post-top -->
+                <div class="post-content">
+                  <h2 class="entry-title"><a href="news_detail.php?news_id=<?=$news_id4;?>">
+				  <?php echo "$news_name4";?></a></h2>
+                  <p class="entry-text">
+                    <?php 
+					echo mb_substr($news_detail4,0,200,"UTF-8");
+					?>
+                    <a href="news_detail.php?news_id=<?php echo $news_id4;?>"><red>.... อ่านต่อ</red></a>
+                  </p>
+                </div><!-- /.post-content -->
+              </article>
+            </div><!-- /.item -->
+          </div>
+          <div class="col-sm-6">
+            <div class="item">
+              <article class="post type-post">
+                <div class="post-top">
+                  <div class="post-thumbnail">
+                   <img src="admin/<?=$photo_name2;?>" alt="parahut">
+                 </div><!-- /.post-thumbnail -->  
+                 <div class="post-meta">
+                  <div class="entry-meta">
+                    <span class="entry-date">
+                      <time datetime="2015-01-15"><i class="glyphicon glyphicon-time"></i> <?php echo $news_date5;?></time>
+                    </span>
+                  </div><!-- /.entry-meta -->
+                </div><!-- /.post-meta -->
+              </div><!-- /.post-top -->
+              <div class="post-content">
+                <h2 class="entry-title"><a href="news_detail.php?news_id=<?php echo $news_id5;?>">
+				  <?php echo "$news_name5";?></a></h2>
+                <p class="entry-text">
+                  <?php 
+					echo mb_substr($news_detail5,0,200,"UTF-8");
+					?>
+                    <a href="news_detail.php?news_id=<?=$news_id5;?>"><red>.... อ่านต่อ</red></a>.
+                </p>
+                <a class="btn" href="news.php">
+                    <span class="btn-icon" style="float:left;"><i class="fa fa-arrow-circle-right"></i></span>
+                    <h5>ดูทั้งหมด</h5>
+                </a>
+              </div><!-- /.post-content -->
+            </article>
+          </div><!-- /.item -->
+        </div>
+      </div><!-- /.latest-posts -->
+    </div><!-- /.row -->
+  </div><!-- /.post-area -->
+</div><!-- /.container -->
+</section>
+<?php } } ?><!-- /#latest-post --> 
+
+<?php {
+		$sql_1 = "SELECT * FROM band order by band_id ASC"; 
+		
+		$link_query_1 = mysqli_query($link, $sql_1);
+
+		$num_rows  = mysqli_num_rows($link_query_1);	
+?>
+<section id="portfolio" class="portfolio text-center">
+ <div class="container th">
+  <div class="portfolio-area">
+    <div class="portfolio-top">
+      <h2 class="portfolio-title">ศิลปิน พาราฮัท</h2>
+      <p class="title-description">ประวัติ ของศิลปินในพาราฮัท</p>
+      <div class="slide-nav-container">
+        <a class="slide-nav left slide-left post-prev" data-slide="post-prev"><i class="fa fa-angle-left"></i></a>
+        <a class="slide-nav right slide-right post-next" data-slide="post-next"><i class="fa fa-angle-right"></i></a>
+      </div>
+    </div><!-- /.portfolio-top -->
+    <div id="portfolio-slider" class="portfolio-slider owl-carousel owl-theme">
+    <?php
+	$i = 0;
+	while($i < $num_rows)
+	{
+		$rs1 = mysqli_fetch_array($link_query_1);
+		
+		$band_id = $rs1['band_id'];
+		$band_pic = $rs1['band_pic'];
+		$band_name = $rs1['band_name'];
+?>
+      <div class="item">
+        <div class="item-image">
+         <a href="band_detail.php?band_id=<?=$band_id;?>"><img src="admin/<?=$band_pic;?>" width="200" alt="parahut"></a>
+        </div>
+        <span class="item-title"><?=$band_name;?></span>
+      </div>
+      <?php 
+	$i++;
+ 	} 
+ ?>
+    </div>
+  </div><!-- /.portfolio-area -->
+</div><!-- /.container -->
+</section>
+<?php } ?><!-- /#portfolio -->
+
+<section id="latest-post" class="latest-post">
+  <div class="container th">
+    <div class="post-area">
+      <div class="post-area-top text-center">
+        <h2 class="post-area-title">เสียงเพลงจากสวนยาง</h2>
+        <p class="title-description">ฟังเพลง และ ติดตามเพจ จากพาราฮัท</p>
+      </div><!-- /.post-area-top -->
+      <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="item">
+            	
+              <article class="post type-post col-lg-6 col-sm-6">
+                <div class="post-top th">
+                <div class="title-video">
+                <i class="fa fa-play-circle" style="font-size:24px"><span>Music Video</span></i>
+                </div>
+                   <div class='embed-container'>
+                   <iframe src='https://www.youtube.com/embed/videoseries?list=PLzFpNII8Q7bPK9LJvoOHTTTZHlbHxSrhV&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>
+                   </div>
+                 
+                </div><!-- /.post-top -->
+
+              </article>
+              
+              <article class="post type-post col-lg-6 col-sm-6">
+                <div class="post-top th">
+                <div class="title-video">
+                   <i class="fa fa-play-circle" style="font-size:24px"><span>Special Clips</span></i>
+                </div>
+                       <div class='embed-container'>
+                       <iframe src='https://www.youtube.com/embed/videoseries?list=PLzFpNII8Q7bOt3rttcVA-MUMyH-TQl6tj&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>
+                       </div>
+                     
+                </div><!-- /.post-top -->
+                  <div class="post-content" style="float:right;">
+                  <a class="btn" href="https://www.youtube.com/user/Parahutmusic">
+                    <span class="btn-icon" style="float:left;"><i class="fa fa-arrow-circle-right"></i></span>
+                    <h5>ดูทั้งหมด</h5>
+                  </a>
+                </div><!-- /.post-content -->
+              </article>
+            </div><!-- /.item -->
+          </div>
+    </div><!-- /.row -->
+  </div><!-- /.post-area -->
+</div><!-- /.container -->
+</section><!-- /#latest-post --> 
+
+
+<section id="contact" class="contact">
+  <div class="contact-area th">
+    <!-- Google Map Section -->
+    <div id="google-map" class="google-map">
+      <div class="map-container">
+  <div id="map"></div>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAir_blMHtx2YK8X25btrr7bk48kjwLFQI&callback=initMap">
+</script>
+ 	   </div>
+      </div><!-- /.map-container -->
+    <!-- Google Map Section End -->
+  </div><!-- /.contact-area -->
+</section><!-- /#contact -->
+
+<?php include"wg/footer.php"; ?>
+
+<div id="scroll-to-top" class="scroll-to-top">
+  <span>
+    <i class="fa fa-chevron-up"></i>    
+  </span>
+</div><!-- /#scroll-to-top -->
+
+
+
+<!-- Include modernizr-2.8.3.min.js -->
+<script src="assets/js/modernizr-2.8.3.min.js"></script>
+
+<!-- Include jquery.min.js plugin -->
+<script src="assets/js/jquery-2.1.0.min.js"></script>
+
+<!-- Include magnific-popup.min.js -->
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+<!-- Google Maps Script -->
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
+<!-- Gmap3.js For Static Maps -->
+<script src="assets/js/gmap3.js"></script>
+
+<!-- Javascript Plugins  -->
+<script src="assets/js/plugins.js"></script>
+
+<!-- Custom Functions  -->
+<script src="assets/js/functions.js"></script>
+
+<script src="assets/js/wow.min.js"></script>
+
+<script type="text/javascript" src="assets/js/jquery.ajaxchimp.min.js"></script>
+
+<script>
+function initMap() {
+  var uluru = {lat: 7.294519, lng: 100.136190};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: uluru
+  });
+
+  var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">พาราฮัท มิวสิค</h1>';
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString,
+    position: uluru,
+    map: map,
+  });
+
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+</script>
+
+
+<script>
+
+ $(document).ready(function() {
+
+  /* -------- One page Navigation ----------*/
+  $('#main-menu #menu').onePageNav({
+    currentClass: 'active',
+    changeHash: false,
+    scrollSpeed: 1500,
+    scrollThreshold: 0.5,
+    scrollOffset: 95,
+    filter: ':not(.sub-menu a, .not-in-home)',
+    easing: 'swing'
+  }); 
+
+
+  /*----------- Google Map - with support of gmaps.js ----------------*/
+
+  function isMobile() { 
+   return ('ontouchstart' in document.documentElement);
+ }
+
+ function init_gmap() {
+   if ( typeof google == 'undefined' ) return;
+   var options = {
+    center: [-37.817331, 144.955652],
+    zoom: 15,
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+     style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+   },
+   navigationControl: true,
+   scrollwheel: false,
+   streetViewControl: true
+ }
+
+ if (isMobile()) {
+  options.draggable = false;
+}
+
+$('#googleMaps').gmap3({
+  map: {
+   options: options
+ },
+ marker: {
+   latLng: [-37.817331, 144.955652],
+   options: { icon: 'images/mapicon.png' }
+ }
+});
+}
+
+init_gmap();
+});
+
+
+
+</script>
+
+</body>
+</html>
+
