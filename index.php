@@ -2,52 +2,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>PARAHUT MUSIC</title>
-
-	<meta name="description" content="Heera HTML5 Template by Jewel Theme" >
-
-	<meta name="author" content="Jewel Theme">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-	<!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-
-	<!-- Bootstrap  -->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- icon fonts font Awesome -->
-	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
-
-	<!-- Import Magnific Pop Up Styles -->
-	<link rel="stylesheet" href="assets/css/magnific-popup.css">
-
-	<!-- Import Custom Styles -->
-	<link href="assets/css/style.css" rel="stylesheet">
-
-	<!-- Import Animate Styles -->
-	<link href="assets/css/animate.min.css" rel="stylesheet">
-
-	<!-- Import owl.carousel Styles -->
-	<link href="assets/css/owl.carousel.css" rel="stylesheet">
-
-	<!-- Import Custom Responsive Styles -->
-	<link href="assets/css/responsive.css" rel="stylesheet">
-
-<link href="https://fonts.googleapis.com/css?family=Kanit:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Questrial|Yellowtail" rel="stylesheet">
-    
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-
-	<!--[if IE]>
-  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  		<![endif]-->
-
-  	</head>
-  	<body class="header-fixed-top">
-	<?php include "wg/menu.php" ?>
-
+  <?php include "wg/scriptheader.php" ?>
+</head>
+  <body class="header-fixed-top">
+    <?php include "wg/menu.php" ?> 
+      
 <?php {
 		$sql_1 = "SELECT * FROM slide order by ad_idimg desc LIMIT 0,1 "; 
 		$link_query_1 = mysqli_query($link, $sql_1);
@@ -364,118 +323,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAir_blMHtx2YK8X25btrr7bk4
   </span>
 </div><!-- /#scroll-to-top -->
 
+<?php include "wg/script.php" ?>
 
-
-<!-- Include modernizr-2.8.3.min.js -->
-<script src="assets/js/modernizr-2.8.3.min.js"></script>
-
-<!-- Include jquery.min.js plugin -->
-<script src="assets/js/jquery-2.1.0.min.js"></script>
-
-<!-- Include magnific-popup.min.js -->
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-
-<!-- Google Maps Script -->
-<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-
-<!-- Gmap3.js For Static Maps -->
-<script src="assets/js/gmap3.js"></script>
-
-<!-- Javascript Plugins  -->
-<script src="assets/js/plugins.js"></script>
-
-<!-- Custom Functions  -->
-<script src="assets/js/functions.js"></script>
-
-<script src="assets/js/wow.min.js"></script>
-
-<script type="text/javascript" src="assets/js/jquery.ajaxchimp.min.js"></script>
-
-<script>
-function initMap() {
-  var uluru = {lat: 7.294519, lng: 100.136190};
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    center: uluru
-  });
-
-  var contentString = '<div id="content">'+
-      '<div id="siteNotice">'+
-      '</div>'+
-      '<h1 id="firstHeading" class="firstHeading">พาราฮัท มิวสิค</h1>';
-
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString,
-    position: uluru,
-    map: map,
-  });
-
-  var marker = new google.maps.Marker({
-    position: uluru,
-    map: map,
-  });
-}
-</script>
-
-
-<script>
-
- $(document).ready(function() {
-
-  /* -------- One page Navigation ----------*/
-  $('#main-menu #menu').onePageNav({
-    currentClass: 'active',
-    changeHash: false,
-    scrollSpeed: 1500,
-    scrollThreshold: 0.5,
-    scrollOffset: 95,
-    filter: ':not(.sub-menu a, .not-in-home)',
-    easing: 'swing'
-  }); 
-
-
-  /*----------- Google Map - with support of gmaps.js ----------------*/
-
-  function isMobile() { 
-   return ('ontouchstart' in document.documentElement);
- }
-
- function init_gmap() {
-   if ( typeof google == 'undefined' ) return;
-   var options = {
-    center: [-37.817331, 144.955652],
-    zoom: 15,
-    mapTypeControl: true,
-    mapTypeControlOptions: {
-     style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-   },
-   navigationControl: true,
-   scrollwheel: false,
-   streetViewControl: true
- }
-
- if (isMobile()) {
-  options.draggable = false;
-}
-
-$('#googleMaps').gmap3({
-  map: {
-   options: options
- },
- marker: {
-   latLng: [-37.817331, 144.955652],
-   options: { icon: 'images/mapicon.png' }
- }
-});
-}
-
-init_gmap();
-});
-
-
-
-</script>
 
 </body>
 </html>
-
