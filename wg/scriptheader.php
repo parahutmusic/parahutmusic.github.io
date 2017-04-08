@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
   <title>Parahut Music</title>
-<link rel="shortcut icon" href="images/icon.png">
+  <link rel="shortcut icon" href="images/icon.png">
   <meta name="description" content="เสียงเพลงจากสวนยาง เราเด็กบ้านๆ เด็กตัดยาง เด็กเลี้ยงวัว" >
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
