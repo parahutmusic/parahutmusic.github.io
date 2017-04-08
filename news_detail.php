@@ -1,7 +1,6 @@
 <?php include "admin/dblink.php"; ?>
 <!doctype html>
 <html lang="en">
-<head>
 <?php {
   $news_id_m3 = $_GET['news_id'];
 
@@ -13,10 +12,11 @@
     $news_name3 = $rsm3['news_name'];
     $news_detail3 = $rsm3['news_detail'];
   ?>
+<head>
   <meta charset="UTF-8">
   <title><?php echo $news_name3;?></title>
   <link rel="shortcut icon" href="images/icon.png">
-  <meta name="description" content="<?php echo mb_substr($news_detail3,0,100,"UTF-8");?>" >
+  <meta name="description" content\="<?php echo mb_substr($news_detail3,0,100,"UTF-8");?>\" >
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
