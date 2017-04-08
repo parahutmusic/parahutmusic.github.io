@@ -88,7 +88,7 @@
                              ชื่อ : <?php echo $pername ;?> <?php echo $member_name ;?><br>
                             ชื่อเล่น : <?php echo $member_nikname ;?><br>
                             เกิดวันที่ : <?php echo $day;?> / <?php echo $month; ?> / <?php echo $year; ?><br>
-การศึกษา<pre style="padding: 0px;margin: 0 0 10px;font-family: 'Kanit', sans-serif;line-height: 1.42857143;color: #333;word-break: break-all;word-wrap: break-word;background-color: #FFF;border: 0px solid #ccc;border-radius: 0px; "><?php echo $member_edu ;?></pre>
+การศึกษา<pre style="padding: 0px;margin: 0 0 10px;font-family: 'Kanit', sans-serif;line-height: 1.42857143;color: #333;word-break: break-all;word-wrap: break-word;background-color: #FFF;border: 0px solid #ccc;border-radius: 0px;    white-space: pre-wrap; "><?php echo $member_edu ;?></pre>
 							</div>
                         </div><!-- /.recent-post-details -->
                       </li>
