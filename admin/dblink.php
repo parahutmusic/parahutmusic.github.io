@@ -1,8 +1,12 @@
 ﻿<?php 
 error_reporting(E_ALL ^ E_NOTICE);
 ?>
+<!-- <?php
+$link //= //@mysqli_connect("mysql.hostinger.in.th", "u242059028_prh", "123456789", "u242059028_prh") or die(mysqli_connect_error(ติดต่อฐานข้อมูลไม่ได้));
+//mysqli_set_charset($link, "utf8");
+?> -->
 <?php
-$link = @mysqli_connect("mysql.hostinger.in.th", "u242059028_prh", "123456789", "u242059028_prh") or die(mysqli_connect_error(ติดต่อฐานข้อมูลไม่ได้));
+$link = @mysqli_connect("localhost", "root", "123456789", "parahutnew") or die(mysqli_connect_error(ติดต่อฐานข้อมูลไม่ได้));
 mysqli_set_charset($link, "utf8");
 ?>
 <?php
