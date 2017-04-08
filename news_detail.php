@@ -1,9 +1,56 @@
 <?php include "admin/dblink.php"; ?>
 <!doctype html>
 <html lang="en">
-
 <head>
-  <?php include "wg/scriptheader.php" ?>
+<?php {
+  $news_id_m3 = $_GET['news_id'];
+
+    $sql_3 = "SELECT * FROM news where news_id = '$news_id_m3'";   
+    $link_query_3 = mysqli_query($link, $sql_3);
+    $rsm3 = mysqli_fetch_array($link_query_3);
+    
+    $news_id3 = $rsm3['news_id'];
+    $news_name3 = $rsm3['news_name'];
+    $news_detail3 = $rsm3['news_detail'];
+  ?>
+  <meta charset="UTF-8">
+  <title><?php echo $news_name3;?></title>
+  <link rel="shortcut icon" href="images/icon.png">
+  <meta name="description" content="<?php echo mb_substr($news_detail3,0,100,"UTF-8");?>" >
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Bootstrap  -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- icon fonts font Awesome -->
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Import Magnific Pop Up Styles -->
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+  <!-- Import Custom Styles -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Import Animate Styles -->
+  <link href="assets/css/animate.min.css" rel="stylesheet">
+
+  <!-- Import owl.carousel Styles -->
+  <link href="assets/css/owl.carousel.css" rel="stylesheet">
+
+  <!-- Import Custom Responsive Styles -->
+  <link href="assets/css/responsive.css" rel="stylesheet">
+
+ <link href="https://fonts.googleapis.com/css?family=Kanit:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Questrial|Yellowtail" rel="stylesheet">
+
+<style type="text/css" media="screen">
+html {
+overflow: -moz-scrollbars-vertical; 
+overflow-y: scroll;
+}
+</style>
 </head>
     <body class="header-fixed-top">
       <?php include "wg/menu.php" ?>
