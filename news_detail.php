@@ -1,11 +1,10 @@
 <?php include "admin/dblink.php"; ?>
 <!doctype html>
 <html lang="en">
-<head>
 <?php {
-  $news_id_m = $_GET['news_id'];
+  $news_id_m3 = $_GET['news_id'];
 
-    $sql_3 = "SELECT * FROM news where news_id = '$news_id_m'";   
+    $sql_3 = "SELECT * FROM news where news_id = '$news_id_m3'";   
     $link_query_3 = mysqli_query($link, $sql_3);
     $rsm3 = mysqli_fetch_array($link_query_3);
     
@@ -13,6 +12,7 @@
     $news_name3 = $rsm3['news_name'];
     $news_detail3 = $rsm3['news_detail'];
   ?>
+<head>
   <meta property="og:title"         content="<?php echo $news_name3;?>" />
   <meta property="og:description"   content="<?php echo mb_substr($news_detail3,0,100,"UTF-8");?>" />
 
