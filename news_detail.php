@@ -13,7 +13,6 @@
     $news_name3 = $rsm3['news_name'];
     $news_detail3 = $rsm3['news_detail'];
   ?>
-  <title><?php echo $news_name3;?></title>
   <meta property="og:title"         content="<?php echo $news_name3;?>" />
   <meta property="og:description"   content="<?php echo mb_substr($news_detail3,0,100,"UTF-8");?>" />
 
