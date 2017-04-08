@@ -45,8 +45,15 @@
                         <div class="entry-meta-content">
                           <span class="entry-date">
                             <time datetime="2015-01-15" ><i class="glyphicon glyphicon-time"></i> <?php echo "ลงวันที่ : $news_date2";?> 
-
-</time>
+<!--  Share Button Start -->
+<div id='share-post'>
+  <a class='facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'>
+    <span/>
+    SHARE
+  </a>
+</div>
+<!--  Share Button Start -->
+                            </time>
 
                           </span>
                         </div><!-- /.meta-content -->
