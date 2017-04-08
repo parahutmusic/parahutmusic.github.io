@@ -1,6 +1,7 @@
 <?php include "admin/dblink.php"; ?>
 <!doctype html>
 <html lang="en">
+
 <head>
   <?php include "wg/scriptheader.php" ?>
 </head>
