@@ -4,80 +4,6 @@
 <head>
   <?php include "wg/scriptheader.php" ?>
 </head>
-  <style type="text/css">
-    /*** Share Post Styling ***/
-#share-post {
-width: 100%;
-overflow: hidden;
-margin-top: 20px;
-}
-#share-post a {
-display: block;
-height: 32px;
-line-height: 43px;
-color: #fff;
-float: left;
-padding-right: 10px;
-margin-right: 10px;
-margin-bottom: 25px;
-text-decoration: none;
--webkit-border-radius: 4px;
--moz-border-radius: 4px;
--o-border-radius: 4px;
--ms-border-radius: 4px;
--khtml-border-radius: 4px;
-border-radius: 4px;
-overflow: hidden;
-margin: 0 10px 10px 0;
-transition: .5s;
--webkit-transition: .5s;
--moz-transition: .5s;
-width: 125px;
-height: 45px;
-float: left;
-padding: 0;
-overflow: hidden;
-text-align: center;
-font-weight: 600;
-}
-#share-post
-.facebook {
-background-color: #6788CE;
-}
-#share-post
-.twitter {
-background-color: #29C5F6;
-}
-#share-post
-.google {
-background-color: #E75C3C;
-}
-#share-post
-span {
-display: block;
-width: 32px;
-height: 32px;
-float: left;
-padding: 6px;
-background: url(http://4.bp.blogspot.com/-M_utSb-nN04/U6V8Gut9dJI/AAAAAAAAAjE/6g1X58pjjcg/s1600/single-share.png) no-repeat;
-background-position-y: 6px;
-background-position-x: 7px;
-}
-#share-post
-.facebook span {
-background-color: #3967C6;
-}
-#share-post
-.twitter span {
-background-color: #26B5F2;
-background-position: -65px;
-}
-#share-post
-.google span {
-background-color: #E94D36;
-background-position: -137px;
-}
-  </style>
     <body class="header-fixed-top">
       <?php include "wg/menu.php" ?>
   
@@ -120,12 +46,7 @@ background-position: -137px;
                           <span class="entry-date">
                             <time datetime="2015-01-15" ><i class="glyphicon glyphicon-time"></i> <?php echo "ลงวันที่ : $news_date2";?> 
 <!--  Share Button Start -->
-<div id='share-post'>
-  <a class='facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'>
-    <span/>
-    SHARE
-  </a>
-</div>
+<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Loader" type="text/javascript"></script>  <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>  <div align=right><a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a></div>
 <!--  Share Button Start -->
                             </time>
 
