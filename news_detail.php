@@ -46,7 +46,7 @@
                           <span class="entry-date">
                             <time datetime="2015-01-15" ><i class="glyphicon glyphicon-time"></i> <?php echo "ลงวันที่ : $news_date2";?> 
 <!--  Share Button Start -->
-<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Loader" type="text/javascript"></script>  <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>  <div align=right><a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a></div>
+<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Loader" type="text/javascript"></script>  <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>  <div align=right><a name="fb_share" type="button_count" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fparahutmusic.com%2Fnews_detail.php%3Fnews_id%3D<?php echo $news_id2;?>">Share</a></div>
 <!--  Share Button Start -->
                             </time>
 
