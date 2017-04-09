@@ -20,7 +20,7 @@
   <meta property="og:title"         content="<?php echo $news_name3; ?>" />
   <meta property="og:description"   content="<?php echo mb_substr($news_detail3,0,100,"UTF-8");?>" />
   <meta property="og:image"         content="<img class='img-responsive' src='admin/<?=$photo_name3;?>' alt='parahut'>"/>
-  <!-- <?php //include "wg/scriptheader.php" ?> -->
+  <?php include "wg/scriptheader.php" ?>
 </head>
     <body class="header-fixed-top">
       <?php include "wg/menu.php" ?>
