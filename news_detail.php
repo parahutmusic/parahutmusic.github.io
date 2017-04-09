@@ -15,9 +15,9 @@
     $photo_name3 = $rsm3['photo_name'];   
 ?>
 <title><?php echo $news_name3; ?></title>
-<meta name="description" content="<?php echo $news_detail3; ?>">
-  <!-- <meta property="og:url"           content="" />
-  <meta property="og:type"          content="website" />
+<meta name="description" content="<?php echo mb_substr($news_detail3,0,100,"UTF-8");?>">
+  <meta property="og:url"           content="http://parahutmusic.com/news_detail.php?news_id=<?=$news_id3;?>" />
+  <!-- <meta property="og:type"          content="website" />
   <meta property="og:title"         content="Your Website Title" />
   <meta property="og:description"   content="Your description" />
   <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
