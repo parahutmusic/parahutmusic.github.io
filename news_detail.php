@@ -2,49 +2,30 @@
 <!doctype html>
 <html lang="en">
 <head>
-<?php 
-  $news_id_m3 = $_GET['news_id'];
-  
-    $sql_3 = "SELECT * FROM news INNER JOIN photonews ON (news.news_id = photonews.news_id) where news.news_id = '$news_id_m3'";
-    $link_query_3 = mysqli_query($link, $sql_3);
-    $rsm3 = mysqli_fetch_array($link_query_3);
+  <?php {
+  $news_id_m = $_GET['news_id'];
+      
+    $sql_2 = "SELECT * FROM news INNER JOIN photonews ON (news.news_id = photonews.news_id) where news.news_id = '$news_id_m'";
+    $link_query_2 = mysqli_query($link, $sql_2);
+    $rsm2 = mysqli_fetch_array($link_query_2);
     
-    $news_id3 = $rsm3['news_id'];
-    $news_name3 = $rsm3['news_name'];
-    $news_detail3 = $rsm3['news_detail'];
-    $photo_name3 = $rsm3['photo_name'];
-?>
-<title><?php echo $news_name3; ?></title>
-<meta name="description" content="<?php echo mb_substr($news_detail3,0,100,"UTF-8");?>">
-  <meta property="og:url"           content="http://parahutmusic.com/news_detail.php?news_id=<?=$news_id3;?>" />
-  <meta property="og:title"         content="<?php echo $news_name3; ?>" />
-  <meta property="og:description"   content="<?php echo mb_substr($news_detail3,0,100,"UTF-8");?>" />
-  <meta property="og:image"         content="http://parahutmusic.com/admin/<?php echo $photo_name3;?>"/>
+    $news_id2 = $rsm2['news_id'];
+    $news_name2 = $rsm2['news_name'];
+    $news_detail2 = $rsm2['news_detail'];
+    $news_date2 = $rsm2['news_date'];
+    $photo_name2 = $rsm1['photo_name'];
+      
+  ?>
+<title><?php echo $news_name2; ?></title>
+<meta name="description" content="<?php echo mb_substr($news_detail2,0,100,"UTF-8");?>">
+  <meta property="og:url"           content="http://parahutmusic.com/news_detail.php?news_id=<?=$news_id2;?>" />
+  <meta property="og:title"         content="<?php echo $news_name2; ?>" />
+  <meta property="og:description"   content="<?php echo mb_substr($news_detail2,0,150,"UTF-8");?>" />
+  <meta property="og:image"         content="http://parahutmusic.com/admin/<?php echo $photo_name2;?>"/>
   <?php include "wg/scriptheader.php" ?>
 </head>
     <body class="header-fixed-top">
       <?php include "wg/menu.php" ?>
-  
-  	<?php {
-	$news_id_m = $_GET['news_id'];
-	
-		$sql_1 = "SELECT * FROM photonews where news_id = '$news_id_m'";
-		$link_query_1 = mysqli_query($link, $sql_1);
-		$rsm1 = mysqli_fetch_array($link_query_1);
-		
-		$news_id1 = $rsm1['news_id'];
-		$photo_name1 = $rsm1['photo_name'];
-			
-		$sql_2 = "SELECT * FROM news where news_id = '$news_id_m'"; 	
-		$link_query_2 = mysqli_query($link, $sql_2);
-		$rsm2 = mysqli_fetch_array($link_query_2);
-		
-		$news_id2 = $rsm2['news_id'];
-		$news_name2 = $rsm2['news_name'];
-		$news_detail2 = $rsm2['news_detail'];
-		$news_date2 = $rsm2['news_date'];
-			
-	?>
       <section id="main-content" class="main-content blog-post-singgle-page">
         <div class="container">
           <div class="row">
