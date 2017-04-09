@@ -34,7 +34,7 @@
                 <article class="post type-post">
                   <div class="post-top">
                     <div class="post-thumbnail">
-                      <img class="img-responsive" src="admin/<?=$photo_name1;?>" alt="parahut">
+                      <img class="img-responsive" src="admin/<?=$photo_name2;?>" alt="parahut">
                     </div><!-- /.post-thumbnail -->  
                     <div class="post-meta">
                       <div class="entry-meta">
