@@ -57,7 +57,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-share-button" data-href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fparahutmusic.com%2Fnews_detail.php%3Fnews_id%3D<?php echo $news_id2;?>" data-layout="box_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fparahutmusic.com%2Fnews_detail.php%3Fnews_id%3D<?php echo $news_id2;?>&amp;src=sdkpreparse">แชร์</a></div>
+<div class="fb-share-button" data-href="http://parahutmusic.com/news_detail.php?news_id=<?php echo $news_id2;?>" data-layout="box_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fparahutmusic.com%2Fnews_detail.php%3Fnews_id%3D<?php echo $news_id2;?>&amp;src=sdkpreparse">แชร์</a></div>
 <!--  Share Button Start -->
                             </time>
                           </span>
