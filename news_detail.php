@@ -13,7 +13,7 @@
     $news_name2 = $rsm2['news_name'];
     $news_detail2 = $rsm2['news_detail'];
     $news_date2 = $rsm2['news_date'];
-    $photo_name2 = $rsm1['photo_name'];
+    $photo_name2 = $rsm2['photo_name'];
       
   ?>
 <title><?php echo $news_name2; ?></title>
@@ -34,7 +34,7 @@
                 <article class="post type-post">
                   <div class="post-top">
                     <div class="post-thumbnail">
-                      <img class="img-responsive" src="admin/<?=$photo_name2;?>" alt="parahut">
+                      <img class="img-responsive" src="admin/<?php echo $photo_name2;?>" alt="parahut">
                     </div><!-- /.post-thumbnail -->  
                     <div class="post-meta">
                       <div class="entry-meta">
@@ -58,7 +58,8 @@
                     </div><!-- /.post-meta -->
                   </div><!-- /.post-top -->
                   <div class="post-content">
-                    <h2 class="entry-title"><a href="#"><?php 
+                    <h2 class="entry-title"><a href="#">
+                    <?php 
 					echo "<br>";
 				 	echo "&rsaquo;&rsaquo; "; 
 					echo "$news_name2 ";
