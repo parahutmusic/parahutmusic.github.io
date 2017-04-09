@@ -2,7 +2,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>ข่าวพาราฮัท</title>
+<?php 
+  $news_id_m3 = $_GET['news_id'];
+  
+    $sql_3 = "SELECT * FROM news INNER JOIN photonews ON (news.news_id = photonews.news_id) where news.news_id = '$news_id_m3'";
+    $link_query_3 = mysqli_query($link, $sql_3);
+    $rsm3 = mysqli_fetch_array($link_query_3);
+    
+    $news_id3 = $rsm3['news_id'];
+    $news_name3 = $rsm3['news_name'];
+    $news_detail3 = $rsm3['news_detail'];
+    $photo_name3 = $rsm3['photo_name'];   
+?>
+<title><?php echo $news_name3; ?></title>
+<!-- <meta name="description" content="<?php //echo $news_detail3; ?>">
+  <meta property="og:url"           content="" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Your Website Title" />
+  <meta property="og:description"   content="Your description" />
+  <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
   <?php include "wg/scriptheader.php" ?>
 </head>
     <body class="header-fixed-top">
