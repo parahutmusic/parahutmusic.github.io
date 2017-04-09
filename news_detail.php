@@ -46,8 +46,11 @@
                           <span class="entry-date">
                             <time datetime="2015-01-15" ><i class="glyphicon glyphicon-time"></i> <?php echo "ลงวันที่ : $news_date2";?> 
 <!--  Share Button Start -->
-<div class="fb-share-button" data-href="http://parahutmusic.com/news_detail.php?news_id=<?php echo $news_id2;?>" data-layout="box_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fparahutmusic.com%2Fnews_detail.php%3Fnews_id%3D<?php echo $news_id2;?>&amp;src=sdkpreparse">แชร์</a></div>
+<!-- <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Loader" type="text/javascript"></script>  <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>  <div align=right><a name="fb_share" type="button_count" href="javascript"onclick="window.open('https://www.facebook.com/sharer.php?u=http%3A%2F%2Fparahutmusic.com%2Fnews_detail.php%3Fnews_id%3D<?php echo $news_id2;?>','windowname2','width=560, height=500, directories=no, location=no, menubar=no, resizable=no, scrollbars=no, status=no, toolbar=no'); return false;"><img src="images/fb.png" width="100" class="btn btn-default"></a> -->
+
 <!--  Share Button Start -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58d00123e2c2ebb4"></script> 
+<div class="addthis_inline_share_toolbox"></div>
                             </time>
                           </span>
                         </div><!-- /.meta-content -->
