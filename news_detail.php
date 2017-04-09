@@ -12,15 +12,14 @@
     $news_id3 = $rsm3['news_id'];
     $news_name3 = $rsm3['news_name'];
     $news_detail3 = $rsm3['news_detail'];
-    $photo_name3 = $rsm3['photo_name'];   
+    $photo_name3 = $rsm3['photo_name'];
 ?>
 <title><?php echo $news_name3; ?></title>
 <meta name="description" content="<?php echo mb_substr($news_detail3,0,100,"UTF-8");?>">
   <meta property="og:url"           content="http://parahutmusic.com/news_detail.php?news_id=<?=$news_id3;?>" />
-  <!-- <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="Your Website Title" />
-  <meta property="og:description"   content="Your description" />
-  <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
+  <meta property="og:title"         content="<?php echo $news_name3; ?>" />
+  <meta property="og:description"   content="<?php echo mb_substr($news_detail3,0,100,"UTF-8");?>" />
+  <meta property="og:image"         content="<img class="img-responsive" src="admin/<?=$photo_name3;?>" alt="parahut">" />
   <?php include "wg/scriptheader.php" ?>
 </head>
     <body class="header-fixed-top">
