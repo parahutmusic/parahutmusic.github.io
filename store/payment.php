@@ -53,7 +53,26 @@
      	<div class="container">
         <div class="col-xs-12 col-sm-6">
         <h2>การสั่งซื้อสินค้า</h2>
-        	
+        	<div class="col-xs-12" style="padding:10px;">
+                <div class="col-sm-4 col-md-3" >
+                    <img src="img/step1.png">
+                </div>
+                <div class="col-sm-4 col-md-3" >
+                    <img src="img/step2.png">
+                </div>
+                <div class="col-sm-4 col-md-3" >
+                    <img src="img/step3.png">
+                </div>
+                <div class="col-sm-4 col-md-3" >
+                    <img src="img/step4.png">
+                </div>
+                <div class="col-sm-4 col-md-3" >
+                    <img src="img/step5.png">
+                </div>
+                <div class="col-sm-4 col-md-3" >
+                    <img src="img/step6.png">
+                </div>
+            </div>
         </div>
 			<div class="col-xs-12 col-sm-6" style="padding:0px;">
             <h2>การโอนเงินธนาคาร</h2>
