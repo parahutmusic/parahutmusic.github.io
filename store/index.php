@@ -66,10 +66,10 @@ $field = "ทั้งหมด";
 $sql = "SELECT *  FROM products ";
 if(isset($_GET['catid']) && !empty($_GET['catid'])) {
 	$cat_id  = $_GET['catid'];
-	$sql .= "WHERE cat_id  = '$cat_id'";
+	$sql .= "WHERE size LIKE 'S%'";
 	$field = $_GET['catname'];
 }
-$sql .= "WHERE size LIKE 'S%'";
+$sql .= "ORDER BY pro_name ASC";
 $result = page_query($link, $sql, 8);
 $first = page_start_row();
 $last = page_stop_row();
