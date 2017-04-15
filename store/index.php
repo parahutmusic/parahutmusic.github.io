@@ -77,7 +77,6 @@ $total = page_total_rows();
 if($total == 0) {
 	$first = 0;
 }
- 	//echo "รายการสินค้า: $field  (ลำดับที่  $first - $last จาก $total)"; 
 ?>
 <?php
 
@@ -89,7 +88,8 @@ while($rs = mysqli_fetch_array($result)) {
 		$price = $rs['price'];
 		$detail = $rs['detail'];
 		$quantity = $rs['quantity'];
-		$img = $rs['img'];	 
+		$img = $rs['img'];
+    $size = $rs['size']; 
  ?>     
  
    
@@ -99,12 +99,12 @@ while($rs = mysqli_fetch_array($result)) {
                         <div class="product-upper">
                             <img src="../admin/shop/<?php echo $img; ?>"><br><br>
                         </div>
-                        <?php echo "<span class=\"pro-name\" data-id=\"$id\">". $rs['pro_name'] . "</span>";?>
+                        <?php echo "<span class=\"pro-name\" data-id=\"$id\">". $rs['pro_name'] . " $size</span>";?>
                         <div class="product-carousel-price">
     <ins><?php echo  "<span class=\"price\">ราคา: " . number_format($rs['price'],2) . " บาท</span>";  ?></ins>
                         </div>
                         <div class="product-option-shop">
-<a href="single-product.php?pro_id=<?php echo $id; ?>&<?php echo $pro_name; ?>" class="btn btn-info btn-md" onclick="document.getElementById('id01').style.display='block'">รายละเอียด</a> 
+<a href="single-product.php?pro_id=<?php echo $id; ?>&<?php echo $pro_name; ?>&size=<?php echo $size ; ?>" class="btn btn-info btn-md" onclick="document.getElementById('id01').style.display='block'">รายละเอียด</a> 
                 		</div>                       
             		</div>
                   </div>

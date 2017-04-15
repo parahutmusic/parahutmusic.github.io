@@ -2,7 +2,6 @@
     session_start(); 
     $pro_id = $_REQUEST['pro_id']; 
 	$act = $_REQUEST['act'];
-	$size = $_REQUEST['size'];
 	
 	
 	if($act=='add' && !empty($pro_id))
@@ -106,13 +105,14 @@ require_once('dblink.php');
 			{		 
 		$sum = $row['price'] * $quantity;
 		$total += $sum;
+    $size = $row['size'];  
 		echo "<tr>";
 		echo "<td align='center'>";
         echo $i += 1;
         echo ".";
 		echo "</td>";
 		echo "<td align='center' width='100'>"."<img src='../admin/shop/$row[img]'  width='50'/>"."</td>";
-		echo "<td width='334'>"." " . $row["pro_name"] . "   ขนาด : $size";
+		echo "<td width='334'>"." " . $row["pro_name"] . " $size";
 		echo "</td>";
 		echo "<td width='100' align='right'>" . number_format($row["price"],2) . "</td>";
 		

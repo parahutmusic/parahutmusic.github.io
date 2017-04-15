@@ -48,7 +48,8 @@
 		$price = $rsm1['price'];
 		$detail = $rsm1['detail'];
 		$quantity = $rsm1['quantity'];
-		$img = $rsm1['img'];		
+		$img = $rsm1['img'];	
+        $size = $rsm1['size'];   	
 ?>
     <div class="single-product-area">
         <div class="zigzag-bottom"></div>
@@ -68,17 +69,17 @@
                             <div class="col-sm-6">
                                 <div class="product-inner">
                                 <br>
-			<h2 class="product-name"><?php echo "<span class=\"pro-name\" data-id=\"$id\">". $rsm1['pro_name'] . "</span>";?></h2>
+			<h2 class="product-name"><?php echo "<span class=\"pro-name\" data-id=\"$id\">". $rsm1['pro_name'] . " $size</span>";?></h2>
                   <div class="product-inner-price">
                     <h4>รายละเอียด</h4>
                     <span><?php echo $detail; ?></span>
                     <br>
                	</div>  
                 <ins><h4><?php echo  "<span class=\"price\">ราคา : " . number_format($rsm1['price'],2) . " บาท</span>";  ?></h4></ins>
-          
-			<input name='size' type='text'>	
-          
- <?php echo "<a href='cart.php?pro_id=$id&$pro_name&act=add&size=$size' class='btn btn-info btn-md'><span class='glyphicon glyphicon-shopping-cart'> </span> เพิ่มลงตะกร้าสินค้า </a>"; ?>  
+    
+        
+
+ <?php echo "<a href='cart.php?pro_id=$id&$pro_name&act=add' class='btn btn-info btn-md'><span class='glyphicon glyphicon-shopping-cart'> </span> เพิ่มลงตะกร้าสินค้า </a>"; ?>  
                             	</div>
                         </div>
                         
