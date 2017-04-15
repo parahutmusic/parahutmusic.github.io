@@ -56,7 +56,7 @@
                     $h = $self . "?catid=" . $cat['cat_id'] . "&catname=" . $cat['cat_name'];
                     echo "<li><a href=\"$h\">". $cat['cat_name'] . "</a></li>";
                 }
-                ?>
+          ?>
 		</ul>
 	</div> 
 </div>    
