@@ -27,7 +27,7 @@
                 <li><a href="news.php">ข่าว</a></li>
                 <li><a href="arttists.php">ศิลปิน</a></li>
                 <li><a href="live.php">ถ่ายทอดสด</a></li>
-                <!-- <li><a href="store">พาราช้อป</a></li> -->
+                <li><a href="store">พาราช้อป</a></li>
                 <li><a href="contact.php">ติดต่อ</a></li>
               </ul><!-- /.menu-list -->
             </nav><!-- /.menu-list -->
