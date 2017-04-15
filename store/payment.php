@@ -54,25 +54,25 @@
         <div class="col-xs-12 col-sm-6">
         <h2>การสั่งซื้อสินค้า</h2>
         	<div class="col-xs-12" style="padding:10px;">
-                <div class="col-sm-12" style="padding:5px;">
+                <div class="col-sm-12" style="padding:5px;border: black 5px solid;;">
                     <img src="img/step1.jpg">
                 </div>
-                <div class="col-sm-12" style="padding:5px;">
+                <div class="col-sm-12" style="padding:5px;border: black 5px solid;;">
                     <img src="img/step2.jpg">
                 </div>
-                <div class="col-sm-12" style="padding:5px;">
+                <div class="col-sm-12" style="padding:5px;border: black 5px solid;;">
                     <img src="img/step3.jpg">
                 </div>
-                <div class="col-sm-12" style="padding:5px;">
+                <div class="col-sm-12" style="padding:5px;border: black 5px solid;">
                     <img src="img/step4.jpg">
                 </div>
-                <div class="col-sm-12" style="padding:5px;">
+                <div class="col-sm-12" style="padding:5px;border: black 5px solid;">
                     <img src="img/step5.jpg">
                 </div>
-                <div class="col-sm-12" style="padding:5px;">
+                <div class="col-sm-12" style="padding:5px;border: black 5px solid;">
                     <img src="img/step6.jpg">
                 </div>
-                <div class="col-sm-12" style="padding:5px;">
+                <div class="col-sm-12" style="padding:5px;border: black 5px solid;">
                     <img src="img/step7.jpg">
                 </div>
             </div>
