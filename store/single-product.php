@@ -23,12 +23,6 @@
     <link rel="stylesheet" href="../store/css/style.css">
     <link rel="stylesheet" href="../store/css/responsive.css">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>   
 <?php include "wg/menu.php" ?>
@@ -76,8 +70,24 @@
                     <br>
                	</div>  
                 <ins><h4><?php echo  "<span class=\"price\">ราคา : " . number_format($rsm1['price'],2) . " บาท</span>";  ?></h4></ins>
-    
-        
+
+        <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%;width:100px;background:url(img/crossword.png) repeat scroll 0 0 #4caf50;">
+                    เลือกขนาด<span class="glyphicon glyphicon-chevron-down floatright"></span> </button>
+         <ul class="dropdown-menu">          
+                    <?php 
+                include "lib/pagination.php";
+                $sql = "SELECT * FROM products where products.pro_name = '$pro_name'";
+                $r = mysqli_query($link, $sql);
+                $self = $_SERVER['PHP_SELF'];
+                $h = $self . "?pro_id=";
+                while($row = mysqli_fetch_array($r)) {
+                    $h = $self . "?pro_id=" . $row['pro_id'] . "&pro_name=" . $row['pro_name'] . "&size=" . $row['size'];
+                    echo "<li><a href=\"$h\">". $row['size'] . "</a></li>";
+                }
+                ?>
+        </ul>
+    </div> 
 
  <?php echo "<a href='cart.php?pro_id=$id&$pro_name&act=add' class='btn btn-info btn-md'><span class='glyphicon glyphicon-shopping-cart'> </span> เพิ่มลงตะกร้าสินค้า </a>"; ?>  
                             	</div>
