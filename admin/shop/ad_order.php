@@ -103,25 +103,7 @@ include "wg/menu.php";
 <div class="row text-center" id="hid">
  <button class="btn btn-primary btn-lg" onClick="window.print()"> พิมพ์รายการสั่งซื้อ </button>
 </div>
-<center id="hid"><red>***เรียงลำดับจากการอัพเดตล่าสุด</red>
-<nav aria-label="Page navigation" >
-  <ul class="pagination">
-    <li <?php if($page==1) echo 'class="disabled"';?>>
-      <a href="ad_order.php?page=<?=$page-1;?>" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li >
-	<?php for($i=1;$i<=$total_page;$i++){ ?>
-    <li <?php if($page==$i) echo 'class="active"';?>><a href="ad_order.php?page=<?=$i;?>"><?=$i;?></a></li>
-	<?php } ?>
-    <li <?php if($page==$total_page) echo 'class="disabled"';?>>
-      <a href="ad_order.php?page=<?=$page+1;?>" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-</center>
+
 </div>
 <br>
 <script language="JavaScript">
