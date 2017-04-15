@@ -74,7 +74,7 @@
         <div class="btn-group">
                     <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%;width:100px;background:url(img/crossword.png) repeat scroll 0 0 #4caf50;">
                     เลือกขนาด<span class="glyphicon glyphicon-chevron-down floatright"></span> </button>
-         <ul class="dropdown-menu">          
+         <ul class="dropdown-menu" style="top: -5px;left: 100%;font-size: large;">          
                     <?php 
                 include "lib/pagination.php";
                 $sql = "SELECT * FROM products where products.pro_name = '$pro_name'";
