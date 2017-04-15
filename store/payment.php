@@ -54,22 +54,23 @@
         <div class="col-xs-12 col-sm-6">
         <h2>การสั่งซื้อสินค้า</h2>
         	<div class="col-xs-12" style="padding:10px;">
-                <div class="col-sm-4 col-md-3" >
+                <div class="col-sm-4 col-md-4" >
                     <img src="img/step1.png">
+                    เลือกสินค้าที่คุณต้องการ โดยคลิกปุ่มสั่งซื้อ / หยิบลงตะกร้า
                 </div>
-                <div class="col-sm-4 col-md-3" >
+                <div class="col-sm-4 col-md-4" >
                     <img src="img/step2.png">
                 </div>
-                <div class="col-sm-4 col-md-3" >
+                <div class="col-sm-4 col-md-4" >
                     <img src="img/step3.png">
                 </div>
-                <div class="col-sm-4 col-md-3" >
+                <div class="col-sm-4 col-md-4" >
                     <img src="img/step4.png">
                 </div>
-                <div class="col-sm-4 col-md-3" >
+                <div class="col-sm-4 col-md-4" >
                     <img src="img/step5.png">
                 </div>
-                <div class="col-sm-4 col-md-3" >
+                <div class="col-sm-4 col-md-4" >
                     <img src="img/step6.png">
                 </div>
             </div>
