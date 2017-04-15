@@ -63,9 +63,10 @@
    <div class="row">
 <?php
 $field = "ทั้งหมด";
-$sql = "SELECT *  FROM products WHERE cat_id  = '$cat_id' AND size = 'S'";
+$sql = "SELECT *  FROM products";
 if(isset($_GET['catid']) && !empty($_GET['catid'])) {
 	$cat_id  = $_GET['catid'];
+	$sql .= "WHERE cat_id  = '$cat_id' AND size = 'S'";
 	$field = $_GET['catname'];
 }
 $sql .= "ORDER BY pro_name ASC";
