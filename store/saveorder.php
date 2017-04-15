@@ -2,15 +2,13 @@
     session_start();  
 	
 	
-	echo "<pre>";
-	print_r($_SESSION);
-	echo "<hr>";
-	print_r($_POST);
-	echo "</pre>";
-	exit();
+	// echo "<pre>";
+	// print_r($_SESSION);
+	// echo "<hr>";
+	// print_r($_POST);
+	// echo "</pre>";
+
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +31,7 @@ require_once('dblink.php');
 	$phone = $_POST["phone"];
 	$quantity = $_POST["quantity"];
 	$total = $_POST["total"];
+	$size = $_POST["size"];
 	$order_date = date("Y-m-d H:i:s");
 	$status = 1;
 

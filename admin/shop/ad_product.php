@@ -105,6 +105,7 @@ include "wg/menu.php";
     <td width="10%"><font size="3">รหัสสินค้า</font></td>
     <td width="10%"><font size="3">รูปสินค้า</font></td>
     <td width="20%"><font size="3">ชื่อสินค้า</font></td>
+    <td width="5%"><font size="3">ขนาด</font></td>
     <td width="20%"><font size="3">ชื่อหมวดหมู่</font></td>
     <td width="10%"><font size="3">ราคา</font></td>
 	<td width="10%"><font size="3">แก้ไข</font></td>
@@ -124,11 +125,13 @@ include "wg/menu.php";
 		$detail = $rs['detail'];
 		$quantity = $rs['quantity'];
 		$img = $rs['img'];
+    $size = $rs['size'];
 	?> 
   <tr>
     <td align="center"><font size="3"><?=$pro_id;?></font></td>
     <td align="center"><font size="3"><img src="<?=$img;?>" width="70" height="70" border="0" /></font></td>
     <td align="center"><font size="3"><?=$pro_name;?></font></td>
+    <td align="center"><font size="3"><?=$size;?></font></td>
     <td align="center"><font size="3"><?=$cat_name;?></font></td>
     <td align="center"><font size="3"><?=$price;?></font></td>
 	<td align="center"><a href="update_product.php?pro_id=<?=$pro_id;?>"><img src="../../images/edit.png" width="30" height="30" border="0" /></a></td>

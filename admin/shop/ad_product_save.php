@@ -19,6 +19,7 @@ $cat_id = $_GET['cat_id'];
 	$price = $_POST['price'];
 	$detail = $_POST['detail'];
 	$img = $_FILES['img'];
+	$size = $_POST['size'];
 	
 	$logodir1="pic_product/";   
 	$pro_pic_file1 = $logodir1.basename($_FILES['img']['name']);
@@ -61,18 +62,30 @@ $cat_id = $_GET['cat_id'];
 	echo " window.location=\"ad_product.php\"\n";
 	echo	"</script>\n";
 	}else{
+
+		if($cat_id != "1")
+	{
+		$sql2="INSERT INTO products( pro_id , cat_id , pro_name , price , detail , img) VALUES ('','$cat_id','$pro_name','$price','$detail','$pro_pic_file1')";
+	 		$link_query2 = mysqli_query($link, $sql2);
+					echo "<script langquage='javascript'>\n";
+					echo " window.location=\"ad_product.php\"\n";
+					echo  "alert('บันทึกข้อมูลเรียบร้อยแล้ว')";
+					echo	"</script>\n";
+
+	}else{
 		
-  	$sql1="INSERT INTO products( pro_id , cat_id , pro_name , price , detail , quantity , img ) VALUES('$pro_id','$cat_id','$pro_name','$price','$detail','$quantity','$pro_pic_file1')";
+  	$sql1="INSERT INTO products( pro_id , cat_id , pro_name , price , detail , img , size ) VALUES ('','$cat_id','$pro_name','$price','$detail','$pro_pic_file1','S'),('','$cat_id','$pro_name','$price','$detail','$pro_pic_file1','M'),('','$cat_id','$pro_name','$price','$detail','$pro_pic_file1','L'),('','$cat_id','$pro_name','$price','$detail','$pro_pic_file1','XL'),('','$cat_id','$pro_name','$price','$detail','$pro_pic_file1','XXL')";
 	 $link_query1 = mysqli_query($link, $sql1);
 					echo "<script langquage='javascript'>\n";
 					echo " window.location=\"ad_product.php\"\n";
 					echo  "alert('บันทึกข้อมูลเรียบร้อยแล้ว')";
 					echo	"</script>\n";
-    }
-	}
-	}
-	}
-	}
+					}
+	    		}
+			}
+		}
+	}	
+}
 	
 	
 	

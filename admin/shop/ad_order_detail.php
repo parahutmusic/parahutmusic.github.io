@@ -70,14 +70,14 @@ include "wg/menu.php";
 		$quantity = $rs['quantity'];
 		$status = $rs['status'];
 		$order_date = $rs['order_date'];
-		
+		$size = $rs['size'];
 		$sum	= $rs['price']*$quantity;
 		$total1	+= $sum;
 	?> 
   <tr>
     <td align="center"><font size="3"><?php echo $p += 1; ?></font></td>
     <td align="center"><font size="3"><?=$order_id;?></font></td>
-    <td align="center"><font size="3"><?=$pro_name;?></font></td>
+    <td align="center"><font size="3"><?=$pro_name;?> <?=$size;?></font></td>
     <td align="center"><font size="3"><?=$quantity;?></font></td>
     <td align="center"><font size="3"><?=$total;?></font></td>
   </tr>
