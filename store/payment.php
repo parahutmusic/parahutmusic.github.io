@@ -54,35 +54,26 @@
         <div class="col-xs-12 col-sm-6">
         <h2>การสั่งซื้อสินค้า</h2>
         	<div class="col-xs-12" style="padding:10px;">
-                <div class="col-sm-1 col-md-4" >
-                    <img src="img/step1.png">
-                    </br>
-                    เลือกสินค้าที่คุณต้องการ โดยคลิกปุ่มสั่งซื้อ / หยิบลงตะกร้า
+                <div class="col-sm-12 col-md-6" >
+                    <img src="img/step1.jpg">
                 </div>
-                <div class="col-sm-6 col-md-4" >
-                    <img src="img/step2.png">
-                    </br>
-                    เมื่อเลือกสินค้าครบแล้ว ให้คลิกปุ่มสั่งซื้อสินค้าในตะกร้าสินค้า
+                <div class="col-sm-12 col-md-6" >
+                    <img src="img/step2.jpg">
                 </div>
-                <div class="col-sm-6 col-md-4" >
-                    <img src="img/step3.png">
-                    </br>
-                    กรอกรายละเอียดให้ครบถ้วนจากนั้นคลิกปุ่มยืนยันการสั่งซื้อ
+                <div class="col-sm-12 col-md-6" >
+                    <img src="img/step3.jpg">
                 </div>
-                <div class="col-sm-6 col-md-4" >
-                    <img src="img/step4.png">
-                    </br>
-                    ชำระค่าสินค้าและบริการ
+                <div class="col-sm-12 col-md-6" >
+                    <img src="img/step4.jpg">
                 </div>
-                <div class="col-sm-6 col-md-4" >
-                    <img src="img/step5.png">
-                    </br>
-                    แจ้งการชำระเงินผ่านทางหน้าเว็บไซต์ แจ้งชำระเงิน
+                <div class="col-sm-12 col-md-6" >
+                    <img src="img/step5.jpg">
                 </div>
-                <div class="col-sm-6 col-md-4" >
-                    <img src="img/step6.png">
-                    </br>
-                    เมื่อทางร้านตรวจสอบรายการชำระเงินเรียบร้อยแล้ว จะจัดส่งสินค้าให้คุณทันที
+                <div class="col-sm-12 col-md-6" >
+                    <img src="img/step6.jpg">
+                </div>
+                <div class="col-sm-12 col-md-6" >
+                    <img src="img/step7.jpg">
                 </div>
             </div>
         </div>
