@@ -137,8 +137,8 @@
                   <div class="post-meta">
                     <div class="entry-meta">
                       <span class="entry-date">
-                        <time datetime="2015-01-15"><i class="glyphicon glyphicon-time"></i> <?php echo $news_date4;?></time>
-                           <i class="glyphicon glyphicon-eye-open"></i> 
+                        <time datetime="2015-01-15"><i class="glyphicon glyphicon-time"></i> <?php echo $news_date4;?></time>&nbsp&nbsp&nbsp&nbsp
+                           <i class="glyphicon glyphicon-eye-open"></i> &nbsp
                            <span class="badge"> <?php echo $news_view4;?></span> ครั้ง
                       </span>
                     </div><!-- /.entry-meta -->
@@ -168,7 +168,7 @@
                   <div class="entry-meta">
                     <span class="entry-date">
                       <time datetime="2015-01-15"><i class="glyphicon glyphicon-time"></i> <?php echo $news_date5;?></time>&nbsp&nbsp&nbsp&nbsp
-                      <span class="glyphicon glyphicon-eye-open"></span> &nbsp&nbsp
+                      <i class="glyphicon glyphicon-eye-open"></i> &nbsp
                       <span class="badge"> <?php echo $news_view5;?></span> ครั้ง
                     </span>
                   </div><!-- /.entry-meta -->
