@@ -1,5 +1,7 @@
 <?php include "dblink.php"; 
 
+$pro_id = $_GET['pro_id'];
+
 $sql5 = "SELECT * FROM products where pro_id = '$pro_id'";
 $link_query = mysqli_query($link, $sql5);
 $rsm5 = mysqli_fetch_array($link_query);
