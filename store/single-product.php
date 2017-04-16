@@ -81,13 +81,14 @@ $query  = mysqli_query($link ,$sql6);
                             <div class="col-sm-6">
                                 <div class="product-inner">
                                 <br>
+                    <span class="glyphicon glyphicon-eye-open"></span> 
+                    <span class="badge"> <?php echo $pro_view;?></span> ครั้ง
+                                <br>
 			<h2 class="product-name"><?php echo "<span class=\"pro-name\" data-id=\"$id\">". $rsm1['pro_name'] . " $size</span>";?></h2>
                   <div class="product-inner-price">
                     <h4>รายละเอียด</h4>
                     <span><?php echo $detail; ?></span>
                     <br>
-                    <span class="glyphicon glyphicon-eye-open"></span> 
-                    <span class="badge"><?php echo $pro_view;?></span> ครั้ง
                	</div>  
                 <ins><h4><?php echo  "<span class=\"price\">ราคา : " . number_format($rsm1['price'],2) . " บาท</span>";  ?></h4></ins>
 

@@ -90,6 +90,7 @@ while($rs = mysqli_fetch_array($result)) {
 		$quantity = $rs['quantity'];
 		$img = $rs['img'];
     $size = $rs['size'];
+    $pro_view = $rs['pro_view'];   
  ?>     
  
    
@@ -102,6 +103,8 @@ while($rs = mysqli_fetch_array($result)) {
                         <?php echo "<span class=\"pro-name\" data-id=\"$id\">". $rs['pro_name'] . " $size</span>";?>
                         <div class="product-carousel-price">
     <ins><?php echo  "<span class=\"price\">ราคา: " . number_format($rs['price'],2) . " บาท</span>";  ?></ins>
+                    <span class="glyphicon glyphicon-eye-open"></span> 
+                    <span class="badge"> <?php echo $pro_view;?></span> ครั้ง
                         </div>
                         <div class="product-option-shop">
 <a href="single-product.php?pro_id=<?php echo $id; ?>&<?php echo $pro_name; ?>&size=<?php echo $size ; ?>" class="btn btn-info btn-md" onclick="document.getElementById('id01').style.display='block'">รายละเอียด</a> 
