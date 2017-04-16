@@ -10,26 +10,26 @@ if($_POST) {
   echo " window.location=\"index.php\"\n";
   echo  "</script>\n";
   } else {
-    if(($login != "admin@parahut") && ($pw != "1959900423488")) {
+    if(($login != "admin@shop") && ($pw != "parahutshop")) {
     echo "<script>alert('Username หรือ Password ไม่ถูกต้อง');history.back();</script>";
     echo "<script langquage='javascript'>\n";
     echo " window.location=\"index.php\"\n";
     echo  "</script>\n";
     } else {
-      if(($login == "admin@parahut") && ($pw != "1959900423488")) {
+      if(($login == "admin@shop") && ($pw != "parahutshop")) {
         echo "<script>alert('Password ไม่ถูกต้อง');history.back();</script>";
         echo "<script langquage='javascript'>\n";
         echo " window.location=\"index.php\"\n";
         echo  "</script>\n";
       } else {
-        if(($login != "admin@parahut") && ($pw == "1959900423488")) {
+        if(($login != "admin@shop") && ($pw == "parahutshop")) {
         echo "<script>alert('Username ไม่ถูกต้อง');history.back();</script>";
         echo "<script langquage='javascript'>\n";
         echo " window.location=\"index.php\"\n";
         echo  "</script>\n";
         } else {
-      		$_SESSION['admin'] = "admin@parahut";
-      		header("location: admin_home.php");
+      		$_SESSION['admin'] = "admin@shop";
+      		header("location: shop/ad_order.php");
       		exit;
         }
       }
@@ -86,6 +86,9 @@ if($_POST) {
 <body>
 <img src="img/btn/data-store.jpg"><br>
 <div class="col-xs-12">
+ <b style="font-family: kanit; font-size: 30px;"><span class="glyphicon glyphicon-shopping-cart"> </span> ADMIN ร้านค้าพาราฮัท</b>
+ </br>
+ </br> 
 <form method="post">
 	<input class="admin" type="text" name="login" placeholder="Username" required >
 	<input class="admin" type="password" name="pswd" placeholder="Password" required>
@@ -93,7 +96,7 @@ if($_POST) {
 </form>
 </div>
 <div class="col-xs-12" style="padding: 10px; margin: 10px; font-family: kanit;">
-<a href="admin_shop.php" class="btn-lg btn-success" > <span class="glyphicon glyphicon-shopping-cart"> </span> ADMIN ร้านค้าพาราฮัท </a>
+<a href="index.php" class="btn-lg btn-success" > <span class="glyphicon glyphicon-user"> </span> ADMIN พาราฮัท </a>
 </div>
 </body>
 <script>
