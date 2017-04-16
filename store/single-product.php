@@ -1,8 +1,11 @@
 <?php require_once("dblink.php"); 
 
+$sql5 = "SELECT * FROM products where pro_id = '$pro_id'";
+$link_query_5 = mysqli_query($link, $sql5);
+$rsm5 = mysqli_fetch_array($link_query_5);
 
-$pro_id = $_REQUEST['pro_id'];
-$pro_view = $rs['pro_view'];
+$pro_id = $rsm5['pro_id'];
+$pro_view = $rsm5['pro_view'];
 $count = $pro_view + 1;
  
 $sql= "update products set pro_view = $count WHERE pro_id = $pro_id";
