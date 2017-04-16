@@ -8,7 +8,7 @@ $rsm5 = mysqli_fetch_array($link_query);
 
 $news_id = $rsm5['news_id'];
 $news_view = $rsm5['news_view'];
-$count = $pro_view + 1;
+$count = $news_view + 1;
  
 $sql6 = "update news set news_view = $count WHERE news.news_id = $news_id";
 $query  = mysqli_query($link ,$sql6);
