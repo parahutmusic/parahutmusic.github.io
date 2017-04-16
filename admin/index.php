@@ -2,16 +2,39 @@
 session_start();
 $msg = "";
 if($_POST) {
- 	$login = $_POST['login'];
-	$pw = $_POST['pswd'];
-	if(($login != "admin@parahut") && ($pw != "1959900423488")) {
-		$msg = 'Login หรือ Password ไม่ถูกต้อง'; 
-	}
-	else {
-		$_SESSION['admin'] = "admin@parahut";
-		header("location: admin_home.php");
-		exit;
-	}
+  $login = $_POST['login'];
+  $pw = $_POST['pswd'];
+  if(($login == "") && ($pw == "")) {
+  echo "<script>alert('กรุณาป้อน Username หรือ Password');history.back();</script>";
+  echo "<script langquage='javascript'>\n";
+  echo " window.location=\"index.php\"\n";
+  echo  "</script>\n";
+  } else {
+    if(($login != "admin@parahut") && ($pw != "1959900423488")) {
+    echo "<script>alert('Username หรือ Password ไม่ถูกต้อง');history.back();</script>";
+    echo "<script langquage='javascript'>\n";
+    echo " window.location=\"index.php\"\n";
+    echo  "</script>\n";
+    } else {
+      if(($login == "admin@parahut") && ($pw != "1959900423488")) {
+        echo "<script>alert('Password ไม่ถูกต้อง');history.back();</script>";
+        echo "<script langquage='javascript'>\n";
+        echo " window.location=\"index.php\"\n";
+        echo  "</script>\n";
+      } else {
+        if(($login != "admin@parahut") && ($pw == "1959900423488")) {
+        echo "<script>alert('Username ไม่ถูกต้อง');history.back();</script>";
+        echo "<script langquage='javascript'>\n";
+        echo " window.location=\"index.php\"\n";
+        echo  "</script>\n";
+        } else {
+          $_SESSION['admin'] = "admin@parahut";
+          header("location: admin_home.php");
+          exit;
+        }
+      }
+    }
+  }
 }
 ?>
 <!doctype html>
