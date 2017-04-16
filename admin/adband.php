@@ -102,19 +102,21 @@
 	<p align="center"><font size="3"><b></b>
 <?php
 	
-	$rows = 5;
-	if($page<="0")$page=1;
-	$total_data  = mysqli_num_rows(mysqli_query($link,"select *  from band"));
-	$total_page=ceil ($total_data/$rows);
-	if($page>=$total_page)$page=$total_page;
-	$start=($page-1)*$rows;
+	$perpage = 5;
+ if (isset($_GET['page'])) {
+ $page = $_GET['page'];
+ } else {
+ $page = 1;
+ }
+ 
+ $start = ($page - 1) * $perpage;
 	
 	
 	$band_id 	= $_POST['band_id'];
 	$band_name = $_POST['band_name'];
 	$band_pic = $_FILES['band_pic'];
 	
-	$sql = "select *  from band where band_id order by band_id desc"; 
+	$sql = "select *  from band where band_id order by band_id desc limit {$start} , {$perpage} "; 
 	$db_query = mysqli_query($link, $sql);
 	$num_rows  = mysqli_num_rows($db_query);
 	
@@ -154,24 +156,30 @@
      }
 	 ?>
 </table>
-<center><red>***เรียงลำดับภาพจากการอัพเดตล่าสุด</red>
-<nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li <?php if($page==1) echo 'class="disabled"';?>>
-      <a href="adband.php?page=<?=$page-1;?>" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li >
-	<?php for($i=1;$i<=$total_page;$i++){ ?>
-    <li <?php if($page==$i) echo 'class="active"';?>><a href="adband.php?page=<?=$i;?>"><?=$i;?></a></li>
-	<?php } ?>
-    <li <?php if($page==$total_page) echo 'class="disabled"';?>>
-      <a href="adband.php?page=<?=$page+1;?>" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+<center><red>***เรียงลำดับจากการอัพเดตล่าสุด</red>
+<?php
+ $sql2 = "select * from band";
+ $query2 = mysqli_query($link, $sql2);
+ $total_record = mysqli_num_rows($query2);
+ $total_page = ceil($total_record / $perpage);
+ ?>
+<nav>
+ <ul class="pagination">
+ <li>
+ <a href="adband.php?page=1" aria-label="Previous">
+ <span aria-hidden="true">&laquo;</span>
+ </a>
+ </li>
+ <?php for($i=1;$i<=$total_page;$i++){ ?>
+ <li><a href="adband.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <?php } ?>
+ <li>
+ <a href="adband.php?page=<?php echo $total_page;?>" aria-label="Next">
+ <span aria-hidden="true">&raquo;</span>
+ </a>
+ </li>
+ </ul>
+ </nav>
 </center>
 <br>
 <script language="JavaScript">

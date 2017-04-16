@@ -37,17 +37,20 @@ include "../admin/dblink.php";
 <div class="container top"> 
 <p align="center"><font size="3"><b>ตารางแสดงข้อมูล</b>
 <?php
-	$rows = 5;
-	if($page<="0")$page=1;
-	$total_data  = mysqli_num_rows(mysqli_query($link,"select * from member"));
-	$total_page=ceil($total_data/$rows);
-	if($page>=$total_page)$page=$total_page;
-	$start=($page-1)*$rows;
+ $perpage = 10;
+ if (isset($_GET['page'])) {
+ $page = $_GET['page'];
+ } else {
+ $page = 1;
+ }
+ 
+ $start = ($page - 1) * $perpage;
+
+	$sql = "select *  from member order by member_id limit {$start} , {$perpage} "; 
+	$query = mysqli_query($link, $sql);
+	$num_rows  = mysqli_num_rows($query);
 	
-	$sql = "select *  from member order by member_id"; 
-	$db_query = mysqli_query($link, $sql);
-	$num_rows  = mysqli_num_rows($db_query);
-	
+
 	$sql1 = "select *  from member"; 
 	$db_query1 = mysqli_query($link, $sql1);
 	$num_rows1  = mysqli_num_rows($db_query1);
@@ -70,7 +73,7 @@ include "../admin/dblink.php";
 	$i = 0;
 	while($i < $num_rows)
 	{
-		$rs1 = mysqli_fetch_array($db_query);			
+		$rs1 = mysqli_fetch_array($query);			
 
 		$member_id 	= $rs1['member_id'];
 		$prename 	= $rs1['prename'];
@@ -95,25 +98,29 @@ include "../admin/dblink.php";
 </table>
 <center><red>***เรียงลำดับจากการอัพเดตล่าสุด</red>
 <p align="center"><font size="3"><a href="admember.php">- เพิ่มข้อมูลศิลปิน -</a></b>
-<nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li <?php if($page==1) echo 'class="disabled"';?>>
-      <a href="admember_show.php?page=<?php echo $page-1;?>" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li >
-    
-	<?php for($i=1;$i<=$total_page;$i++){ ?>
-    <li <?php if($page==$i) echo 'class="active"';?> ><a href="admember_show.php?page=<?php echo $i;?>"><?php echo $i;?></a></li>
-	<?php } ?>
-    
-    <li <?php if($page==$total_page) echo 'class="disabled"';?>>
-      <a href="admember_show.php?page=<?php echo $page+1;?>" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+<?php
+ $sql2 = "select * from member ";
+ $query2 = mysqli_query($link, $sql2);
+ $total_record = mysqli_num_rows($query2);
+ $total_page = ceil($total_record / $perpage);
+ ?>
+<nav>
+ <ul class="pagination">
+ <li>
+ <a href="admember_show.php?page=1" aria-label="Previous">
+ <span aria-hidden="true">&laquo;</span>
+ </a>
+ </li>
+ <?php for($i=1;$i<=$total_page;$i++){ ?>
+ <li><a href="admember_show.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <?php } ?>
+ <li>
+ <a href="admember_show.php?page=<?php echo $total_page;?>" aria-label="Next">
+ <span aria-hidden="true">&raquo;</span>
+ </a>
+ </li>
+ </ul>
+ </nav>
 </center>
 <br>
 <script language="JavaScript">
