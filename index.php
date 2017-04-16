@@ -268,7 +268,7 @@
                 <i class="fa fa-play-circle" style="font-size:24px"><span>Music Video</span></i>
                 </div>
                    <div class='embed-container'>
-                   <iframe src='https://www.youtube.com/embed/videoseries?list=PLzFpNII8Q7bPK9LJvoOHTTTZHlbHxSrhV&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>
+                   <iframe src='https://www.youtube.com/embed/Q9LOWbDp7Xw?list=PLzFpNII8Q7bPK9LJvoOHTTTZHlbHxSrhV&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>
                    </div>
                  
                 </div><!-- /.post-top -->
