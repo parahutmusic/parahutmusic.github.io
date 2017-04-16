@@ -89,7 +89,7 @@ while($rs = mysqli_fetch_array($result)) {
 		$detail = $rs['detail'];
 		$quantity = $rs['quantity'];
 		$img = $rs['img'];
-    $size = $rs['size']; 
+    $size = $rs['size'];
  ?>     
  
    

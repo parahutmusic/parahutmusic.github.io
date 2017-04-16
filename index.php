@@ -314,7 +314,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAir_blMHtx2YK8X25btrr7bk4
     <!-- Google Map Section End -->
   </div><!-- /.contact-area -->
 </section><!-- /#contact -->
-<script type='text/javascript' src='https://www.siamecohost.com/member/gcounter/graphcount.php?page=http://parahutmusic.com/&style=02&maxdigits=7'></script>
+
 <?php include"wg/footer.php"; ?>
 
 <div id="scroll-to-top" class="scroll-to-top">

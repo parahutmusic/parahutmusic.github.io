@@ -1,4 +1,12 @@
-<?php include "dblink.php"; ?>
+<?php include "dblink.php"; 
+
+$pro_id = $rs['pro_id'];
+$pro_view = $rs['pro_view'];
+$count = $pro_view + 1;
+ 
+$sql= "UPDATE products SET  pro_view=$count WHERE pro_id = $pro_id";
+    mysqli_query($link ,$sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
