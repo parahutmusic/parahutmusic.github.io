@@ -37,7 +37,7 @@ include "dblink.php";
 include "wg/menu.php";
 ?>
 
-<div class="container top"> 
+<div class="container top" id="hidden"> 
 <form id="form-img1" method="post" action="ad_categories_save.php" enctype="multipart/form-data">
 	  <div align="center">
 	<?php
