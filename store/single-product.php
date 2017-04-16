@@ -8,8 +8,12 @@ $pro_id = $rsm5['pro_id'];
 $pro_view = $rsm5['pro_view'];
 $count = $pro_view + 1;
  
-$sql6 = "update products set pro_view = $count WHERE pro_id = $pro_id";
+$sql6 = "update products set pro_view = $count WHERE products.pro_id = $pro_id";
 $query  = mysqli_query($link ,$sql6);
+
+echo "$sql5";
+echo "$sql6";
+exit();
 ?>
 <!DOCTYPE html>
 <html lang="en">
