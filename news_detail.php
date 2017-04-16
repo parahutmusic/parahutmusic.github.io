@@ -1,4 +1,19 @@
-<?php include "admin/dblink.php"; ?>
+<?php include "admin/dblink.php"; 
+
+$news_id = $_GET['news_id'];
+
+$sql5 = "SELECT * FROM news where news_id = '$news_id'";
+$link_query = mysqli_query($link, $sql5);
+$rsm5 = mysqli_fetch_array($link_query);
+
+$news_id = $rsm5['news_id'];
+$news_view = $rsm5['news_view'];
+$count = $pro_view + 1;
+ 
+$sql6 = "update news set news_view = $count WHERE news.news_id = $news_id";
+$query  = mysqli_query($link ,$sql6);
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,6 +29,7 @@
     $news_detail2 = $rsm2['news_detail'];
     $news_date2 = $rsm2['news_date'];
     $photo_name2 = $rsm2['photo_name'];
+    $news_view = $rsm2['news_view'];
       
   ?>
 <title><?php echo $news_name2; ?></title>
@@ -58,6 +74,9 @@
                     </div><!-- /.post-meta -->
                   </div><!-- /.post-top -->
                   <div class="post-content">
+                    <span class="glyphicon glyphicon-eye-open"></span> 
+                    <span class="badge"> <?php echo $news_view;?></span> ครั้ง
+                    <br>
                     <h2 class="entry-title"><a href="#">
                     <?php 
 					echo "<br>";
