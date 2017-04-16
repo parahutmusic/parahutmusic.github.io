@@ -47,12 +47,12 @@
                 		<h2 class="text-center post-area-title-ads">ขอขอบคุณ</h2>
                         <br>
                        <div class="ads">
-                     			<div class="col-xs-6">
-                                <img class="img-responsive" src="admin/img/ads/ads-delong.jpg" alt="parahut">
-                                </div>
-                                <div class="col-xs-6">
-                                <img class="img-responsive" src="admin/img/ads/ads-parahut.jpg" alt="parahut">
-                                </div>
+               			      <div class="col-xs-6">
+                            <img class="img-responsive" src="admin/img/ads/ads-delong.jpg" alt="parahut">
+                          </div>
+                          <div class="col-xs-6">
+                            <img class="img-responsive" src="admin/img/ads/ads-redbull.jpg" alt="parahut">
+                          </div>
                           
                        </div>
                 </div><!-- /.post-top -->
