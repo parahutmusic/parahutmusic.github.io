@@ -12,10 +12,9 @@ $count = $pro_view + 1;
  
 $sql6 = "update products set pro_view = $count WHERE products.pro_id = $pro_id";
 $query  = mysqli_query($link ,$sql6);
-
-echo "$sql5";
-echo "$sql6";
-exit();
+// echo "$sql5";
+// echo "$sql6";
+// exit();
 ?>
 <!DOCTYPE html>
 <html lang="en">
