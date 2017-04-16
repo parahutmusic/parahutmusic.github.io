@@ -64,8 +64,8 @@ if($_POST) {
 <img src="img/btn/data-store.jpg"><br>
 <div class="col-xs-12">
 <form method="post">
-	<input class="admin" type="text" name="login" placeholder="Login" required >
-	<input class="admin" type="password" name="password" placeholder="Password" required>
+	<input class="admin" type="text" name="login" placeholder="Username" required >
+	<input class="admin" type="password" name="pswd" placeholder="Password" required>
 <button type="submit">เข้าสู่ระบบ</button>
 </form>
 </div>
