@@ -8,7 +8,7 @@ $sql= "update products set pro_view = $count WHERE pro_view.pro_id = $pro_id";
     mysqli_query($link ,$sql);
 
     echo "$count";
-
+    echo "$sql";
     exit();
 ?>
 <!DOCTYPE html>
