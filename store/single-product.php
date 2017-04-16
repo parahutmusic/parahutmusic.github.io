@@ -5,7 +5,7 @@ $pro_view = $rs['pro_view'];
 $count = $pro_view + 1;
  
 $sql= "UPDATE products SET pro_view=$count WHERE pro_view.pro_id = $pro_id";
-    mysqli_db_query($link ,$sql);
+    mysqli_query($link ,$sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
