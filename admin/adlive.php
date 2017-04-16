@@ -107,7 +107,16 @@ function thai_date_and_time($time){   // 19 ธันวาคม 2556 เวล
 	</form>
         <p align="center"><font size="3"><b>ตารางแสดงรูปภาพสไลด์</b>
 <?php
-	$sql = "select *  from live where live_id order by live_id"; 
+$perpage = 5;
+ if (isset($_GET['page'])) {
+ $page = $_GET['page'];
+ } else {
+ $page = 1;
+ }
+ 
+ $start = ($page - 1) * $perpage;
+
+	$sql = "select *  from live where live_id order by live_id limit {$start} , {$perpage} "; 
 	$db_query = mysqli_query($link, $sql);
 	$num_rows  = mysqli_num_rows($db_query);
 	
@@ -141,6 +150,31 @@ function thai_date_and_time($time){   // 19 ธันวาคม 2556 เวล
      }
 	 ?>
 </table>
+<center><red>***เรียงลำดับจากการอัพเดตล่าสุด</red>
+<?php
+ $sql2 = "select * from live ";
+ $query2 = mysqli_query($link, $sql2);
+ $total_record = mysqli_num_rows($query2);
+ $total_page = ceil($total_record / $perpage);
+ ?>
+<nav>
+ <ul class="pagination">
+ <li>
+ <a href="adlive.php?page=1" aria-label="Previous">
+ <span aria-hidden="true">&laquo;</span>
+ </a>
+ </li>
+ <?php for($i=1;$i<=$total_page;$i++){ ?>
+ <li><a href="adlive.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <?php } ?>
+ <li>
+ <a href="adlive.php?page=<?php echo $total_page;?>" aria-label="Next">
+ <span aria-hidden="true">&raquo;</span>
+ </a>
+ </li>
+ </ul>
+ </nav>
+</center>
 </div>
 </body>
 </html>

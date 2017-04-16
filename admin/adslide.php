@@ -61,18 +61,20 @@ include "../admin/dblink.php";
 <p align="center"><font size="3"><b>ตารางแสดงรูปภาพสไลด์</b>
 <?php
 	
-	$rows = 5;
-	if($page<="0")$page=1;
-	$total_data  = mysqli_num_rows(mysqli_query($link,"select *  from slide"));
-	$total_page=ceil ($total_data/$rows);
-	if($page>=$total_page)$page=$total_page;
-	$start=($page-1)*$rows;
+ $perpage = 5;
+ if (isset($_GET['page'])) {
+ $page = $_GET['page'];
+ } else {
+ $page = 1;
+ }
+ 
+ $start = ($page - 1) * $perpage;
 	
 	
 	$ad_idimg 	= $_POST['ad_idimg'];
 	$ad_img1 = $_POST['ad_img1'];
 	
-	$sql = "select *  from slide where ad_idimg order by ad_idimg desc limit $start,5"; 
+	$sql = "select *  from slide where ad_idimg order by ad_idimg desc limit {$start} , {$perpage}"; 
 	$db_query = mysqli_query($link, $sql);
 	$num_rows  = mysqli_num_rows($db_query);
 	
@@ -112,24 +114,30 @@ include "../admin/dblink.php";
      }
 	 ?>
 </table>
-<center><red>***เรียงลำดับภาพจากการอัพเดตล่าสุด</red>
-<nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li <?php if($page==1) echo 'class="disabled"';?>>
-      <a href="adslide.php?page=<?=$page-1;?>" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li >
-	<?php for($i=1;$i<=$total_page;$i++){ ?>
-    <li <?php if($page==$i) echo 'class="active"';?>><a href="adslide.php?page=<?=$i;?>"><?=$i;?></a></li>
-	<?php } ?>
-    <li <?php if($page==$total_page) echo 'class="disabled"';?>>
-      <a href="adslide.php?page=<?=$page+1;?>" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+<center><red>***เรียงลำดับจากการอัพเดตล่าสุด</red>
+<?php
+ $sql2 = "select * from slide";
+ $query2 = mysqli_query($link, $sql2);
+ $total_record = mysqli_num_rows($query2);
+ $total_page = ceil($total_record / $perpage);
+ ?>
+<nav>
+ <ul class="pagination">
+ <li>
+ <a href="adslide.php?page=1" aria-label="Previous">
+ <span aria-hidden="true">&laquo;</span>
+ </a>
+ </li>
+ <?php for($i=1;$i<=$total_page;$i++){ ?>
+ <li><a href="adslide.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <?php } ?>
+ <li>
+ <a href="adslide.php?page=<?php echo $total_page;?>" aria-label="Next">
+ <span aria-hidden="true">&raquo;</span>
+ </a>
+ </li>
+ </ul>
+ </nav>
 </center>
 <br>
 <script language="JavaScript">

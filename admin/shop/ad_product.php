@@ -85,16 +85,18 @@ include "wg/menu.php";
     <p align="center"><font size="3"><b>ตารางแสดงรายการสินค้า</b>
 <?php
 	
-	$rows = 5;
-	if($page<="0")$page=1;
-	$total_data  = mysqli_num_rows(mysqli_query($link,"select *  from products"));
-	$total_page=ceil ($total_data/$rows);
-	if($page>=$total_page)$page=$total_page;
-	$start=($page-1)*$rows;
-	
-	$cat_id = $_GET['cat_id'];
-	
-	$sql = "select * FROM products INNER JOIN categories ON( products.cat_id = categories.cat_id )"; 
+	$perpage = 10;
+ if (isset($_GET['page'])) {
+ $page = $_GET['page'];
+ } else {
+ $page = 1;
+ }
+ 
+ $start = ($page - 1) * $perpage;
+
+$cat_id = $_GET['cat_id'];
+
+  $sql = "select *  from products INNER JOIN categories ON( products.cat_id = categories.cat_id ) limit {$start} , {$perpage} ";
 	$db_query = mysqli_query($link, $sql);
 	$num_rows  = mysqli_num_rows($db_query);
 	echo "รายการทั้งหมด $num_rows รายการ";
@@ -142,6 +144,31 @@ include "wg/menu.php";
      }
 	 ?>
 </table>
+<center><red>***เรียงลำดับจากการอัพเดตล่าสุด</red>
+<?php
+ $sql2 = "select * from products ";
+ $query2 = mysqli_query($link, $sql2);
+ $total_record = mysqli_num_rows($query2);
+ $total_page = ceil($total_record / $perpage);
+ ?>
+<nav>
+ <ul class="pagination">
+ <li>
+ <a href="ad_product.php?page=1" aria-label="Previous">
+ <span aria-hidden="true">&laquo;</span>
+ </a>
+ </li>
+ <?php for($i=1;$i<=$total_page;$i++){ ?>
+ <li><a href="ad_product.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <?php } ?>
+ <li>
+ <a href="ad_product.php?page=<?php echo $total_page;?>" aria-label="Next">
+ <span aria-hidden="true">&raquo;</span>
+ </a>
+ </li>
+ </ul>
+ </nav>
+</center>
 </div>
 <br>
 <script language="JavaScript">
