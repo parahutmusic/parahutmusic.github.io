@@ -58,8 +58,8 @@
                   <div class="post-meta">
                     <div class="entry-meta">
                       <span class="entry-date">
-                        <time datetime="2015-01-15"><?php echo $news_date;?></time>
-                          <i class="glyphicon glyphicon-eye-open"></i> 
+                        <time datetime="2015-01-15"><?php echo $news_date;?></time>&nbsp&nbsp&nbsp&nbsp
+                          <i class="glyphicon glyphicon-eye-open"></i> &nbsp&nbsp
                           <span class="badge"> <?php echo $news_view;?></span> ครั้ง
                       </span>
                     </div><!-- /.entry-meta -->

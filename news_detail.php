@@ -75,7 +75,7 @@ $query  = mysqli_query($link ,$sql6);
                   </div><!-- /.post-top -->
                   <div class="post-content">
                     <span class="glyphicon glyphicon-eye-open"></span> 
-                    <span class="badge">    <?php echo $news_view;?></span> ครั้ง
+                    <span class="badge">&nbsp&nbsp<?php echo $news_view;?></span> ครั้ง
                     <br>
                     <h2 class="entry-title"><a href="#">
                     <?php 
