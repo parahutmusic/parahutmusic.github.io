@@ -38,7 +38,7 @@ include "wg/menu.php";
 ?>
 
 <div class="col-xs-12 text-center" id="show" style="padding-top:60px;">
-<img src="img/btn/data-store.jpg" width="500">
+<img src="../img/btn/data-store.jpg" width="500">
 </div>
 
 <div class="container top" id="hidden"> 
