@@ -9,11 +9,17 @@ include "dblink.php";
         #hidden { 
           display:none;
         }
+        #show { 
+          display:block;
+        }
 
       <?php } else if($_SESSION['admin'] == "admin@parahut") { ?>
 
         #hidden { 
           display: block;
+        }
+        #show { 
+          display: none;
         }
         <?php } else { ?>
 
