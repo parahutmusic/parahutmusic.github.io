@@ -1,6 +1,7 @@
 <?php require_once("dblink.php"); 
 
-$pro_id = $rs['pro_id'];
+
+$pro_id = $_REQUEST['pro_id'];
 $pro_view = $rs['pro_view'];
 $count = $pro_view + 1;
  
