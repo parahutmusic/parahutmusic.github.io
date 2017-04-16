@@ -84,11 +84,6 @@
 	
 	$photo_name2 = $rs2['photo_name'];
 	
-	$sql_3 = "SELECT * FROM photonews order by photo_id desc LIMIT 2,1 "; 		
-		$link_query_3 = mysqli_query($link, $sql_3);
-		$rs3 = mysqli_fetch_array($link_query_3);
-	
-	$photo_name3 = $rs3['photo_name'];
 	
 	$sql_4 = "SELECT * FROM news order by news_id desc LIMIT 0,1 "; 	
 		$link_query_4 = mysqli_query($link, $sql_4);
@@ -98,6 +93,7 @@
 	$news_name4 = $rs4['news_name'];
 	$news_detail4 = $rs4['news_detail'];
 	$news_date4 = $rs4['news_date'];
+  $news_view4 = $rs4['news_view'];
 	
 	$sql_5 = "SELECT * FROM news order by news_id desc LIMIT 1,1 "; 	
 		$link_query_5 = mysqli_query($link, $sql_5);
@@ -107,15 +103,7 @@
 	$news_name5 = $rs5['news_name'];
 	$news_detail5 = $rs5['news_detail'];
 	$news_date5 = $rs5['news_date'];
-	
-	$sql_6 = "SELECT * FROM news order by news_id desc LIMIT 2,1 "; 	
-		$link_query_6 = mysqli_query($link, $sql_6);
-		$rs6 = mysqli_fetch_array($link_query_6);
-		
-	$news_id6 = $rs6['news_id'];
-	$news_detail6 = $rs6['news_detail'];
-	$news_name6 = $rs6['news_name'];
-	$news_date6 = $rs6['news_date'];
+  $news_view5 = $rs5['news_view'];
 	
 	?>
 	<?php {
@@ -150,6 +138,8 @@
                     <div class="entry-meta">
                       <span class="entry-date">
                         <time datetime="2015-01-15"><i class="glyphicon glyphicon-time"></i> <?php echo $news_date4;?></time>
+                        <span class="glyphicon glyphicon-eye-open"></span> 
+                        <span class="badge"> <?php echo $news_view4;?></span> ครั้ง
                       </span>
                     </div><!-- /.entry-meta -->
                   </div><!-- /.post-meta -->
@@ -178,6 +168,8 @@
                   <div class="entry-meta">
                     <span class="entry-date">
                       <time datetime="2015-01-15"><i class="glyphicon glyphicon-time"></i> <?php echo $news_date5;?></time>
+                      <span class="glyphicon glyphicon-eye-open"></span> 
+                      <span class="badge"> <?php echo $news_view5;?></span> ครั้ง
                     </span>
                   </div><!-- /.entry-meta -->
                 </div><!-- /.post-meta -->

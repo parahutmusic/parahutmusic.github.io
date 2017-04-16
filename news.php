@@ -46,6 +46,7 @@
 		$news_name = $rs2['news_name'];
 		$news_detail = $rs2['news_detail'];
 		$news_date = $rs2['news_date'];
+    $news_view = $rs2['news_view'];
 		
 	?>
             <div class="item col-sm-4">
@@ -58,6 +59,8 @@
                     <div class="entry-meta">
                       <span class="entry-date">
                         <time datetime="2015-01-15"><?php echo $news_date;?></time>
+                        <span class="glyphicon glyphicon-eye-open"></span> 
+                        <span class="badge"> <?php echo $news_view;?></span> ครั้ง
                       </span>
                     </div><!-- /.entry-meta -->
                   </div><!-- /.post-meta -->
