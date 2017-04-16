@@ -87,7 +87,8 @@ $query  = mysqli_query($link ,$sql6);
                     <span><?php echo $detail; ?></span>
                     <br>
                     <h3>
-                    <span class="glyphicon glyphicon-eye-open"></span> <?php echo $pro_view;?>
+                    <span class="glyphicon glyphicon-eye-open"></span> 
+                    <span class="badge"><?php echo $pro_view;?></span> ครั้ง
                     </h3>
                	</div>  
                 <ins><h4><?php echo  "<span class=\"price\">ราคา : " . number_format($rsm1['price'],2) . " บาท</span>";  ?></h4></ins>
