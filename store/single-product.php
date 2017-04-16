@@ -60,7 +60,8 @@ $query  = mysqli_query($link ,$sql6);
 		$detail = $rsm1['detail'];
 		$quantity = $rsm1['quantity'];
 		$img = $rsm1['img'];	
-        $size = $rsm1['size'];   	
+        $size = $rsm1['size']; 
+        $pro_view = $rsm1['pro_view'];   	
 ?>
     <div class="single-product-area">
         <div class="zigzag-bottom"></div>
@@ -84,6 +85,8 @@ $query  = mysqli_query($link ,$sql6);
                   <div class="product-inner-price">
                     <h4>รายละเอียด</h4>
                     <span><?php echo $detail; ?></span>
+                    <br>
+                    <h2><span class="glyphicon glyphicon-eye-open"></span> $pro_view </h2>
                     <br>
                	</div>  
                 <ins><h4><?php echo  "<span class=\"price\">ราคา : " . number_format($rsm1['price'],2) . " บาท</span>";  ?></h4></ins>
