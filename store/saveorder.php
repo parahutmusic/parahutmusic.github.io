@@ -33,7 +33,7 @@ require_once('dblink.php');
 	$total = $_POST["total"];
 	$size = $_POST["size"];
 	$order_date = date("Y-m-d H:i:s");
-	$status = "รอการโอนเงิน";
+	$status = "ค้างชำระเงิน";
 
 	$sql7 = "select  *  from tb_order order by order_id desc";
 	$r	= mysqli_query($link, $sql7);
