@@ -99,7 +99,12 @@ $cat_id = $_GET['cat_id'];
   $sql = "select *  from products INNER JOIN categories ON( products.cat_id = categories.cat_id ) limit {$start} , {$perpage} ";
 	$db_query = mysqli_query($link, $sql);
 	$num_rows  = mysqli_num_rows($db_query);
-	echo "รายการทั้งหมด $num_rows รายการ";
+
+  $sql2 = "select *  from products INNER JOIN categories ON( products.cat_id = categories.cat_id )";
+  $db_query2 = mysqli_query($link, $sql2);
+  $num_rows2  = mysqli_num_rows($db_query2);
+  echo "รายการทั้งหมด $num_rows2 รายการ";
+
 ?>
 </font></p>
 <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
