@@ -16,7 +16,7 @@ include "dblink.php";
       <?php } else if($_SESSION['admin'] == "admin@parahut") { ?>
 
         #hidden { 
-          display: block;
+          display: contents;
         }
         #show { 
           display: none;
