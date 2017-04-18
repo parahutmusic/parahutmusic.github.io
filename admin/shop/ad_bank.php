@@ -149,6 +149,8 @@ include "wg/menu.php";
 		$money = $rs['money'];
 		$bank = $rs['bank'];
 		$img_bank = $rs['img_bank'];
+    $no = "btn-danger";
+    $yes = "btn-success";
 	?> 
   <tr>
     <td align="center"><font size="3"><?=$order_id;?></font></td>
@@ -157,13 +159,14 @@ include "wg/menu.php";
     <td align="center"><font size="3"><img id="myImg" src="../../store/<?=$img_bank;?>" width="80"></font></td>
     <td align="center"><font size="3"><?=$money;?></font></td>
     <td align="center"><font size="3"><?=$phone;?></font></td>
-    <td align="center"><font size="3"><?=$confirm;?></font></td>
+    <td align="center"><font size="3"><button class="btn <?=$$confirm;?> btn-sm" id="btn" disabled><?=$confirm;?></button></font></td>
     <td align="center" id="hid"><font size="3">
     <form  name="formlogin" action="update_bank.php" method="POST"  class="form-horizontal" enctype="multipart/form-data">
-    	<input name="confirm" value="yes" type="hidden">
+    	 <input name="confirm" value="yes" type="hidden">
+       <input name="order_id" value="<?=$order_id;?>" type="hidden">
         <input name="pay_id" value="<?=$pay_id;?>" type="hidden">
-        <a href="del_bank.php?pay_id=<?=$pay_id;?>" class="btn btn-danger btn-xs" OnClick="return chkdel();" onclick= "return del()">ลบ</a>
-    	<button type="submit" class="btn btn-primary btn-xs" id="btn">ยืนยัน</button>
+        <a href="del_bank.php?pay_id=<?=$pay_id;?>" id="hidden" class="btn btn-danger btn-sm" OnClick="return chkdel();" onclick= "return del()">ลบ</a>
+    	<button type="submit" class="btn btn-primary btn-sm" id="btn">ยืนยัน</button>
     </form>
     </font></td>
   </tr>
