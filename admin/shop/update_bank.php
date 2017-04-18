@@ -6,7 +6,7 @@
 		$pay_id = $_POST['pay_id'];
 		$confirm = $_POST['confirm'];
 		$order_id 	= $_POST['order_id'];
-		$status = "จัดส่งสินค้า";
+		$status = "ชำระเงินแล้ว";
 	
 	$sql="update payments set confirm = '$confirm' where payments.pay_id ='$pay_id'";
 	$link_query = mysqli_query($link, $sql);
