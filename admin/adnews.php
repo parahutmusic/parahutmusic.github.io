@@ -217,7 +217,7 @@ function thai_date_and_time($time){   // 19 ธันวาคม 2556 เวล
  ?>
 <nav>
  <ul class="pagination">
- <li>
+ <li <?php if($page == 1) echo 'class="disabled"';?>>
  <a href="adnews.php?page=1" aria-label="Previous">
  <span aria-hidden="true">&laquo;</span>
  </a>
@@ -225,7 +225,7 @@ function thai_date_and_time($time){   // 19 ธันวาคม 2556 เวล
  <?php for($i=1;$i<=$total_page;$i++){ ?>
  <li <?php if($page == $i) echo 'class="active"';?>><a href="adnews.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
  <?php } ?>
- <li>
+ <li <?php if($page == $total_page) echo 'class="disabled"';?>>
  <a href="adnews.php?page=<?php echo $total_page;?>" aria-label="Next">
  <span aria-hidden="true">&raquo;</span>
  </a>

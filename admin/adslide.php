@@ -123,7 +123,7 @@ include "../admin/dblink.php";
  ?>
 <nav>
  <ul class="pagination">
- <li>
+ <li <?php if($page == 1) echo 'class="disabled"';?>>
  <a href="adslide.php?page=1" aria-label="Previous">
  <span aria-hidden="true">&laquo;</span>
  </a>
@@ -131,7 +131,7 @@ include "../admin/dblink.php";
  <?php for($i=1;$i<=$total_page;$i++){ ?>
  <li <?php if($page == $i) echo 'class="active"';?>><a href="adslide.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
  <?php } ?>
- <li>
+ <li <?php if($page == $total_page) echo 'class="disabled"';?>>
  <a href="adslide.php?page=<?php echo $total_page;?>" aria-label="Next">
  <span aria-hidden="true">&raquo;</span>
  </a>
