@@ -159,7 +159,7 @@ $cat_id = $_GET['cat_id'];
  </a>
  </li>
  <?php for($i=1;$i<=$total_page;$i++){ ?>
- <li><a href="ad_product.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <li <?php if($page == $i) echo 'class="active"';?>><a href="ad_product.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
  <?php } ?>
  <li>
  <a href="ad_product.php?page=<?php echo $total_page;?>" aria-label="Next">

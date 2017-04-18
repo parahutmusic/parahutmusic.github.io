@@ -165,7 +165,7 @@ $perpage = 5;
  </a>
  </li>
  <?php for($i=1;$i<=$total_page;$i++){ ?>
- <li><a href="adlive.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <li <?php if($page == $i) echo 'class="active"';?>><a href="adlive.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
  <?php } ?>
  <li>
  <a href="adlive.php?page=<?php echo $total_page;?>" aria-label="Next">
