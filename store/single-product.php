@@ -48,9 +48,9 @@ $query  = mysqli_query($link ,$sql6);
   <?php 
   
   $pro_id = $_GET['pro_id'];
-  $size_id = $_REQUEST['size_id'];
+  $size_name = $_REQUEST['size_name'];
 	
-		$sql_1 = "SELECT * FROM products INNER JOIN pro_size ON (products.pro_id = pro_size.pro_id) where products.pro_id = '$pro_id' AND pro_size.size_id = '$size_id'";
+		$sql_1 = "SELECT * FROM products INNER JOIN pro_size ON (products.pro_id = pro_size.pro_id) where products.pro_id = '$pro_id' AND pro_size.size_name = '$size_name'";
 		$link_query_1 = mysqli_query($link, $sql_1);
 		$rsm1 = mysqli_fetch_array($link_query_1);
 		
