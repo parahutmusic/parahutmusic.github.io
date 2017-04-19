@@ -122,7 +122,6 @@ require_once('dblink.php');
 		
 		echo "<td width='100' align='right'>" .number_format($sum,2)."</td>";
 		echo "<td width='100' align='center'><a id='dis' href='cart.php?size_id=$size_id&act=remove' class='btn btn-danger btn-xs'>ลบ</a></td>";
-		
 		echo "</tr>";
 		}
 	}
