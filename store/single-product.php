@@ -48,8 +48,9 @@ $query  = mysqli_query($link ,$sql6);
   <?php 
   
   $pro_id = $_GET['pro_id'];
+  $size_name = $_REQUEST['size_name'];
 	
-		$sql_1 = "SELECT * FROM products where pro_id = '$pro_id'";
+		$sql_1 = "SELECT * FROM products INNER JOIN pro_size ON (products.pro_id = pro_size.pro_id) where products.pro_id = '$pro_id' AND pro_size.size_name = '$size_name'";
 		$link_query_1 = mysqli_query($link, $sql_1);
 		$rsm1 = mysqli_fetch_array($link_query_1);
 		
@@ -61,7 +62,8 @@ $query  = mysqli_query($link ,$sql6);
 		$detail = $rsm1['detail'];
 		$quantity = $rsm1['quantity'];
 		$img = $rsm1['img'];	
-        $size = $rsm1['size']; 
+        $size_id = $rsm1['size_id']; 
+        $size_name = $rsm1['size_name'];
         $pro_view = $rsm1['pro_view'];   	
 ?>
     <div class="single-product-area">
@@ -85,7 +87,7 @@ $query  = mysqli_query($link ,$sql6);
                     <span class="glyphicon glyphicon-eye-open"></span> 
                     <span class="badge"> <?php echo $pro_view;?></span> ครั้ง
                                 <br>
-			<h2 class="product-name"><?php echo "<span class=\"pro-name\" data-id=\"$id\">". $rsm1['pro_name'] . " $size</span>";?></h2>
+			<h2 class="product-name"><?php echo "<span class=\"pro-name\" data-id=\"$id\">". $rsm1['pro_name'] . " $size_name</span>";?></h2>
                   <div class="product-inner-price">
                     <h4>รายละเอียด</h4>
                     <span><?php echo $detail; ?></span>
@@ -99,19 +101,20 @@ $query  = mysqli_query($link ,$sql6);
          <ul class="dropdown-menu" style="top: -5px;left: 100%;font-size: large;">          
                 <?php 
                 include "lib/pagination.php";
-                $sql = "SELECT * FROM products where products.pro_name = '$pro_name'";
+                $sql = "SELECT * FROM products INNER JOIN pro_size ON (products.pro_id = pro_size.pro_id) where products.pro_id = '$pro_id'
+                ";
                 $r = mysqli_query($link, $sql);
                 $self = $_SERVER['PHP_SELF'];
                 $h = $self . "?pro_id=";
                 while($row = mysqli_fetch_array($r)) {
-                    $h = $self . "?pro_id=" . $row['pro_id'] . "&pro_name=" . $row['pro_name'] . "&size=" . $row['size'];
-                    echo "<li><a href=\"$h\">". $row['size'] . "</a></li>";
+                    $h = $self . "?pro_id=" . $row['pro_id'] . "&pro_name=" . $row['pro_name'] . "&size_id=" . $row['size_id'] . "&size_name=" . $row['size_name'] ;
+                    echo "<li><a href=\"$h\">". $row['size_name'] . "</a></li>";
                 }
                 ?>
         </ul>
     </div> 
 
- <?php echo "<a href='cart.php?pro_id=$id&$pro_name&act=add' class='btn btn-info btn-md'><span class='glyphicon glyphicon-shopping-cart'> </span> เพิ่มลงตะกร้าสินค้า </a>"; ?>  
+ <?php echo "<a href='cart.php?pro_id=$id&$pro_name&act=add&size_id=$size_id&$size_name' class='btn btn-info btn-md'><span class='glyphicon glyphicon-shopping-cart'> </span> เพิ่มลงตะกร้าสินค้า </a>"; ?>  
                             	</div>
                         </div>
                         

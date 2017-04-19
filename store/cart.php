@@ -1,10 +1,10 @@
 <?php
     session_start(); 
-    $pro_id = $_REQUEST['pro_id']; 
-	$act = $_REQUEST['act'];
+    $size_id = $_REQUEST['size_id']; 
+	 $act = $_REQUEST['act'];
 	
 	
-	if($act=='add' && !empty($pro_id))
+	if($act=='add' && !empty($size_id))
 	{
 		if(!isset($_SESSION['shopping_cart']))
 		{
@@ -12,26 +12,26 @@
 		}else{
 		 
 		}
-		if(isset($_SESSION['shopping_cart'][$pro_id]))
+		if(isset($_SESSION['shopping_cart'][$size_id]))
 		{
-			$_SESSION['shopping_cart'][$pro_id]++;
+			$_SESSION['shopping_cart'][$size_id]++;
 		}
 		else
 		{
-			$_SESSION['shopping_cart'][$pro_id]=1;
+			$_SESSION['shopping_cart'][$size_id]=1;
 		}
 	}
 
-	if($act=='remove' && !empty($pro_id))  //ยกเลิกการสั่งซื้อ
+	if($act=='remove' && !empty($size_id))  //ยกเลิกการสั่งซื้อ
 	{
-		unset($_SESSION['shopping_cart'][$pro_id]);
+		unset($_SESSION['shopping_cart'][$size_id]);
 	}
 	if($act=='update')
 	{
 		$amount_array = $_POST['amount'];
-		foreach($amount_array as $pro_id => $amount)
+		foreach($amount_array as $size_id => $amount)
 		{
-			$_SESSION['shopping_cart'][$pro_id]=$amount;
+			$_SESSION['shopping_cart'][$size_id]=$amount;
 		}
 	}
 	if($act=='Cancel-Cart'){
@@ -97,35 +97,33 @@
 if(!empty($_SESSION['shopping_cart']))
 {
 require_once('dblink.php');
-	foreach($_SESSION['shopping_cart'] as $pro_id=>$quantity)
+	foreach($_SESSION['shopping_cart'] as $size_id=>$quantity)
 	{
 		
-		$sql = "select * from products where pro_id=$pro_id";
+		$sql = "select * from products INNER JOIN pro_size ON (products.pro_id = pro_size.pro_id) where pro_size.size_id = '$size_id'";
 		$query = mysqli_query($link, $sql);
 		while($row = mysqli_fetch_array($query))
 			{		 
 		$sum = $row['price'] * $quantity;
+    $size_name = $row['size_name'];
 		$total += $sum;
-    $size = $row['size'];  
 		echo "<tr>";
 		echo "<td align='center'>";
         echo $i += 1;
         echo ".";
 		echo "</td>";
 		echo "<td align='center' width='100'>"."<img src='../admin/shop/$row[img]'  width='50'/>"."</td>";
-		echo "<td width='334'>"." " . $row["pro_name"] . " $size";
+		echo "<td width='334'>"." " . $row["pro_name"] . " $size_name";
 		echo "</td>";
 		echo "<td width='100' align='right'>" . number_format($row["price"],2) . "</td>";
 		
 		echo "<td width='57' align='right'>";  
-		echo "<input type='text' name='amount[$pro_id]' value='$quantity' size='2'/></td>";
+		echo "<input type='text' name='amount[$size_id]' value='$quantity' size='2'/></td>";
 		
 		echo "<td width='100' align='right'>" .number_format($sum,2)."</td>";
-		echo "<td width='100' align='center'><a id='dis' href='cart.php?pro_id=$pro_id&act=remove' class='btn btn-danger btn-xs'>ลบ</a></td>";
-		
+		echo "<td width='100' align='center'><a id='dis' href='cart.php?size_id=$size_id&act=remove' class='btn btn-danger btn-xs'>ลบ</a></td>";
 		echo "</tr>";
 		}
- 
 	}
 	echo "<tr>";
   	echo "<td colspan='5' bgcolor='#CEE7FF' align='right'>ราคารวม</td>";

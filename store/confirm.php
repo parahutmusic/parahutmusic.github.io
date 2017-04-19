@@ -59,22 +59,21 @@
       <td align="center">รวม/รายการ</td>
     </tr>
 <?php
-echo $_POST['size']; 
 	require_once('dblink.php');
 	$total=0;
-	foreach($_SESSION['shopping_cart'] as $pro_id=>$quantity)
+	foreach($_SESSION['shopping_cart'] as $size_id=>$quantity)
 	{
-		$sql = "select * from products where pro_id=$pro_id";
+		$sql = "select * from products INNER JOIN pro_size ON (products.pro_id = pro_size.pro_id) where pro_size.size_id = '$size_id'";
 		$query = mysqli_query($link, $sql);
 		$row	= mysqli_fetch_array($query);
 		$sum	= $row['price']*$quantity;
 		$total	+= $sum;
-    $size = $row['size'];
+    $size_name = $row['size_name'];
     echo "<tr>";
 	echo "<td align='center'>";
 	echo  $i += 1;
 	echo "</td>";
-    echo "<td>" . $row["pro_name"] . " $size</td>";
+    echo "<td>" . $row["pro_name"] . " $size_name</td>";
     echo "<td align='right'>" .number_format($row['price'],2) ."</td>";
     echo "<td align='right'>$quantity</td>";
     echo "<td align='right'>".number_format($sum,2)."</td>";

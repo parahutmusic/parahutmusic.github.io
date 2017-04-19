@@ -42,17 +42,17 @@ include "wg/menu.php";
 <?php	
 	$order_id = $_GET['order_id'];
 	
-	$sql = "SELECT *  FROM products INNER JOIN tb_order_detail on(products.pro_id = tb_order_detail.pro_id) where tb_order_detail.order_id = '$order_id' ";
+	$sql = "SELECT *  FROM pro_size INNER JOIN products on(pro_size.pro_id = products.pro_id) INNER JOIN tb_order_detail on(pro_size.size_id = tb_order_detail.size_id) where tb_order_detail.order_id = '$order_id' ";
 	$db_query = mysqli_query($link, $sql);
 	$num_rows  = mysqli_num_rows($db_query);
 	//echo $sql;
 	echo "รายการทั้งหมด $num_rows รายการ";
 ?>
 </font></p>
-<table width="90%" border="1" align="center" cellpadding="0" cellspacing="0">
+<table width="50%" border="1" align="center" cellpadding="0" cellspacing="0">
   <tr align="center" bgcolor="#FFCC00">
-    <td width="10%"><font size="3">รายการ</font></td>
-    <td width="10%"><font size="3">รหัสสั่งซื้อ</font></td>
+    <td width="5%"><font size="3">รายการ</font></td>
+    <td width="5%"><font size="3">รหัสสั่งซื้อ</font></td>
     <td width="20%"><font size="3">ชื่อสินค้า</font></td>
     <td width="5%"><font size="3">จำนวน</font></td>
     <td width="10%"><font size="3">ราคา</font></td>
@@ -73,18 +73,20 @@ include "wg/menu.php";
 		$size = $rs['size'];
 		$sum	= $rs['price']*$quantity;
 		$total1	+= $sum;
+    $size_id = $rs['size_id']; 
+    $size_name = $rs['size_name'];
 	?> 
   <tr>
     <td align="center"><font size="3"><?php echo $p += 1; ?></font></td>
     <td align="center"><font size="3"><?=$order_id;?></font></td>
-    <td align="center"><font size="3"><?=$pro_name;?> <?=$size;?></font></td>
+    <td align="center"><font size="3"><?=$pro_name;?> <?=$size_name;?></font></td>
     <td align="center"><font size="3"><?=$quantity;?></font></td>
     <td align="center"><font size="3"><?=$total;?></font></td>
   </tr>
   <?php
   	$i++;
      }
- ?>
+  ?>
    <tr>
   	<td align="center" colspan="3"></td>
     <td align="center" bgcolor="#dff0d8"><font size="3">ราคารวม</font></td>
