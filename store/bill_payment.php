@@ -46,7 +46,7 @@
 	</style>
   </head>
   <body>   
-     	<div class="container" style="margin-top:40px;">
+     	<div class="container" style="margin-top:40px;margin-bottom:40px;min-width: 780px;">
                 <?php 
                     $order_id =$_GET['order_id'];
                     $sql1 = "SELECT *  FROM tb_order INNER JOIN tb_order_detail on(tb_order.order_id = tb_order_detail.order_id) where tb_order.order_id = '$order_id' ";
@@ -60,22 +60,14 @@
                      $phone1 = $rs1['phone'];
                      $order_date1 = $rs1['order_date'];
                      $total1 = $rs1['total'];
+                     $status1 = $rs1['status'];
                 ?>
             <div class="col-xs-12" style="padding:10px;border: black 3px solid;">
-            	<div class="col-xs-6 col-sm-6" style="padding:10px; text-align: center;">
+            	<div class="col-xs-12" style="padding:10px; text-align: center;">
                     <img src="../images/logo.png" style="padding:10px;">
                     <h2>ใบแจ้งการชำระเงิน</h2>
                     <h3>บริษัท พาราฮัทมิวสิค จำกัด</h3>
                     <h4>117 ม.8 ต.หนองธง อ.ป่าบอน จ.พัทลุง</h2>
-                </div>
-                <div class="col-xs-6 col-sm-6" style="padding:10px;">
-                    <h4>เลขที่สั่งซื้อ : <?php echo $order_id1 ;?></h4>
-                    <h4>คุณ : <?php echo $name1 ;?></h4>
-                    <h4>ที่อยู่ : <?php echo $address1 ;?></h4>
-                    <h4>วันที่ทำรายการ : <?php echo $order_date1 ;?></h4>
-
-                    <h3>จำนวนเงินที่ชำระ</h3>
-                    <h1><?php echo $total1 ;?> บาท</h1>
                 </div>
                 <table width="700" border="1" align="center" class="table">
                 <?php   
@@ -85,11 +77,11 @@
                     $db_query = mysqli_query($link, $sql);
                     $num_rows  = mysqli_num_rows($db_query);
                     //echo $sql;
-                    echo "รายการทั้งหมด $num_rows รายการ";
+                    //echo "รายการทั้งหมด $num_rows รายการ";
                 ?>
                 <tr>
                   <td width="1558" colspan="5" align="center">
-                  <strong>สั่งซื้อสินค้า</strong></td>
+                  <strong>รายการสินค้าที่สั่งซื้อ</strong></td>
                 </tr>
                 <tr class="success">
                     <td align="center">ลำดับ</td>
@@ -135,6 +127,25 @@
                     <td align="center"  bgcolor="#dff0d8"><font size="3"><?=$total2;?></font></td>
                 </tr>
             </table>
+            <div class="col-xs-12" style="padding:10px; text-align: right;">
+                <div class="col-xs-6 " style="padding:10px; text-align: left;">
+                    <h2>การชำระเงิน : <font style="color: red;"><?php echo $status1 ;?></font></h2>
+                    <h2>เลขที่ใบสั่งซื้อ : <font style="color: red;"><?php echo $order_id1 ;?></font></h2>
+                    <h4>คุณ : <?php echo $name1 ;?></h4>
+                    <h4>ที่อยู่ : <?php echo $address1 ;?></h4>
+                    <h4>วันที่ทำรายการ : <?php echo $order_date1 ;?></h4>
+
+                    <h3>จำนวนเงินที่ชำระ</h3>
+                    <h1><?php echo $total1 ;?> บาท</h1>
+                    <h5>**หมายเหตุ : ราคานี้ยังไม่รวมค่าส่ง</h5>
+                </div>
+                    <div class="col-xs-6">
+                    <img src="img/KBANK.jpg">
+                        <h3>ธนาคารกสิกรไทย</h3>
+                        <h4>ชื่อบัญชี : นางสาวกัลยา แก้วบุญส่ง</h4>
+                        <h4>เลขที่บัญชี : 018-3-71678-6</h4>
+                    </div>
+                </div>
             <p><a href="index.php" class="btn btn-danger">กลับหน้าหลัก</a> &nbsp;  <button class="btn btn-primary" onClick="window.print()"> พิมพ์ใบชำระเงิน </button></p>
             </div>    
 		</div>

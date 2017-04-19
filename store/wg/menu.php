@@ -33,7 +33,7 @@
                         <li><a href="index.php">สินค้า</a></li>
                         <li><a href="payment.php">วีธีการสั่งซื้อ</a></li>
                         <li><a href="check-order-detail.php">แจ้งการโอนเงิน</a></li>
-                        <!-- <li><a href="checkout.php">ตรวจสอบการส่งของ</a></li> -->
+                        <li><a href="ad_check_bill.php">ใบแจ้งชำระเงิน</a></li>
                     </ul>
                 </div>  
             </div>
