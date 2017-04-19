@@ -35,20 +35,25 @@ require_once('dblink.php');
 	$order_date = date("Y-m-d H:i:s");
 	$status = "ค้างชำระเงิน";
 
-	$sql7 = "select  *  from tb_order order by order_id desc";
-	$r	= mysqli_query($link, $sql7);
-	$rs_num			= mysqli_fetch_array($r);
 
-	$order_id_n		= $rs_num['order_id'];
-	
-	$order_id_n1		= intval($order_id_n) + 1;
-	
+$code = "PRH";
+$yearMonth = substr(date("Y")+543, -2).date("m");
 
+//query MAX ID 
+$sql = "SELECT MAX(order_id) AS order_id FROM tb_order";
+$qry = mysqli_query($link , $sql) or die(mysql_error());
+$rs = mysqli_fetch_assoc($qry);
+$maxId = substr($rs['order_id'], -4);  //ข้อมูลนี้จะติดรหัสตัวอักษรด้วย ตัดเอาเฉพาะตัวเลขท้ายนะครับ
+$maxId = ($maxId + 1); 
+
+$maxId = substr("0000".$maxId, -4);
+$nextId = $code.$yearMonth.$maxId;
+	
 	
 	//บันทึกการสั่งซื้อลงใน order_detail
 	mysqli_query($link, "BEGIN"); 
-	$sql1 = "INSERT  INTO tb_order VALUES
-	('$order_id_n1',  
+	$sql1 = "INSERT INTO tb_order VALUES
+	('$nextId',  
 	'$name',
 	'$address',
 	'$email',
