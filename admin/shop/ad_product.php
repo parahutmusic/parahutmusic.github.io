@@ -100,7 +100,7 @@ $cat_id = $_GET['cat_id'];
 	$db_query = mysqli_query($link, $sql);
 	$num_rows  = mysqli_num_rows($db_query);
 
-  $sql2 = "select *  from products INNER JOIN categories ON( products.cat_id = categories.cat_id )";
+  $sql2 = "select *  from products INNER JOIN categories ON( products.cat_id = categories.cat_id ) INNER JOIN pro_size ON (products.pro_id = pro_size.pro_id)";
   $db_query2 = mysqli_query($link, $sql2);
   $num_rows2  = mysqli_num_rows($db_query2);
   echo "รายการทั้งหมด $num_rows2 รายการ";
@@ -112,7 +112,6 @@ $cat_id = $_GET['cat_id'];
     <td width="10%"><font size="3">รหัสสินค้า</font></td>
     <td width="10%"><font size="3">รูปสินค้า</font></td>
     <td width="20%"><font size="3">ชื่อสินค้า</font></td>
-    <td width="5%"><font size="3">ขนาด</font></td>
     <td width="20%"><font size="3">ชื่อหมวดหมู่</font></td>
     <td width="10%"><font size="3">ราคา</font></td>
 	<td width="10%"><font size="3">แก้ไข</font></td>
@@ -132,13 +131,13 @@ $cat_id = $_GET['cat_id'];
 		$detail = $rs['detail'];
 		$quantity = $rs['quantity'];
 		$img = $rs['img'];
-    $size = $rs['size'];
+    $size_id = $rs['size_id'];
+    $size_name = $rs['size_name'];
 	?> 
   <tr>
     <td align="center"><font size="3"><?=$pro_id;?></font></td>
     <td align="center"><font size="3"><img src="<?=$img;?>" width="70" height="70" border="0" /></font></td>
     <td align="center"><font size="3"><?=$pro_name;?></font></td>
-    <td align="center"><font size="3"><?=$size;?></font></td>
     <td align="center"><font size="3"><?=$cat_name;?></font></td>
     <td align="center"><font size="3"><?=$price;?></font></td>
 	<td align="center"><a href="update_product.php?pro_id=<?=$pro_id;?>"><img src="../../images/edit.png" width="30" height="30" border="0" /></a></td>

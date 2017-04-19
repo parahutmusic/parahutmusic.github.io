@@ -16,6 +16,9 @@ include "dblink.php";
 	
 	$sql="delete from tb_order where order_id = '$order_id';";
 	$db_query=mysqli_query($link, $sql);
+
+	$sql2="delete from tb_order_detail where order_id = '$order_id';";
+	$db_query2=mysqli_query($link, $sql2);
 	
 	echo "<script langquage='javascript'>\n";
 	echo " window.location=\"ad_order.php\"\n";

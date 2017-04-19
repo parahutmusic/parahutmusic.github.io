@@ -66,18 +66,19 @@ require_once('dblink.php');
 	$order_id = $row['order_id'];
 	
 	
-	foreach($_SESSION['shopping_cart'] as $pro_id=>$quantity)
+	foreach($_SESSION['shopping_cart'] as $size_id=>$quantity)
 	 
 	{
-		$sql3	= "SELECT * FROM products where pro_id=$pro_id";
+		$sql3	= "SELECT * FROM products INNER JOIN pro_size ON (products.pro_id = pro_size.pro_id) where pro_size.size_id = '$size_id'";
 		$query3 = mysqli_query($link, $sql3);
 		$row3 = mysqli_fetch_array($query3);
 		$total = $row3['price']*$quantity;
+		$size_name = $row3['size_name'];
 		
 		$sql4 = "INSERT INTO tb_order_detail 
 		values(NULL, 
 		'$order_id', 
-		'$pro_id', 
+		'$size_id', 
 		'$quantity', 
 		'$total')";
 		$query4	= mysqli_query($link, $sql4);

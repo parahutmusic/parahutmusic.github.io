@@ -59,7 +59,7 @@ include "wg/menu.php";
 	
 	$cat_id = $_GET['cat_id'];
 	
-	$sql = "SELECT *  FROM tb_order limit {$start} , {$perpage}";
+	$sql = "SELECT *  FROM tb_order  limit {$start} , {$perpage}";
 	$db_query = mysqli_query($link, $sql);
 	$num_rows  = mysqli_num_rows($db_query);
 	echo "รายการทั้งหมด $num_rows รายการ";

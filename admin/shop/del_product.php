@@ -16,6 +16,9 @@ include "dblink.php";
 	
 	$sql="delete from products where pro_id = '$pro_id';";
 	$db_query=mysqli_query($link, $sql);
+
+	$sql2="delete from pro_size where pro_id = '$pro_id';";
+	$db_query2=mysqli_query($link, $sql2);
 	
 	echo "<script langquage='javascript'>\n";
 	echo " window.location=\"ad_product.php\"\n";
