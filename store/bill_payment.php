@@ -46,7 +46,7 @@
 	</style>
   </head>
   <body>   
-     	<div class="container" style="margin-top:40px;margin-bottom:40px;min-width: 780px;">
+     	<div class="container" style="margin-top:40px;margin-bottom:40px;min-width: 1000px;">
                 <?php 
                     $order_id =$_GET['order_id'];
                     $sql1 = "SELECT *  FROM tb_order INNER JOIN tb_order_detail on(tb_order.order_id = tb_order_detail.order_id) where tb_order.order_id = '$order_id' ";

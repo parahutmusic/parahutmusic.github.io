@@ -18,7 +18,7 @@ if($_POST) {
     $order_date = $rs['order_date'];
 
   if(($order_id2 != "$order_id") && ($email2 != "$email")) {
-  echo "<script>alert('ไม่มีใบชำระเงินเลขที่นี้');history.back();</script>";
+  echo "<script>alert('ไม่มีเลขที่ใบสั่งซื้อ');history.back();</script>";
   echo "<script langquage='javascript'>\n";
   echo " window.location=\"ad_check_bill.php\"\n";
   echo  "</script>\n";
