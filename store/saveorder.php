@@ -112,17 +112,18 @@ $nextId = $code.$yearMonth.$maxId;
 		$msg = "บันทึกข้อมูลไม่สำเร็จ กรุณาติดต่อแอดมิน";	
 	}
 
-	mysqli_close($link);
-	
 ?>
 
 
 <script type="text/javascript">
 	alert("<?php echo $msg;?>");
-	window.location ='index.php';
+	window.location ='bill_payment.php?order_id=$order_id';
 </script>
 
+<?php
 
+	mysqli_close($link);
+	?>
  
 </body>
 </html>
