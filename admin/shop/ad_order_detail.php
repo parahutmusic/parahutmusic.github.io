@@ -86,7 +86,7 @@ include "wg/menu.php";
   <?php
   	$i++;
      }
- ?>
+  ?>
    <tr>
   	<td align="center" colspan="3"></td>
     <td align="center" bgcolor="#dff0d8"><font size="3">ราคารวม</font></td>
