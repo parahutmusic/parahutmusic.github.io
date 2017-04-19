@@ -70,7 +70,7 @@ if(isset($_GET['catid']) && !empty($_GET['catid'])) {
 	$sql .= "WHERE cat_id  = '$cat_id'";
 	$field = $_GET['catname'];
 }
-$sql .= "ORDER BY size ASC";
+$sql .= "ORDER BY pro_name ASC";
 $result = page_query($link, $sql, 8);
 $first = page_start_row();
 $last = page_stop_row();
@@ -90,7 +90,6 @@ while($rs = mysqli_fetch_array($result)) {
 		$detail = $rs['detail'];
 		$quantity = $rs['quantity'];
 		$img = $rs['img'];
-    $size = $rs['size'];
     $pro_view = $rs['pro_view'];   
  ?>     
  
@@ -108,7 +107,7 @@ while($rs = mysqli_fetch_array($result)) {
                     <span class="badge"> <?php echo $pro_view;?></span> ครั้ง
                         </div>
                         <div class="product-option-shop">
-<a href="single-product.php?pro_id=<?php echo $id; ?>&<?php echo $pro_name; ?>&size=<?php echo $size ; ?>" class="btn btn-info btn-md" onclick="document.getElementById('id01').style.display='block'">รายละเอียด</a> 
+<a href="single-product.php?pro_id=<?php echo $id; ?>&<?php echo $pro_name; ?>&size_id=1" class="btn btn-info btn-md" onclick="document.getElementById('id01').style.display='block'">รายละเอียด</a> 
                 		</div>                       
             		</div>
                   </div>

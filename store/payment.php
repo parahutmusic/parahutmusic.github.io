@@ -80,7 +80,7 @@
         </div>
 			<div class="col-xs-12 col-sm-6" style="padding:0px;">
             <h2>การโอนเงินธนาคาร</h2>
-            	<div class="col-xs-12" style="padding:10px;">
+            <!-- 	<div class="col-xs-12" style="padding:10px;">
                     <div class="col-sm-4 col-md-3" >
                         <img src="img/KTB.jpg">
                     </div>
@@ -89,18 +89,18 @@
                         <span>ชื่อบัญชี : นายทิวากร แก้วบุญส่ง</span><br>
                         <span>เลขที่บัญชี : </span>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-xs-12" style="padding:10px;">
                     <div class="col-sm-4 col-md-3">
                         <img src="img/KBANK.jpg">
                     </div>
                     <div class="col-sm-8">
                         <h4>ธนาคารกสิกรไทย</h4>
-                        <span>ชื่อบัญชี : นายทิวากร แก้วบุญส่ง</span><br>
-                        <span>เลขที่บัญชี : </span>
+                        <span>ชื่อบัญชี : นางสาวกัลยา แก้วบุญส่ง</span><br>
+                        <span>เลขที่บัญชี : 018-3-71678-6</span>
                     </div>
                 </div>
-                <div class="col-xs-12" style="padding:10px;">
+               <!--  <div class="col-xs-12" style="padding:10px;">
                     <div class="col-sm-4 col-md-3">
                         <img src="img/SCB.jpg">
                     </div>
@@ -109,7 +109,7 @@
                         <span>ชื่อบัญชี : นายทิวากร แก้วบุญส่ง</span><br>
                         <span>เลขที่บัญชี : </span>
                     </div>
-                </div>
+                </div> -->
             </div>
 		</div>
    </div>

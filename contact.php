@@ -36,7 +36,7 @@
    		<div class="top-icon"><i class="fa fa-home"></i></div>117 ม.8 ต.หนองธง อ.ป่าบอน จ.พัทลุง<br>
         <div class="top-icon"><i class="fa fa-phone"></i></div>ติดต่องานแสดงศิลปิน โทร 084-185-3266<br>
         <div class="top-icon"><i class="fa fa-phone"></i></div>มิวสิควิดีโอ พาราฮัท โปรดักชั่น โทร 081-099-4345 <br>
-    	<div class="top-icon"><i class="fa fa-envelope"></i></div>parahut_music@gmail.com<br>
+    	<div class="top-icon"><i class="fa fa-envelope"></i></div>info@parahutmusic.com<br>
         <div class="top-icon"><a href="https://www.facebook.com/ParahutMusicOfficial" class="top-icon fa fa-facebook"></a></div>พาราฮัทมิวสิค<br>
     	<div class="top-icon"><a href="https://www.youtube.com/user/Parahutmusic" class="top-icon fa fa-youtube-play"></a></div>PARAHUT MUSIC CHANNEL<br>
         <div class="fb-follow" data-href="https://www.facebook.com/Parahutmusic/" data-layout="standard" data-size="small" data-show-faces="true"></div>
