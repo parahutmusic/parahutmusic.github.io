@@ -117,7 +117,7 @@ $nextId = $code.$yearMonth.$maxId;
 
 <script type="text/javascript">
 	alert("<?php echo $msg;?>");
-	window.location ='bill_payment.php?order_id=$order_id';
+	window.location ='bill_payment.php?order_id=<?php echo $order_id;?>';
 </script>
 
 <?php
