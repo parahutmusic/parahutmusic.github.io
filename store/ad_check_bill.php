@@ -54,6 +54,10 @@ if($_POST) {
     <link rel="stylesheet" href="../store/css/style.css">
     <link rel="stylesheet" href="../store/css/responsive.css">
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+
   <style type="text/css">
   @media print{
 	  #hid{
@@ -67,8 +71,8 @@ if($_POST) {
 </br>
 <div class="container" id="hid">
   <div class="row">
-  <div class="col-md-4"></div>
-    <div class="col-md-5" style="background-color:#f4f4f4">
+  <div class="col-md-3"></div>
+    <div class="col-md-6" style="background-color:#f4f4f4">
       <h3 align="center" style="color:green">
       <span class=" glyphicon glyphicon-file"> </span>
          ตรวจสอบใบชำระเงิน </h3>
@@ -80,15 +84,50 @@ if($_POST) {
         </div>
         <div class="form-group">
           <div class="col-sm-12">
-            <input type="text"  name="email" id="email" class="form-control" required placeholder="e-mail" />
+            <input type="text"  name="email" id="email" class="form-control" required placeholder="E-Mail" />
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-12" align="center">
-            <button type="submit" class="btn btn-primary" id="btn">ตวรจสอบ</button>
+            <button type="submit" class="btn btn-primary" id="btn">ตรวจสอบ</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12" align="left">
+          <span>&raquo; ขั้นตอนการติดต่อเจ้าหน้าที่ หากลืม เลขที่ใบสั่งซื้อ</span><br>
+          <span>
+          1. คลิก <a href="" data-target="#myModal" data-toggle="modal" style="color: red;">&raquo; ติดต่อเจ้าหน้าที่ &laquo;</a> <br>
+          2. กรอก e-mail ที่ได้ทำการสั่งซื้อสินค้า <br>
+          3. เจ้าหน้าที่จะส่ง เลขที่ใบสั่งซื้อ ไปทาง e-mail ของคุณ
+          </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12" align="center">
+            <a href="" data-target="#myModal" data-toggle="modal"  style="color: red;">&raquo; ติดต่อเจ้าหน้าที่ &laquo;</a>
           </div>
         </div>
       </form>
+  <!-- Modal -->
+       <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog" style="margin-top: 15%;">
+          <div class="modal-content">
+          <form method="POST" action="sent_mail.php" class="form-horizontal">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">กรุณาป้อน E-Mail</h4>
+            </div>
+              <div class="modal-body">                
+                  <div class="col-sm-12" align="center">
+                    <input type="text" name="email" id="email" class="form-control" required placeholder="E-Mail" />
+                    <br>
+                  </div>                
+              </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" id="btn">ยืนยัน</button>
+            </div>
+          </form>
+        </div>
     </div>
   </div>
 </div>
