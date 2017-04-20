@@ -84,7 +84,7 @@ if($_POST) {
         </div>
         <div class="form-group">
           <div class="col-sm-12">
-            <input type="text"  name="email" id="email" class="form-control" required placeholder="E-Mail" />
+            <input type="email"  name="email" id="email" class="form-control" required placeholder="E-Mail" />
           </div>
         </div>
         <div class="form-group">
@@ -119,7 +119,7 @@ if($_POST) {
             </div>
               <div class="modal-body">                
                   <div class="col-sm-12" align="center">
-                    <input type="text" name="email" id="email" class="form-control" required placeholder="E-Mail" />
+                    <input type="email" name="email" id="email" class="form-control" required placeholder="E-Mail" />
                     <br>
                   </div>                
               </div>
