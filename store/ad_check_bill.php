@@ -59,6 +59,9 @@ if($_POST) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
 
   <style type="text/css">
+  body{
+    font-family: kanit
+  }
   @media print{
 	  #hid{
 		  display:none;
@@ -68,8 +71,8 @@ if($_POST) {
   </head>
   <body>   
 <?php include "wg/menu.php" ?>
-</br>
-<div class="container" id="hid">
+<div class="single-product-area">
+<div class="container">
   <div class="row">
   <div class="col-md-3"></div>
     <div class="col-md-6" style="background-color:#f4f4f4">
@@ -130,6 +133,7 @@ if($_POST) {
         </div>
     </div>
   </div>
+</div>
 </div>
 
                         
