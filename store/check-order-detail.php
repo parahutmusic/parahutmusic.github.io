@@ -92,7 +92,7 @@
                         </div>
                         <div class="form-group">
                           <div class="col-sm-12">
-                            <input type="text"  name="order_id" class="form-control" required placeholder="รหัสการสั่งซื้อ" />
+                            <input type="text"  name="order_id" class="form-control" required placeholder="เลขที่ใบสั่งซื้อ" />
                           </div>
                         </div>
                         <div class="form-group">

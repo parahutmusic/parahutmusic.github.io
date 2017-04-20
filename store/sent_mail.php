@@ -5,12 +5,12 @@
 		$email2 	= $_POST['email'];
 		$email_dt 	= "ลืมเลขที่ใบสั่งซื้อ";
 
-  $sql = "SELECT * FROM tb_order WHERE email = '$email2' ";
-  $db_query = mysqli_query($link, $sql);
-  $num_rows  = mysqli_num_rows($db_query);
-  $rs = mysqli_fetch_array($db_query);  
+	  $sql = "SELECT * FROM tb_order WHERE email = '$email2' ";
+	  $db_query = mysqli_query($link, $sql);
+	  $num_rows  = mysqli_num_rows($db_query);
+	  $rs = mysqli_fetch_array($db_query);  
 
-    $email = $rs['email'];
+    	$email = $rs['email'];
 
 		if($email2 != "$email")
 		{
@@ -27,5 +27,4 @@
 					echo	"</script>\n";
 		}
 ?>
-
 
