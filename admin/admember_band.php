@@ -69,21 +69,18 @@ include "../admin/dblink.php";
 ?>	
 <table class="img-responsive" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <th colspan="3" scope="col"><h1><b>แก้ไข<red><?php echo $band_name;?></red></b></h1></th>
+    <td align="center" colspan="3" height="100px" colspan="3" scope="col"><h1><b>เพิ่มสมาชิก <red><?php echo $band_name;?></red></b></h1></td>
     </tr>
-
   <tr>
-    <td width="50%" valign="top"><span class="style6">>> เพิ่มสมาชิก <<</span></td>
-  </tr>
-  <tr>
-  	<td></td>
-    <td>&nbsp;</td>
-    <td align="center"><a href="javascript:window.location.reload(history.go(-1));"><red> >> กดรีเฟรช ทุกครั้งเพื่ออัปเดต << </red><a></td>
+  	<td width="30%"></td>
+    <td align="center" width="40%" >
+    <a href="javascript:window.location.reload(history.go(-1));"><red> >> กดรีเฟรช ทุกครั้งเพื่ออัปเดต << </red><a>
+    </td>
+    <td width="30%"></td>
   </tr>
  <tr>
-    <td></td>
-    <td>&nbsp;</td>
-    <td align="center"><br>
+    <td width="30%"></td>
+    <td align="center" width="40%"><br>
 
 		<?php
 				  $sql1="select * from member order by member_id;"; 
@@ -98,6 +95,7 @@ include "../admin/dblink.php";
                   	print('</select>');
 		?>
 	</td>
+	<td width="30%"></td>
   </tr> 
 </table><br>
   <div align="center">	
@@ -107,7 +105,7 @@ include "../admin/dblink.php";
     <input type="hidden" name="mb_id" value="<?php echo $mb_n1;?>"/>
     <input type="hidden" name="band_id" value="<?php echo $band_id;?>"/>
 			<input type="submit" class="btn btn-default" style="font-size:22px;
-	  			font-weight:500;" name="submit1" value="เพิ่มสมาชิกใน<?php echo $band_name ;?>" >
+	  			font-weight:500;" name="submit1" value="เพิ่มสมาชิกใน <?php echo $band_name ;?>" >
 			</li>
 		</ul>
 	
@@ -139,9 +137,9 @@ $band_id = $_GET['band_id'];
 	<td width="20%" style="border:solid 1px;"><font size="3">ชื่อนาม-สกุล</font></td>
     <td width="10%" style="border:solid 1px;"><font size="3">ชื่อเล่น</font></td>
     <td width="10%" style="border:solid 1px;"><font size="3">ตำแหน่ง</font></td>
-	<td width="10%" style="border:solid 1px;"><font size="3">รายละเอียด</font></td>
+	<!-- <td width="10%" style="border:solid 1px;"><font size="3">รายละเอียด</font></td> -->
 	<td width="10%" style="border:solid 1px;"><font size="3">แก้ไขประวัติ</font></td>
-	<td width="10%" style="border:solid 1px;"><font size="3">ลบประวัติ</font></td>
+	<td width="10%" style="border:solid 1px;"><font size="3">ลบ</font></td>
   </tr>
   <?php
   	
@@ -166,7 +164,7 @@ $band_id = $_GET['band_id'];
 	<td align="center" style="border:dotted 1px;"><font size="3"><?=$prename;?><?=$member_name;?></font></td>
     <td align="center" style="border:dotted 1px;"><font size="3"><?=$member_nikname;?></font></td>
     <td align="center" style="border:dotted 1px;"><font size="3"><?=$position;?></font></td>
-	<td align="center" style="border:dotted 1px;"><font size="3"><img src="../images/view.png" width="30" height="30" border="0" /></font></td>
+	<!-- <td align="center" style="border:dotted 1px;"><font size="3"><img src="../images/view.png" width="30" height="30" border="0" /></font></td> -->
 	<td align="center" style="border:dotted 1px;"><a href="update_member.php?member_id=<?=$member_id;?>"><img src="../images/edit.png" width="30" height="30" border="0" /></a></td>
 	<td align="center" style="border:dotted 1px;"><a href="delmember_band.php?member_id=<?=$member_id;?>" class="style2" OnClick="return chkdel();"						 onclick="return del()"><img src="../images/del.png" width="30" height="30" border="0" /></a></td>
   </tr>

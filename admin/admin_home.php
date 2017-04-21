@@ -39,7 +39,6 @@ include "../admin/dblink.php";
 <div class="col-xs-12 text-center" style="padding-top:60px;">
 <img src="img/btn/data-store.jpg" width="500">
 </div>
-
 <script>
     document.getElementById("drop").onclick = function() {openNav()};
 

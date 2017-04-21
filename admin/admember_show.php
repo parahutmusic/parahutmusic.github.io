@@ -64,7 +64,7 @@ include "../admin/dblink.php";
 	<td width="20%" style="border:solid 1px;"><font size="3">ชื่อนาม-สกุล</font></td>
     <td width="10%" style="border:solid 1px;"><font size="3">ชื่อเล่น</font></td>
     <td width="10%" style="border:solid 1px;"><font size="3">ตำแหน่ง</font></td>
-	<td width="10%" style="border:solid 1px;"><font size="3">รายละเอียด</font></td>
+	<!-- <td width="10%" style="border:solid 1px;"><font size="3">รายละเอียด</font></td> -->
 	<td width="10%" style="border:solid 1px;"><font size="3">แก้ไขประวัติ</font></td>
 	<td width="10%" style="border:solid 1px;"><font size="3">ลบประวัติ</font></td>
   </tr>
@@ -87,7 +87,7 @@ include "../admin/dblink.php";
 	<td align="center" style="border:dotted 1px;"><font size="3"><?=$prename;?><?=$member_name;?></font></td>
     <td align="center" style="border:dotted 1px;"><font size="3"><?=$member_nikname;?></font></td>
     <td align="center" style="border:dotted 1px;"><font size="3"><?=$position;?></font></td>
-	<td align="center" style="border:dotted 1px;"><font size="3"><img src="../images/view.png" width="30" height="30" border="0" /></font></td>
+	<!-- <td align="center" style="border:dotted 1px;"><font size="3"><img src="../images/view.png" width="30" height="30" border="0" /></font></td> -->
 	<td align="center" style="border:dotted 1px;"><a href="update_member.php?member_id=<?=$member_id;?>"><img src="../images/edit.png" width="30" height="30" border="0" /></a></td>
 	<td align="center" style="border:dotted 1px;"><a href="delmember.php?member_id=<?=$member_id;?>" class="style2" OnClick="return chkdel();" onclick= "return del()"><img src="../images/del.png" width="30" height="30" border="0" /></a></td>
   </tr>

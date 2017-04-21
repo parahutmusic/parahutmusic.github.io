@@ -146,10 +146,10 @@ echo'</select>';
     <td>&nbsp;</td>
     <td>
     <select name="position">
-    	<option value="">-- เลือกตำแหน่ง --</option>
-		<option value="ร้องนำ">ร้องนำ</option>
-		<option value="กีต้าร์">กีต้าร์</option>
-		<option value="เบส">เบส</option>
+      	<option value="">-- เลือกตำแหน่ง --</option>
+  		  <option value="ร้องนำ">ร้องนำ</option>
+  		  <option value="กีต้าร์">กีต้าร์</option>
+  		  <option value="เบส">เบส</option>
         <option value="กลอง">กลอง</option>
         <option value="คีย์บอร์ด">คีย์บอร์ด</option>		
 	</select><br><br>
@@ -158,7 +158,7 @@ echo'</select>';
 				  $sql1="select * from band order by band_id;"; 
 				  $rs1=mysqli_query($link, $sql1);
 				  $num1=mysqli_num_rows($rs1);    						
-					print('<select id =\'band_id\' name =\'bnad_id\'>');
+					print('<select id =\'band_id\' name =\'band_id\'>');
 					print('<option value=\'\'>---- กรุณาเลือกวง -----</option>');	
 				  	while($rs2 = mysqli_fetch_array($rs1))
 					{   
