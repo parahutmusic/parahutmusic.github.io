@@ -123,10 +123,10 @@ $perpage = 5;
 	echo "รายการทั้งหมด $num_rows รายการ";
 ?>
 </font></p>
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+<table width="50%" border="1" align="center" cellpadding="0" cellspacing="0">
   <tr align="center" bgcolor="#FFCC00">
     <td width="5%"><font size="3">ที่</font></td>
-    <td width="40%"><font size="3">ลิงค์ URL</font></td>
+    <td width="10%"><font size="3">ลิงค์ URL</font></td>
     <td width="30%"><font size="3">วันที่ลง</font></td>
 	<td width="10%"><font size="3">ลบ</font></td>
   </tr>
@@ -141,7 +141,8 @@ $perpage = 5;
 	?> 
   <tr>
     <td align="center"><font size="3"><?=$live_id;?></font></td>
-    <td align="center"><font size="3"><a href="<?=$live_url;?>"><?=$live_url;?></a></font></td>
+    <td align="center"><font size="3"><a href="<?=$live_url;?>"> CLICK !!
+        </a></font></td>
     <td align="center"><font size="3"><?=$live_date;?></font></td>
 	<td align="center"><a href="dellive.php?live_id=<?=$live_id;?>" class="style2" OnClick="return chkdel();" onclick= "return del()"><img src="../images/del.png" width="30" height="30" border="0" /></a></td>
   </tr>
