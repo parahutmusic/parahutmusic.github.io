@@ -67,7 +67,7 @@
                 </div><!-- /.post-top -->
                 <div class="post-content">
                   <h4 class="entry-title">
-                  <a href="news_detail.php?news_id=<?=$news_id;?>"><?php //echo "$news_name";?></a>
+                    <a href="news_detail.php?news_id=<?=$news_id;?>"><?php echo "$news_name";?></a>
                   </h4>
                   <p class="entry-text">
                     <?php 
