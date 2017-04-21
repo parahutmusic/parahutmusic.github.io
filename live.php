@@ -35,9 +35,9 @@
               <article class="post type-post col-lg-8 col-sm-8">
                 <div class="post-top th">
                    <div class='embed-container'>
-<iframe src="https://www.youtube.com/embed/<?=$live_url?>?rel=0&amp;showinfo=0&autoplay=1"  frameborder="0" allowfullscreen></iframe>
+                      <iframe src="<?=$live_url?>"  frameborder="0" allowfullscreen></iframe>
                    </div>
-                 
+                 <!-- ?rel=0&amp;showinfo=0&autoplay=1 -->
                 </div><!-- /.post-top -->
 
               </article>
