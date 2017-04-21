@@ -116,7 +116,7 @@ $perpage = 5;
  
  $start = ($page - 1) * $perpage;
 
-	$sql = "select *  from live where live_id order by live_id limit {$start} , {$perpage} "; 
+	$sql = "select *  from live where live_id order by live_id desc limit {$start} , {$perpage} "; 
 	$db_query = mysqli_query($link, $sql);
 	$num_rows  = mysqli_num_rows($db_query);
 	
@@ -141,7 +141,7 @@ $perpage = 5;
 	?> 
   <tr>
     <td align="center"><font size="3"><?=$live_id;?></font></td>
-    <td align="center"><font size="3"><a href="https://www.youtube.com/watch?v=<?=$live_url;?>">https://www.youtube.com/watch?v=<?=$live_url;?></a></font></td>
+    <td align="center"><font size="3"><a href="<?=$live_url;?>"><?=$live_url;?></a></font></td>
     <td align="center"><font size="3"><?=$live_date;?></font></td>
 	<td align="center"><a href="dellive.php?live_id=<?=$live_id;?>" class="style2" OnClick="return chkdel();" onclick= "return del()"><img src="../images/del.png" width="30" height="30" border="0" /></a></td>
   </tr>
