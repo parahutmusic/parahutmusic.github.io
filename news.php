@@ -66,13 +66,13 @@
                   </div><!-- /.post-meta -->
                 </div><!-- /.post-top -->
                 <div class="post-content">
-                  <!-- <h2 class="entry-title">
+                  <h4 class="entry-title">
                   <a href="news_detail.php?news_id=<?=$news_id;?>"><?php //echo "$news_name";?></a>
-                  </h2> -->
+                  </h4>
                   <p class="entry-text">
                     <?php 
-					echo mb_substr($news_detail,0,200,"UTF-8");
-					?>
+          					echo mb_substr($news_detail,0,200,"UTF-8");
+          					?>
                     <a href="news_detail.php?news_id=<?=$news_id;?>"><red>.... อ่านต่อ</red></a>
                   </p>
                 </div><!-- /.post-content -->
