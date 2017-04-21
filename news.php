@@ -66,7 +66,7 @@
                   </div><!-- /.post-meta -->
                 </div><!-- /.post-top -->
                 <div class="post-content">
-                  <h4 class="entry-title">
+                  <h4 class="entry-title" style="font-size: 1.1em;">
                     <a href="news_detail.php?news_id=<?=$news_id;?>"><?php echo "$news_name";?></a>
                   </h4>
                   <p class="entry-text">
