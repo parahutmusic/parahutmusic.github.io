@@ -61,20 +61,11 @@ $query  = mysqli_query($link ,$sql6);
                           <span class="entry-date">
                             <time datetime="2015-01-15" ><i class="glyphicon glyphicon-time"></i> <?php echo "ลงวันที่ : $news_date2";?> 
 <!--  Share Button Start -->
-<!-- <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Loader" type="text/javascript"></script>
+<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Loader" type="text/javascript"></script>
 <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
 <div align=left>
 <a name="fb_share" type="button_count" href="javascript"onclick="window.open('https://www.facebook.com/sharer.php?u=http%3A%2F%2Fparahutmusic.com%2Fnews_detail.php%3Fnews_id%3D<?php //echo $news_id2;?>','windowname2','width=560, height=500, directories=no, location=no, menubar=no, resizable=no, scrollbars=no, status=no, toolbar=no'); return false;"><img src="images/fb.png" width="100" class="btn btn-default"></a>
-</div> -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.9";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<div class="fb-share-button" data-href="http://parahutmusic.com/news_detail.php?news_id=<?php echo $news_id2;?>" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fparahutmusic.com%2Fnews_detail.php%3Fnews_id%3D<?php echo $news_id2;?>&amp;src=sdkpreparse">แชร์</a></div>
+</div>
 <!--  Share Button Start -->
                             </time>
                           </span>
