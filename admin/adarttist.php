@@ -31,12 +31,15 @@
 </style>
 <body style="margin:0;padding:0;">
 <?php include "../admin/admin_parahut.php"; ?>
-<div class="container top"> 
-
-	<a href="admember.php"><input type="button" class="btn btn-primary add-btn" style="font-size:22px;font-weight:500;margin-bottom:10px;margin-top:10px" value="เพิ่ม/จัดการข้อมูลศิลปิน"></a>
-    
-    
-    <a href="adband.php"><input type="button" class="btn btn-primary add-btn" style="font-size:22px;font-weight:500;margin-bottom:10px;margin-top:10px" value="เพิ่ม/จัดการวงดนตรี"></a>
-</div>
+	<div class="container top" align="center"> 
+		<div class="col-xs-12">
+			<div class="col-xs-12">
+				<a href="admember.php"><input type="button" class="btn btn-primary add-btn" style="font-size:22px;font-weight:500;margin-bottom:10px;margin-top:10px;width: 300px;" value="จัดการข้อมูลศิลปิน"></a>
+			</div>
+			<div class="col-xs-12">
+		    	<a href="adband.php"><input type="button" class="btn btn-success add-btn" style="font-size:22px;font-weight:500;margin-bottom:10px;margin-top:10px;width: 300px;" value="จัดการวงดนตรี"></a>
+		    </div>
+		</div>
+	</div>
 </body>
 </html>

@@ -45,10 +45,10 @@ include "wg/menu.php";
 ?>
 <div class="container top" style="margin-top:-20px;;"> 
     </div>
-    <p align="center"><font size="3"><b>ตารางแสดงรายการสั่งซื้อสินค้า</b>
+    <p align="center"><font size="3"><b>ตารางแสดงรายการลืมเลขที่ใบสั่งซื้อ</b>
 <?php
 	
-	$perpage = 5;
+	$perpage = 10;
  if (isset($_GET['page'])) {
  $page = $_GET['page'];
  } else {
@@ -59,20 +59,17 @@ include "wg/menu.php";
 	
 	$cat_id = $_GET['cat_id'];
 	
-	$sql = "SELECT *  FROM tb_order  limit {$start} , {$perpage}";
+	$sql = "SELECT *  FROM email order by email_id DESC limit {$start} , {$perpage}";
 	$db_query = mysqli_query($link, $sql);
 	$num_rows  = mysqli_num_rows($db_query);
 	echo "รายการทั้งหมด $num_rows รายการ";
 ?>
 </font></p>
-<table width="90%" border="1" align="center" cellpadding="0" cellspacing="0">
+<table width="50%" border="1" align="center" cellpadding="0" cellspacing="0">
   <tr align="center" bgcolor="#FFCC00">
-    <td width="10%"><font size="3">รหัสสั่่งซื้อ</font></td>
-    <td width="20%"><font size="3">ชื่อลูกค้า</font></td>
-    <td width="20%"><font size="3">เบอร์โทร</font></td>
-	<td width="10%" id="hid" ><font size="3">ดูรายการสั่งซื้อ</font></td>
-    <td width="20%"><font size="3">วันที่สั่งซื้อ</font></td>
-    <td width="10%"><font size="3">การจัดส่ง</font></td>
+    <!-- <td width="10%"><font size="3">ลำดับ</font></td> -->
+    <td width="20%"><font size="3">E-Mail</font></td>
+    <td width="20%"><font size="3">รายละเอียด</font></td>
     <td width="5%" id="hidden"><font size="3">ลบ</font></td>
   </tr>
   <?php
@@ -81,31 +78,27 @@ include "wg/menu.php";
 	{
 		$rs = mysqli_fetch_array($db_query);	
 			
-		$order_id 	= $rs['order_id'];
-		$name 	= $rs['name'];
-		$phone = $rs['phone'];
-		$status = $rs['status'];
-		$order_date = $rs['order_date'];
-    $yes = 'ชำระเงินแล้ว';
-    $no = 'ค้างชำระเงิน';
+		$email_id   = $rs['email_id'];
+    $email   = $rs['email'];
 	?> 
   <tr>
-    <td align="center" style="background-color:#abf7af"><font size="3"><?=$order_id;?></font></td>
-    <td align="center"><font size="3"><?=$name;?></font></td>
-    <td align="center"><font size="3"><?=$phone;?></font></td>
-    <td align="center" id="hid"><font size="3"><a href="ad_order_detail.php?order_id=<?php echo $order_id ;?>&<?php echo $name; ?>"  class="btn btn-info btn-xs">รายละเอียด</a></font></td>
-    <td align="center"><font size="3"><?=$order_date;?></font></td>
-    <td align="center" <?php if($status == $yes) echo 'style="background-color:#abf7af"'; if($status == $no) echo 'style="background-color:#ff8585"';?> ><font size="3"><?=$status;?></font></td>
-    <td align="center" id="hidden"><font size="3" ><a href="del_order.php?order_id=<?=$order_id;?>" OnClick="return chkdel();" onclick= "return del()" class="btn btn-danger btn-xs">ลบ</a></font></td>
+    <!-- <td align="center"><font size="3"><?=$email_id;?></font></td> -->
+    <td align="center"><font size="3"><?=$email;?></font></td>
+    <td align="center" id="hid">
+    <font size="3">
+    <a href="ad_forget_detail.php?email_id=<?php echo $email_id ;?>&email=<?php echo $email; ?>" class="btn btn-info btn-xs">รายละเอียด</a>
+    </font>
+    </td>
+    <td align="center" id="hidden"><font size="3" ><a href="del_forget.php?email_id=<?=$email_id;?>" OnClick="return chkdel();" onclick= "return del()" class="btn btn-danger btn-xs">ลบ</a></font></td>
   </tr>
   <?php
   	$i++;
-     }
+    }
  ?>
 </table><br>
 <center><red>***เรียงลำดับจากการอัพเดตล่าสุด</red>
 <?php
- $sql2 = "select * from tb_order";
+ $sql2 = "select * from email";
  $query2 = mysqli_query($link, $sql2);
  $total_record = mysqli_num_rows($query2);
  $total_page = ceil($total_record / $perpage);
@@ -113,24 +106,24 @@ include "wg/menu.php";
 <nav>
  <ul class="pagination">
  <li <?php if($page == 1) echo 'class="disabled"';?>>
- <a href="ad_order.php?page=1" aria-label="Previous">
+ <a href="ad_forget.php?page=1" aria-label="Previous">
  <span aria-hidden="true">&laquo;</span>
  </a>
  </li>
  <?php for($i=1;$i<=$total_page;$i++){ ?>
- <li <?php if($page == $i) echo 'class="active"';?>><a href="ad_order.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <li <?php if($page == $i) echo 'class="active"';?>><a href="ad_forget.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
  <?php } ?>
  <li <?php if($page == $total_page) echo 'class="disabled"';?>>
- <a href="ad_order.php?page=<?php echo $total_page;?>" aria-label="Next">
+ <a href="ad_forget.php?page=<?php echo $total_page;?>" aria-label="Next">
  <span aria-hidden="true">&raquo;</span>
  </a>
  </li>
  </ul>
  </nav>
 </center>
-<div class="row text-center" id="hid">
+<!-- <div class="row text-center" id="hid">
  <button class="btn btn-primary btn-lg" onClick="window.print()"> พิมพ์รายการสั่งซื้อ </button>
-</div>
+</div> -->
 
 </div>
 <br>
