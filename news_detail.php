@@ -64,8 +64,10 @@ $query  = mysqli_query($link ,$sql6);
 <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Loader" type="text/javascript"></script>
 <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
 <div align=left>
-<a name="fb_share" type="button_count" href="javascript"onclick="window.open('https://www.facebook.com/sharer.php?u=http%3A%2F%2Fparahutmusic.com%2Fnews_detail.php%3Fnews_id%3D<?php echo $news_id2;?>','windowname2','width=560, height=500, directories=no, location=no, menubar=no, resizable=no, scrollbars=no, status=no, toolbar=no'); return false;"><img src="images/fb.png" width="100" class="btn btn-default"></a>
+<a name="fb_share" type="button_count" href="javascript"onclick="window.open('https://www.facebook.com/sharer.php?u=http%3A%2F%2Fparahutmusic.com%2Fnews_detail.php%3Fnews_id%3D<?php //echo $news_id2;?>','windowname2','width=560, height=500, directories=no, location=no, menubar=no, resizable=no, scrollbars=no, status=no, toolbar=no'); return false;"><img src="images/fb.png" width="100" class="btn btn-default"></a>
 </div>
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58d00123e2c2ebb4"></script> 
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox_r5zh"></div>
 <!--  Share Button Start -->
                             </time>
                           </span>
