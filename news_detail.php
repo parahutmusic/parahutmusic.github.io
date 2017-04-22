@@ -92,8 +92,19 @@ $query  = mysqli_query($link ,$sql6);
 					echo "$news_detail2";
 					?>
                     </p>
+                    <br>
+                    <div class="comment">
+                  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-comments" data-href="http://parahutmusic.com/news_detail.php?news_id=<?=$news_id2;?>" data-numposts="5"></div>
+                  </div>
                   </div><!-- /.post-content -->
-	
                 </article>
               </div>
             </div>
