@@ -27,9 +27,13 @@ include "../admin/dblink.php";
 
 	<!-- Import Custom Responsive Styles -->
 	<link href="../assets/css/responsive.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 
-</script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Kanit');
@@ -131,7 +135,12 @@ function thai_date_and_time($time){   // 19 ธันวาคม 2556 เวล
   <tr>
     <td valign="top"><span> >> รายละเอียดข่าวสาร/กิจกรรม << </span></td>
     <td>&nbsp;</td>
-    <td><textarea name="news_detail" id="news_detail" cols="60" rows="5"></textarea></td>
+    <td>
+    <div class="col-sm-12" align="left">
+      <a href="javascript"onclick="window.open('ad_pic_upload.php','windowname2','width=1000, \height=600, \directories=no, \location=no, \menubar=no, \resizable=no, \scrollbars=no, \status=no, \toolbar=no'); return false;" class="btn-default btn-sm btn glyphicon glyphicon-picture" ></a>
+    </div>
+ <textarea name="news_detail" id="news_detail" cols="60" rows="5"></textarea>
+ </td>
   </tr>
 </table>
 <input type="hidden" name="news_id" value="<?php echo $news_id_n1;?>"/>
@@ -148,6 +157,23 @@ function thai_date_and_time($time){   // 19 ธันวาคม 2556 เวล
 	
   </div>
 	</form>
+   <!-- Modal -->
+        <!--  <form method="POST" action="ad_pic_upload_save.php" class="form-horizontal">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">อัพโหลดรูปภาพ</h4>
+            </div>
+              <div class="modal-body">                
+                  <div class="col-sm-12" align="center">
+                    <input id="img_upload" class="btn btn-default" style="font-size:20px;" type="file"  name="pic_upload" id="file1">
+                    <br>
+                  </div>                
+              </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" id="btn">ยืนยัน</button>
+            </div>
+          </form> -->
+  <!-- Modal -->
     <div class="text-center">
 <?php
 	 $perpage = 5;

@@ -67,13 +67,13 @@
                 </div><!-- /.post-top -->
                 <div class="post-content">
                   <h4 class="entry-title" style="font-size: 1.1em;">
-                    <a href="news_detail.php?news_id=<?=$news_id;?>"><?php echo "$news_name";?></a>
+                    <a href="news_detail.php?news_id=<?=$news_id;?>&news_name=<?=$news_name;?>"><?php echo "$news_name";?></a>
                   </h4>
                   <p class="entry-text">
                     <?php 
           					echo mb_substr($news_detail,0,200,"UTF-8");
           					?>
-                    <a href="news_detail.php?news_id=<?=$news_id;?>"><red>.... อ่านต่อ</red></a>
+                    <a href="news_detail.php?news_id=<?=$news_id;?>&news_name=<?=$news_name;?>"><red>.... อ่านต่อ</red></a>
                   </p>
                 </div><!-- /.post-content -->
               </article>
