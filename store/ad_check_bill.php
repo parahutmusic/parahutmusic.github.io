@@ -115,24 +115,24 @@ if($_POST) {
        <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog" style="margin-top: 15%;">
           <div class="modal-content">
-          <form method="POST" action="sent_mail.php" class="form-horizontal">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">กรุณาป้อน E-Mail</h4>
-            </div>
-              <div class="modal-body">                
-                  <div class="col-sm-12" align="center">
-                    <input type="email" name="email" id="email" class="form-control" required placeholder="E-Mail" />
-                    <br>
-                  </div>                
+            <form method="POST" action="sent_mail.php" class="form-horizontal">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">กรุณาป้อน E-Mail</h4>
               </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary" id="btn">ยืนยัน</button>
-            </div>
-          </form>
+                <div class="modal-body">                
+                    <div class="col-sm-12" align="center">
+                      <input type="email" name="email" id="email" class="form-control" required placeholder="E-Mail" />
+                      <br>
+                    </div>                
+                </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="btn">ยืนยัน</button>
+              </div>
+            </form>
+          </div>
         </div>
-    </div>
-  </div>
+      </div>
 </div>
 </div>
 
