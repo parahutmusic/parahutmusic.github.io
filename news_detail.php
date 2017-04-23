@@ -34,7 +34,7 @@ $query  = mysqli_query($link ,$sql6);
   ?>
 <title><?php echo $news_name2; ?></title>
 <meta name="description" content="<?php echo mb_substr($news_detail2,0,100,"UTF-8");?>">
-  <meta property="og:url"           content="http://parahutmusic.com/news_detail.php?news_id=<?=$news_id2;?>&news_name=<?=$news_name2;?>" />
+  <meta property="og:url"           content="http://parahutmusic.com/news_detail.php?news_id=<?=$news_id2;?>" />
   <meta property="og:title"         content="<?php echo $news_name2; ?>" />
   <meta property="og:description"   content="<?php echo mb_substr($news_detail2,0,150,"UTF-8");?>" />
   <meta property="og:image"         content="http://parahutmusic.com/admin/<?php echo $photo_name2;?>"/>
@@ -146,7 +146,7 @@ $query  = mysqli_query($link ,$sql6);
                               <img class="img-responsive" src="admin/<?=$photo_name1;?>"  alt="parahut">
                             </div>
                             <?php echo mb_substr($news_detail1,0,100,"UTF-8");?>
-                            <a href="news_detail.php?news_id=<?php echo $news_id;?>&news_name=<?=$news_name;?>"><red>.... อ่านต่อ</red></a>
+                            <a href="news_detail.php?news_id=<?php echo $news_id;?>"><red>.... อ่านต่อ</red></a>
                         </div><!-- /.recent-post-details -->
                       </li>
     </ul>
