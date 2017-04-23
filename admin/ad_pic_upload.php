@@ -104,7 +104,7 @@ include "../admin/dblink.php";
   <tr>
     <td align="center"><font size="3"><?=$pic_upid;?></font></td>
     <td align="center"><font size="3"><img src="<?=$pic_name;?>" width="100" height="50" border="0" /></font></td>
-	<td align="center"><font size="3"><?='<';?> <?="img src='$pic_name'" ;?> ></font></td>
+	<td align="center"><font size="3"><?=$pic_name;?></font></td>
 	<td align="center"><a href="del_pic_upload.php?pic_upid=<?=$pic_upid;?>" class="style2" OnClick="return chkdel();" onclick= "return del()"><img src="../images/del.png" width="30" height="30" border="0" /></a></td>
   </tr>
   <?php
