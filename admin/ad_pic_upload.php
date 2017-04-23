@@ -89,7 +89,7 @@ include "../admin/dblink.php";
   <tr align="center" bgcolor="#FFCC00">
     <td width="10%"><font size="3">รหัสรูปภาพ</font></td>
     <td width="10%"><font size="3">รูปภาพ</font></td>
-	<td width="40%"><font size="3">< <?='img' ;?> ></font></td>
+	<td width="40%"><font size="3">ที่อยู่รูปภาพ</font></td>
 	<td width="10%"><font size="3">ลบรูปภาพ</font></td>
   </tr>
   <?php
@@ -114,7 +114,7 @@ include "../admin/dblink.php";
 </table>
 <center><red>***เรียงลำดับจากการอัพเดตล่าสุด</red>
 <?php
- $sql2 = "select * from slide";
+ $sql2 = "select * from pic_upload";
  $query2 = mysqli_query($link, $sql2);
  $total_record = mysqli_num_rows($query2);
  $total_page = ceil($total_record / $perpage);
@@ -122,15 +122,15 @@ include "../admin/dblink.php";
 <nav>
  <ul class="pagination">
  <li <?php if($page == 1) echo 'class="disabled"';?>>
- <a href="adslide.php?page=1" aria-label="Previous">
+ <a href="ad_pic_upload.php?page=1" aria-label="Previous">
  <span aria-hidden="true">&laquo;</span>
  </a>
  </li>
  <?php for($i=1;$i<=$total_page;$i++){ ?>
- <li <?php if($page == $i) echo 'class="active"';?>><a href="adslide.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <li <?php if($page == $i) echo 'class="active"';?>><a href="ad_pic_upload.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
  <?php } ?>
  <li <?php if($page == $total_page) echo 'class="disabled"';?>>
- <a href="adslide.php?page=<?php echo $total_page;?>" aria-label="Next">
+ <a href="ad_pic_upload.php?page=<?php echo $total_page;?>" aria-label="Next">
  <span aria-hidden="true">&raquo;</span>
  </a>
  </li>
