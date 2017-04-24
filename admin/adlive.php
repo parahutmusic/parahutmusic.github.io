@@ -54,7 +54,7 @@ include "../admin/dblink.php";
 		<h3> >> อัพเดตการถ่ายทอดสด << </h3> <br>
 <input name="live_url" type="text" size="80">
 <br><br>
-<red> *** copy url หลังเครื่องหมาย = </red>เช่น https://www.youtube.com/watch?v=<red>_9fyPp6RRio</red>
+<red> *** แชร์แบบฝัง</red>
 <br>
 <br>
 <?php

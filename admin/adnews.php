@@ -36,6 +36,7 @@ include "../admin/dblink.php";
 <body style="margin:0;padding:0;">
 <?php include "../admin/admin_parahut.php"; ?>
 <div class="container top"> 
+<div id="hidden">
 	<form id="form-img1" method="post" action="adnews_save.php" enctype="multipart/form-data">
 <?php
 		$sql = "select  *  from news order by news_id desc";
@@ -152,6 +153,7 @@ function thai_date_and_time($time){   // 19 ธันวาคม 2556 เวล
 	
   </div>
 	</form>
+  </div>
    <!-- Modal -->
         <!--  <form method="POST" action="ad_pic_upload_save.php" class="form-horizontal">
             <div class="modal-header">

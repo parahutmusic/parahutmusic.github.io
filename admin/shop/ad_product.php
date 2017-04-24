@@ -37,8 +37,9 @@ include "dblink.php";
 include "wg/menu.php";
 ?>
 
-<div class="container top" id="hidden"> 
-<form id="form-img1" method="post" action="ad_product_save.php" enctype="multipart/form-data">
+<div class="container top"> 
+<div id="hidden">
+<form id="form-img1" method="post" action="ad_product_save.php" enctype="multipart/form-data" >
 	  <div align="left" style="margin-left:20%;">
 	<?php
 		$sql = "select  *  from products order by pro_id desc";
@@ -82,6 +83,7 @@ include "wg/menu.php";
 
 	</form>
     </div>
+    </div>
     <p align="center"><font size="3"><b>ตารางแสดงรายการสินค้า</b>
 <?php
 	
@@ -104,7 +106,6 @@ $cat_id = $_GET['cat_id'];
   $db_query2 = mysqli_query($link, $sql2);
   $num_rows2  = mysqli_num_rows($db_query2);
   echo "รายการทั้งหมด $num_rows2 รายการ";
-
 ?>
 </font></p>
 <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
@@ -114,8 +115,8 @@ $cat_id = $_GET['cat_id'];
     <td width="20%"><font size="3">ชื่อสินค้า</font></td>
     <td width="20%"><font size="3">ชื่อหมวดหมู่</font></td>
     <td width="10%"><font size="3">ราคา</font></td>
-	<td width="10%"><font size="3">แก้ไข</font></td>
-	<td width="20%"><font size="3">ลบ</font></td>
+	<td width="10%" id="hidden"><font size="3">แก้ไข</font></td>
+	<td width="20%" id="hidden"><font size="3">ลบ</font></td>
   </tr>
   <?php
 	$i = 0;
@@ -140,8 +141,8 @@ $cat_id = $_GET['cat_id'];
     <td align="center"><font size="3"><?=$pro_name;?></font></td>
     <td align="center"><font size="3"><?=$cat_name;?></font></td>
     <td align="center"><font size="3"><?=$price;?></font></td>
-	<td align="center"><a href="update_product.php?pro_id=<?=$pro_id;?>"><img src="../../images/edit.png" width="30" height="30" border="0" /></a></td>
-	<td align="center"><a href="del_product.php?pro_id=<?=$pro_id;?>" class="style2" OnClick="return chkdel();" onclick= "return del()"><img src="../../images/del.png" width="30" height="30" border="0" /></a></td>
+	<td align="center" id="hidden"><a href="update_product.php?pro_id=<?=$pro_id;?>"><img src="../../images/edit.png" width="30" height="30" border="0" /></a></td>
+	<td align="center" id="hidden"><a href="del_product.php?pro_id=<?=$pro_id;?>" class="style2" OnClick="return chkdel();" onclick= "return del()"><img src="../../images/del.png" width="30" height="30" border="0" /></a></td>
   </tr>
   <?php
   	$i++;

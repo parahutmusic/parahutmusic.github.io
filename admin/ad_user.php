@@ -34,7 +34,7 @@ include "../admin/dblink.php";
 </style>
 <body style="margin:0;padding:0;">
 <?php include "../admin/admin_parahut.php"; ?>
-<div class="container top"> 
+<div class="container top" id="hidden"> 
 <form id="form-img1" method="post" action="ad_user_save.php" enctype="multipart/form-data">
 	  <div align="center">
 	<?php

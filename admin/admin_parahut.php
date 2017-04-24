@@ -2,6 +2,32 @@
 include "check-login.php";
 include "../admin/dblink.php";
 ?>
+<head>
+  <style type="text/css">
+     <?php
+        if($_SESSION['admin'] != "admin@parahut") { ?>
+
+        #hidden { 
+          display:none;
+        }
+        #show { 
+          display:block;
+        }
+
+      <?php } else if($_SESSION['admin'] == "admin@parahut") { ?>
+
+        #hidden { 
+          display: contents;
+        }
+        #show { 
+          display: none;
+        }
+        <?php } else { ?>
+
+          <?php } ?>
+        }
+  </style>
+</head>
 <div id="fix">
 <div class="menudrop">
     <div class="dropdown">
@@ -12,12 +38,12 @@ include "../admin/dblink.php";
    			<h1>Parahut Music</h1>
         </div>
         <ul id="Dropdown" class="dropdown-content dropbg">
-            <li class="list-drop"><a href="../admin/adslide.php">จัดการภาพสไลด์</a></li>
+            <li class="list-drop" id="hidden"><a href="../admin/adslide.php">จัดการภาพสไลด์</a></li>
             <li class="list-drop"><a href="../admin/adnews.php">จัดการข่าวสาร</a></li>
-            <li class="list-drop"><a href="../admin/adarttist.php">จัดการข้อมูลศิลปิน</a></li>
+            <li class="list-drop" id="hidden"><a href="../admin/adarttist.php">จัดการข้อมูลศิลปิน</a></li>
             <li class="list-drop"><a href="../admin/adlive.php">จัดการการถ่ายทอดสด</a></li>
             <li class="list-drop"><a href="../admin/shop/">จัดการข้อมูลร้านค้า</a></li>
-            <li class="list-drop"><a href="../admin/ad_user.php">จัดการผู้ใช้งาน</a></li>
+            <li class="list-drop" id="hidden"><a href="../admin/ad_user.php">จัดการผู้ใช้งาน</a></li>
             <li class="list-drop"><a href="logout.php" title="ออกจากระบบ"><span class="glyphicon glyphicon-remove-circle"></span> ออกจากระบบ</a></li>
         </ul>
     </div>
