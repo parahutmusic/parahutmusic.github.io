@@ -92,7 +92,7 @@ $perpage = 5;
 	<td width="10%"><font size="3">ลบ</font></td>
   </tr>
   <?php
-	$i = 0;
+	$i = 1;
 	while($i < $num_rows)
 	{
 		$rs = mysqli_fetch_array($db_query);		
