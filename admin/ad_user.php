@@ -65,7 +65,7 @@ include "../admin/dblink.php";
 	  			width:200px;" type="submit" name="submit1" value="บันทึก">
       </div>
 	</form>
-        <p align="center"><font size="3"><b>ตารางแสดงรูปภาพสไลด์</b>
+        <p align="center"><font size="3"><b>ตารางแสดง ADMIN / USER</b>
 <?php
 $perpage = 5;
  if (isset($_GET['page'])) {
@@ -92,7 +92,7 @@ $perpage = 5;
 	<td width="10%"><font size="3">ลบ</font></td>
   </tr>
   <?php
-	$i = 1;
+	$i = 0;
 	while($i < $num_rows)
 	{
 		$rs = mysqli_fetch_array($db_query);		
