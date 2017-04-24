@@ -4,7 +4,7 @@ include "dblink.php";
 ?>
 <style type="text/css">
      <?php
-        if($_SESSION['admin'] == "admin@shop") { ?>
+        if($_SESSION['admin'] != "admin@parahut") { ?>
 
         #hidden { 
           display:none;

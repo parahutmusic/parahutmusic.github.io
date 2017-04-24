@@ -17,6 +17,7 @@ include "../admin/dblink.php";
             <li class="list-drop"><a href="../admin/adarttist.php">จัดการข้อมูลศิลปิน</a></li>
             <li class="list-drop"><a href="../admin/adlive.php">จัดการการถ่ายทอดสด</a></li>
             <li class="list-drop"><a href="../admin/shop/">จัดการข้อมูลร้านค้า</a></li>
+            <li class="list-drop"><a href="../admin/ad_user.php">จัดการผู้ใช้งาน</a></li>
             <li class="list-drop"><a href="logout.php" title="ออกจากระบบ"><span class="glyphicon glyphicon-remove-circle"></span> ออกจากระบบ</a></li>
         </ul>
     </div>

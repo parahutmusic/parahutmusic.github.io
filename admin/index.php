@@ -1,42 +1,123 @@
 <?php
 session_start();
 $msg = "";
+
+include "dblink.php";
+
 if($_POST) {
  	$login = $_POST['login'];
-	$pw = $_POST['pswd'];
+	$pw = md5($_POST['pswd']);
+
+  // echo $pw;
+
+  $sql = "SELECT * FROM userparahut WHERE user_name = '$login' and user_pass = '$pw' ";
+
+  $db_query = mysqli_query($link, $sql);
+  $num_rows  = mysqli_num_rows($db_query);
+  $rs = mysqli_fetch_array($db_query);    
+
+    $user_name   = $rs['user_name'];
+    $user_pass   = $rs['user_pass'];
+    $user_level  = $rs['user_level'];
+
+    // echo $user_pass;
+
+    // exit();
+
+
+  // if(($login == "") && ($pw == "")) {
+  // echo "<script>alert('กรุณาป้อน Username หรือ Password');history.back();</script>";
+  // echo "<script langquage='javascript'>\n";
+  // echo " window.location=\"index.php\"\n";
+  // echo  "</script>\n";
+  // } else {
+  //   if(($login != "admin@parahut") && ($pw != "1959900423488")) {
+  //   echo "<script>alert('Username หรือ Password ไม่ถูกต้อง');history.back();</script>";
+  //   echo "<script langquage='javascript'>\n";
+  //   echo " window.location=\"index.php\"\n";
+  //   echo  "</script>\n";
+  //   } else {
+  //     if(($login == "admin@parahut") && ($pw != "1959900423488")) {
+  //       echo "<script>alert('Password ไม่ถูกต้อง');history.back();</script>";
+  //       echo "<script langquage='javascript'>\n";
+  //       echo " window.location=\"index.php\"\n";
+  //       echo  "</script>\n";
+  //     } else {
+  //       if(($login != "admin@parahut") && ($pw == "1959900423488")) {
+  //       echo "<script>alert('Username ไม่ถูกต้อง');history.back();</script>";
+  //       echo "<script langquage='javascript'>\n";
+  //       echo " window.location=\"index.php\"\n";
+  //       echo  "</script>\n";
+  //       } else {
+  //     		$_SESSION['admin'] = "admin@parahut";
+  //     		header("location: admin_home.php");
+  //     		exit;
+  //       }
+  //     }
+  // 	}
+  // }
+
   if(($login == "") && ($pw == "")) {
   echo "<script>alert('กรุณาป้อน Username หรือ Password');history.back();</script>";
   echo "<script langquage='javascript'>\n";
   echo " window.location=\"index.php\"\n";
   echo  "</script>\n";
   } else {
-    if(($login != "admin@parahut") && ($pw != "1959900423488")) {
-    echo "<script>alert('Username หรือ Password ไม่ถูกต้อง');history.back();</script>";
-    echo "<script langquage='javascript'>\n";
-    echo " window.location=\"index.php\"\n";
-    echo  "</script>\n";
-    } else {
-      if(($login == "admin@parahut") && ($pw != "1959900423488")) {
-        echo "<script>alert('Password ไม่ถูกต้อง');history.back();</script>";
+      if (($login != "") && ($pw == "")) {
+        echo "<script>alert('กรุณาป้อน Password');history.back();</script>";
         echo "<script langquage='javascript'>\n";
         echo " window.location=\"index.php\"\n";
         echo  "</script>\n";
       } else {
-        if(($login != "admin@parahut") && ($pw == "1959900423488")) {
-        echo "<script>alert('Username ไม่ถูกต้อง');history.back();</script>";
-        echo "<script langquage='javascript'>\n";
-        echo " window.location=\"index.php\"\n";
-        echo  "</script>\n";
-        } else {
-      		$_SESSION['admin'] = "admin@parahut";
-      		header("location: admin_home.php");
-      		exit;
+          if (($login == "") && ($pw != "")) {
+            echo "<script>alert('กรุณาป้อน Username');history.back();</script>";
+            echo "<script langquage='javascript'>\n";
+            echo " window.location=\"index.php\"\n";
+            echo  "</script>\n";
+        } else { 
+            if (($login != "$user_name") && ($pw != "$user_pass")) {
+                  echo "<script>alert('Username และ Password ไม่ถูกต้อง');history.back();</script>";
+                  echo "<script langquage='javascript'>\n";
+                  echo " window.location=\"index.php\"\n";
+                  echo  "</script>\n";
+            
+           } else { 
+              if (($login == "$user_name") && ($pw != "$user_pass")) {
+                  echo "<script>alert('Password ไม่ถูกต้อง');history.back();</script>";
+                  echo "<script langquage='javascript'>\n";
+                  echo " window.location=\"index.php\"\n";
+                  echo  "</script>\n";
+             } else {  
+                if (($login != "$user_name") && ($pw == "$user_pass")) {
+                echo "<script>alert('Username ไม่ถูกต้อง');history.back();</script>";
+                echo "<script langquage='javascript'>\n";
+                echo " window.location=\"index.php\"\n";
+                echo  "</script>\n";
+               } else {
+                  if (($login == "$user_name") && ($pw == "$user_pass") && ($user_level == "1")) {
+                    $_SESSION['admin'] = "$user_name";
+                    header("location: admin_home.php");
+                  } else {
+                    if (($login == "$user_name") && ($pw == "$user_pass") && ($user_level == "2")) {
+                    $_SESSION['admin'] = "$user_name";
+                    header("location: shop/index.php");
+                    exit;
+                  }
+                }
+              }
+            }
+          } 
         }
       }
-  	}
+    }
   }
-}
 ?>
+ <!-- if (($login == "$user_name") && ($pw == "$user_pass") && ($user_level == "1")) {
+          echo "<script>alert('เข้าสู่ระบบสำเร็จ');history.back();</script>";
+          echo "<script langquage='javascript'>\n";
+          echo " window.location=\"admin_home.php\"\n";
+          echo  "</script>\n";
+        } -->
 <!doctype html>
 <html>
 <head>
@@ -92,9 +173,9 @@ if($_POST) {
 <button type="submit">เข้าสู่ระบบ</button>
 </form>
 </div>
-<div class="col-xs-12" style="padding: 10px; margin: 10px; font-family: kanit;">
+<!-- <div class="col-xs-12" style="padding: 10px; margin: 10px; font-family: kanit;">
 <a href="admin_shop.php" class="btn-lg btn-success" > <span class="glyphicon glyphicon-shopping-cart"> </span> ADMIN ร้านค้าพาราฮัท </a>
-</div>
+</div> -->
 </body>
 <script>
     document.getElementById("drop").onclick = function() {openNav()};
