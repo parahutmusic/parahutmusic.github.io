@@ -20,43 +20,6 @@ if($_POST) {
     $user_pass   = $rs['user_pass'];
     $user_level  = $rs['user_level'];
 
-    // echo $user_pass;
-
-    // exit();
-
-
-  // if(($login == "") && ($pw == "")) {
-  // echo "<script>alert('กรุณาป้อน Username หรือ Password');history.back();</script>";
-  // echo "<script langquage='javascript'>\n";
-  // echo " window.location=\"index.php\"\n";
-  // echo  "</script>\n";
-  // } else {
-  //   if(($login != "admin@parahut") && ($pw != "1959900423488")) {
-  //   echo "<script>alert('Username หรือ Password ไม่ถูกต้อง');history.back();</script>";
-  //   echo "<script langquage='javascript'>\n";
-  //   echo " window.location=\"index.php\"\n";
-  //   echo  "</script>\n";
-  //   } else {
-  //     if(($login == "admin@parahut") && ($pw != "1959900423488")) {
-  //       echo "<script>alert('Password ไม่ถูกต้อง');history.back();</script>";
-  //       echo "<script langquage='javascript'>\n";
-  //       echo " window.location=\"index.php\"\n";
-  //       echo  "</script>\n";
-  //     } else {
-  //       if(($login != "admin@parahut") && ($pw == "1959900423488")) {
-  //       echo "<script>alert('Username ไม่ถูกต้อง');history.back();</script>";
-  //       echo "<script langquage='javascript'>\n";
-  //       echo " window.location=\"index.php\"\n";
-  //       echo  "</script>\n";
-  //       } else {
-  //     		$_SESSION['admin'] = "admin@parahut";
-  //     		header("location: admin_home.php");
-  //     		exit;
-  //       }
-  //     }
-  // 	}
-  // }
-
   if(($login == "") && ($pw == "")) {
   echo "<script>alert('กรุณาป้อน Username หรือ Password');history.back();</script>";
   echo "<script langquage='javascript'>\n";
@@ -112,12 +75,6 @@ if($_POST) {
     }
   }
 ?>
- <!-- if (($login == "$user_name") && ($pw == "$user_pass") && ($user_level == "1")) {
-          echo "<script>alert('เข้าสู่ระบบสำเร็จ');history.back();</script>";
-          echo "<script langquage='javascript'>\n";
-          echo " window.location=\"admin_home.php\"\n";
-          echo  "</script>\n";
-        } -->
 <!doctype html>
 <html>
 <head>

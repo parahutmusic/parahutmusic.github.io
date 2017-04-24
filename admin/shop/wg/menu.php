@@ -67,9 +67,9 @@ include "dblink.php";
    			<h1>Parahut Music</h1>
         </div>
         <ul id="Dropdown" class="dropdown-content dropbg">
-       		<li class="list-drop" id="hidden"><a href="../admin_home.php" style="color: #FF0;"> >> เมนูหลัก << </a></li>
+       		<li class="list-drop"><a href="../admin_home.php" style="color: #FF0;"> >> เมนูหลัก << </a></li>
             <li class="list-drop" id="hidden"><a href="../shop/">หมวดหมู่สินค้า</a></li>
-            <li class="list-drop" id="hidden"><a href="../shop/ad_product.php">รายการสินค้า</a></li>
+            <li class="list-drop"><a href="../shop/ad_product.php">รายการสินค้า</a></li>
             <li class="list-drop"><a href="../shop/ad_order.php">รายการสั่งซื้อ</a></li>
             <li class="list-drop"><a href="../shop/ad_bank.php">รายการโอนเงิน</a></li>
             <li class="list-drop"><a href="../shop/ad_forget.php">ลืมเลขที่ใบสั่งซื้อ</a></li>
