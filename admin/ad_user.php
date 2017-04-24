@@ -107,7 +107,7 @@ $perpage = 5;
     <td align="center"><font size="3"><?=$user_id;?></font></td>
     <td align="center"><font size="3"><?=$user_name;?></font></td>
     <td align="center"><font size="3"><?=$name;?></font></td>
-    <td align="center"><font size="3"><?=$user_level;?></font></td>
+    <td align="center"><font size="3"><?php if($user_level == "1"){ echo "ADMIN"; } else { echo "USER"; }  ?></font></td>
 	<td align="center"><a href="del_user.php?user_id=<?=$user_id;?>" class="style2" OnClick="return chkdel();" onclick= "return del()"><img src="../images/del.png" width="30" height="30" border="0" /></a></td>
   </tr>
   <?php
