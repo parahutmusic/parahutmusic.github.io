@@ -99,7 +99,7 @@ if($_POST) {
           <div class="col-sm-12" align="left">
           <span>&raquo; ขั้นตอนการติดต่อเจ้าหน้าที่ หากลืม เลขที่ใบสั่งซื้อ</span><br>
           <span>
-          1. คลิก <a href="" data-target="#myModal" data-toggle="modal" style="color: red;">&raquo; ติดต่อเจ้าหน้าที่ &laquo;</a> <br>
+          1. คลิก <a href="" data-target="#myModal" data-toggle="modal" style="color: red;">&raquo; ลืมเลขที่ใบสั่งซื้อ &laquo;</a> <br>
           2. กรอก e-mail ที่ได้ทำการสั่งซื้อสินค้า <br>
           3. เจ้าหน้าที่จะส่ง เลขที่ใบสั่งซื้อ ไปทาง e-mail ของคุณ
           </span>
@@ -107,7 +107,7 @@ if($_POST) {
         </div>
         <div class="form-group">
           <div class="col-sm-12" align="center">
-            <a href="" data-target="#myModal" data-toggle="modal"  style="color: red;">&raquo; ติดต่อเจ้าหน้าที่ &laquo;</a>
+            <a href="" data-target="#myModal" data-toggle="modal"  style="color: red;">&raquo; ลืมเลขที่ใบสั่งซื้อ &laquo;</a>
           </div>
         </div>
       </form>
