@@ -73,7 +73,17 @@ include "wg/menu.php";
 	<td width="10%" id="hid" ><font size="3">ดูรายการสั่งซื้อ</font></td>
     <td width="20%"><font size="3">วันที่สั่งซื้อ</font></td>
     <td width="10%"><font size="3">การจัดส่ง</font></td>
-    <td width="5%" id="hidden"><font size="3">ลบ</font></td>
+    <td width="5%" <?php  
+  if($user_level == "1"){
+    echo $show_user;
+  } else {
+      if($user_level == "2"){
+      echo $hidden_user;
+      } else {
+        echo $hidden_user;
+      }
+  }
+  ?>><font size="3">ลบ</font></td>
   </tr>
   <?php
 	$i = 0;
@@ -96,7 +106,17 @@ include "wg/menu.php";
     <td align="center" id="hid"><font size="3"><a href="ad_order_detail.php?order_id=<?php echo $order_id ;?>&<?php echo $name; ?>"  class="btn btn-info btn-xs">รายละเอียด</a></font></td>
     <td align="center"><font size="3"><?=$order_date;?></font></td>
     <td align="center" <?php if($status == $yes) echo 'style="background-color:#abf7af"'; if($status == $no) echo 'style="background-color:#ff8585"';?> ><font size="3"><?=$status;?></font></td>
-    <td align="center" id="hidden"><font size="3" ><a href="del_order.php?order_id=<?=$order_id;?>" OnClick="return chkdel();" onclick= "return del()" class="btn btn-danger btn-xs">ลบ</a></font></td>
+    <td align="center" <?php  
+  if($user_level == "1"){
+    echo $show_user;
+  } else {
+      if($user_level == "2"){
+      echo $hidden_user;
+      } else {
+        echo $hidden_user;
+      }
+  }
+  ?>><font size="3" ><a href="del_order.php?order_id=<?=$order_id;?>" OnClick="return chkdel();" onclick= "return del()" class="btn btn-danger btn-xs">ลบ</a></font></td>
   </tr>
   <?php
   	$i++;

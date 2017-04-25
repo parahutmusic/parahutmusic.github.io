@@ -38,6 +38,8 @@ include "../admin/dblink.php";
 </div>
 <div class="col-xs-12 text-center" style="padding-top:60px;">
 <img src="img/btn/data-store.jpg" width="500">
+<br>
+    <h1>จัดการข้อมูล พาราฮัทมิวสิค</h1>
 </div>
 <script>
     document.getElementById("drop").onclick = function() {openNav()};
