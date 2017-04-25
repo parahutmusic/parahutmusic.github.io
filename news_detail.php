@@ -146,7 +146,7 @@ $query  = mysqli_query($link ,$sql6);
                               <img class="img-responsive" src="admin/<?=$photo_name1;?>"  alt="parahut">
                             </div>
                             <?php echo mb_substr($news_detail1,0,100,"UTF-8");?>
-                            <a href="news_detail.php?news_id=<?php echo $news_id;?>"><red>.... อ่านต่อ</red></a>
+                            <a href="news_detail.php?news_id=<?php echo $news_id;?>&news_name=<?=$news_name;?>"><red>.... อ่านต่อ</red></a>
                         </div><!-- /.recent-post-details -->
                       </li>
     </ul>
