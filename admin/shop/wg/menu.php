@@ -1,31 +1,26 @@
 <?php 
 include "check-login.php";
 include "dblink.php";
+include "../dblink.php";
 ?>
-<style type="text/css">
-     <?php
-        if($_SESSION['admin'] != "admin@parahut") { ?>
+<head>
+<?php
+  $admin = $_SESSION['admin'];
 
-        #hidden { 
-          display:none;
-        }
-        #show { 
-          display:block;
-        }
+  $sql = "SELECT * FROM userparahut WHERE user_name ='$admin'";
+  $db_query = mysqli_query($link, $sql);
+  $rs = mysqli_fetch_array($db_query);    
+    $user_id  = $rs['user_id'];
+    $user_name    = $rs['user_name'];
+    $user_pass    = $rs['user_pass'];
+    $user_level    = $rs['user_level'];
+    $name   = $rs['name'];
 
-      <?php } else if($_SESSION['admin'] == "admin@parahut") { ?>
+  $hidden_user = 'style="display:none;"';
+  $show_user = 'style="display:contents;"';
 
-        #hidden { 
-          display: contents;
-        }
-        #show { 
-          display: none;
-        }
-        <?php } else { ?>
-
-          <?php } ?>
-        }
-  </style>
+  ?>
+  </head>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,8 +62,29 @@ include "dblink.php";
    			<h1>Parahut Music</h1>
         </div>
         <ul id="Dropdown" class="dropdown-content dropbg">
-       		<li class="list-drop"><a href="../admin_home.php" style="color: #FF0;"> >> เมนูหลัก << </a></li>
-            <li class="list-drop" id="hidden"><a href="../shop/">หมวดหมู่สินค้า</a></li>
+           <li class="list-drop" style="text-decoration: none;">>> ผู้ใช้งาน <font style="color:#d4ff5d;"><?php echo $admin; ?></font> <<</li>
+       		<li class="list-drop" <?php  
+  if($user_level == "1"){
+    echo $show_user;
+  } else {
+      if($user_level == "2"){
+      echo $show_user;
+      } else {
+        echo $hidden_user;
+      }
+  }
+  ?>><a href="../admin_home.php" style="color: #FF0;"> >> เมนูหลัก << </a></li>
+            <li class="list-drop" <?php  
+  if($user_level == "1"){
+    echo $show_user;
+  } else {
+      if($user_level == "2"){
+      echo $hidden_user;
+      } else {
+        echo $hidden_user;
+      }
+  }
+  ?>><a href="../shop/">หมวดหมู่สินค้า</a></li>
             <li class="list-drop"><a href="../shop/ad_product.php">รายการสินค้า</a></li>
             <li class="list-drop"><a href="../shop/ad_order.php">รายการสั่งซื้อ</a></li>
             <li class="list-drop"><a href="../shop/ad_bank.php">รายการโอนเงิน</a></li>

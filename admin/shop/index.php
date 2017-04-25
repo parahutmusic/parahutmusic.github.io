@@ -36,12 +36,35 @@ include "dblink.php";
 <?php 
 include "wg/menu.php";
 ?>
-
-<div class="col-xs-12 text-center" id="show" style="padding-top:60px;">
+<div <?php  
+  if($user_level == "1"){
+    echo $hidden_user;
+  } else {
+      if($user_level == "2"){
+      echo $show_user;
+      } else {
+        echo $show_user;
+      }
+  }
+  ?>>
+<div class="col-xs-12 text-center" style="padding-top:60px;">
 <img src="../img/btn/data-store.jpg" width="500">
+<br>
+    <h1>จัดการข้อมูลพาราช้อป</h1>
+  </div>
 </div>
 
-<div class="container top" id="hidden"> 
+<div class="container top" <?php  
+  if($user_level == "1"){
+    echo $show_user;
+  } else {
+      if($user_level == "2"){
+      echo $hidden_user;
+      } else {
+        echo $hidden_user;
+      }
+  }
+  ?>> 
 <form id="form-img1" method="post" action="ad_categories_save.php" enctype="multipart/form-data">
 	  <div align="center">
 	<?php

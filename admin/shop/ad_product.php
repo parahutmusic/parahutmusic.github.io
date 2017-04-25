@@ -38,7 +38,17 @@ include "wg/menu.php";
 ?>
 
 <div class="container top"> 
-<div id="hidden">
+<div <?php  
+  if($user_level == "1"){
+    echo $show_user;
+  } else {
+      if($user_level == "2"){
+      echo $hidden_user;
+      } else {
+        echo $hidden_user;
+      }
+  }
+  ?>>
 <form id="form-img1" method="post" action="ad_product_save.php" enctype="multipart/form-data" >
 	  <div align="left" style="margin-left:20%;">
 	<?php
@@ -115,8 +125,28 @@ $cat_id = $_GET['cat_id'];
     <td width="20%"><font size="3">ชื่อสินค้า</font></td>
     <td width="20%"><font size="3">ชื่อหมวดหมู่</font></td>
     <td width="10%"><font size="3">ราคา</font></td>
-	<td width="10%" id="hidden"><font size="3">แก้ไข</font></td>
-	<td width="20%" id="hidden"><font size="3">ลบ</font></td>
+	<td width="10%" <?php  
+  if($user_level == "1"){
+    echo $show_user;
+  } else {
+      if($user_level == "2"){
+      echo $hidden_user;
+      } else {
+        echo $hidden_user;
+      }
+  }
+  ?>><font size="3">แก้ไข</font></td>
+	<td width="20%" <?php  
+  if($user_level == "1"){
+    echo $show_user;
+  } else {
+      if($user_level == "2"){
+      echo $hidden_user;
+      } else {
+        echo $hidden_user;
+      }
+  }
+  ?>><font size="3">ลบ</font></td>
   </tr>
   <?php
 	$i = 0;
@@ -141,8 +171,28 @@ $cat_id = $_GET['cat_id'];
     <td align="center"><font size="3"><?=$pro_name;?></font></td>
     <td align="center"><font size="3"><?=$cat_name;?></font></td>
     <td align="center"><font size="3"><?=$price;?></font></td>
-	<td align="center" id="hidden"><a href="update_product.php?pro_id=<?=$pro_id;?>"><img src="../../images/edit.png" width="30" height="30" border="0" /></a></td>
-	<td align="center" id="hidden"><a href="del_product.php?pro_id=<?=$pro_id;?>" class="style2" OnClick="return chkdel();" onclick= "return del()"><img src="../../images/del.png" width="30" height="30" border="0" /></a></td>
+	<td align="center" <?php  
+  if($user_level == "1"){
+    echo $show_user;
+  } else {
+      if($user_level == "2"){
+      echo $hidden_user;
+      } else {
+        echo $hidden_user;
+      }
+  }
+  ?>><a href="update_product.php?pro_id=<?=$pro_id;?>"><img src="../../images/edit.png" width="30" height="30" border="0" /></a></td>
+	<td align="center" <?php  
+  if($user_level == "1"){
+    echo $show_user;
+  } else {
+      if($user_level == "2"){
+      echo $hidden_user;
+      } else {
+        echo $hidden_user;
+      }
+  }
+  ?>><a href="del_product.php?pro_id=<?=$pro_id;?>" class="style2" OnClick="return chkdel();" onclick= "return del()"><img src="../../images/del.png" width="30" height="30" border="0" /></a></td>
   </tr>
   <?php
   	$i++;
