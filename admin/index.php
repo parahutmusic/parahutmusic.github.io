@@ -63,8 +63,13 @@ if($_POST) {
                   } else {
                     if (($login == "$user_name") && ($pw == "$user_pass") && ($user_level == "2")) {
                     $_SESSION['admin'] = "$user_name";
+                    header("location: admin_home.php");
+                  } else {
+                    if (($login == "$user_name") && ($pw == "$user_pass") && ($user_level == "3")) {
+                    $_SESSION['admin'] = "$user_name";
                     header("location: shop/index.php");
                     exit;
+                    }
                   }
                 }
               }
