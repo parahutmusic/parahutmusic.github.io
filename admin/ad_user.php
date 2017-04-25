@@ -89,6 +89,7 @@ $perpage = 5;
     <td width="10%"><font size="3">Username</font></td>
     <td width="30%"><font size="3">ชื่อ</font></td>
     <td width="5%"><font size="3">สถานะ</font></td>
+    <td width="5%"><font size="3">แก้ไข</font></td>
 	<td width="10%"><font size="3">ลบ</font></td>
   </tr>
   <?php
@@ -108,7 +109,12 @@ $perpage = 5;
     <td align="center"><font size="3"><?=$user_name;?></font></td>
     <td align="center"><font size="3"><?=$name;?></font></td>
     <td align="center"><font size="3"><?php if($user_level == "1"){ echo "ADMIN"; } else { echo "USER"; }  ?></font></td>
-	<td align="center"><a href="del_user.php?user_id=<?=$user_id;?>" class="style2" OnClick="return chkdel();" onclick= "return del()"><img src="../images/del.png" width="30" height="30" border="0" /></a></td>
+    <td align="center">
+		<a href="edit_user.php?user_id=<?=$user_id;?>&user_name=<?=$user_name;?>" class="style2"><img src="../images/edit.png" width="30" height="30" border="0" /></a>
+	</td>
+	<td align="center">
+		<a href="del_user.php?user_id=<?=$user_id;?>" class="style2" OnClick="return chkdel();" onclick= "return del()"><img src="../images/del.png" width="30" height="30" border="0" /></a>
+	</td>
   </tr>
   <?php
   	$i++;
