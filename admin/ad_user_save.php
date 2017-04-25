@@ -16,7 +16,7 @@ include "../admin/dblink.php";
     $user_pass    = $_POST['user_pass'];
     $news_pass = md5($user_pass);
 	$name 	= $_POST['name'];
-	$user_level   =  '2';
+	$user_level   =  $_POST['user_level'];;
 
 
 	$sql = "select *  from userparahut where user_name = '$user_name'"; 
@@ -43,18 +43,25 @@ include "../admin/dblink.php";
 			echo " window.location=\"ad_user.php\"\n";
 			echo	"</script>\n";
 		} else {
-				if($user_name == "$user_name_db") {
-				echo "<script>alert('ไม่สามารถใช่ Username นี้ได้');history.back();</script>";
+				if($user_level == "") {
+				echo "<script>alert('กรุณาเลือก User');history.back();</script>";
 				echo "<script langquage='javascript'>\n";
 				echo " window.location=\"ad_user.php\"\n";
 				echo	"</script>\n";
-			} else {
-		  	$sql1="insert into userparahut (user_id,user_name,user_pass,name,user_level) VALUES('$user_id','$user_name','$news_pass','$name','$user_level')";
-			$link_query1 = mysqli_query($link, $sql1);
+				} else {
+					if($user_name == "$user_name_db") {
+					echo "<script>alert('ไม่สามารถใช่ Username นี้ได้');history.back();</script>";
 					echo "<script langquage='javascript'>\n";
 					echo " window.location=\"ad_user.php\"\n";
-					echo  "alert('บันทึกข้อมูลเรียบร้อยแล้ว')";
 					echo	"</script>\n";
+				} else {
+			  	$sql1="insert into userparahut (user_id,user_name,user_pass,name,user_level) VALUES('$user_id','$user_name','$news_pass','$name','$user_level')";
+				$link_query1 = mysqli_query($link, $sql1);
+						echo "<script langquage='javascript'>\n";
+						echo " window.location=\"ad_user.php\"\n";
+						echo  "alert('บันทึกข้อมูลเรียบร้อยแล้ว')";
+						echo	"</script>\n";
+					}
 				}
 			}
 		}

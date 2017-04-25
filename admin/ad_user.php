@@ -60,6 +60,13 @@ include "../admin/dblink.php";
             <input name="name" type="text" size="30" style="width:300px;" placeholder="ชื่อ - นามสกุล">
         <br>
         <br>
+        	<select name="user_level" style="width:300px;">
+        		<option name="user_level"  value="">-- กรุณาเลือก --</option>
+        		<option name="user_level" value="2">User พาราฮัท</option>
+        		<option name="user_level" value="3">User ร้านค้า</option>
+        	</select>	
+        <br>
+        <br>
 	<input class="btn btn-default" style="font-size:22px;
 	  			font-weight:900;
 	  			width:200px;" type="submit" name="submit1" value="บันทึก">
