@@ -1,8 +1,2 @@
-../store/dblink.php
-
-admin/dblink.php
-
-admin/shop/dblink.php
-
-.DS_Store
-
+.DS_store
+/dblink.php
