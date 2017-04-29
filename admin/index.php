@@ -59,14 +59,17 @@ if($_POST) {
                } else {
                   if (($login == "$user_name") && ($pw == "$user_pass") && ($user_level == "1")) {
                     $_SESSION['admin'] = "$user_name";
+                    $_SESSION['level'] = "1";
                     header("location: admin_home.php");
                   } else {
                     if (($login == "$user_name") && ($pw == "$user_pass") && ($user_level == "2")) {
                     $_SESSION['admin'] = "$user_name";
+                    $_SESSION['level'] = "2";
                     header("location: admin_home.php");
                   } else {
                     if (($login == "$user_name") && ($pw == "$user_pass") && ($user_level == "3")) {
                     $_SESSION['admin'] = "$user_name";
+                    $_SESSION['level'] = "3";
                     header("location: shop/index.php");
                     exit;
                     }

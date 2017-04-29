@@ -1,26 +1,15 @@
 <?php 
 include "check-login.php";
 include "dblink.php";
-include "../dblink.php";
 ?>
-<head>
 <?php
   $admin = $_SESSION['admin'];
-
-  $sql = "SELECT * FROM userparahut WHERE user_name ='$admin'";
-  $db_query = mysqli_query($link, $sql);
-  $rs = mysqli_fetch_array($db_query);    
-    $user_id  = $rs['user_id'];
-    $user_name    = $rs['user_name'];
-    $user_pass    = $rs['user_pass'];
-    $user_level    = $rs['user_level'];
-    $name   = $rs['name'];
+  $user_level = $_SESSION['level'];
 
   $hidden_user = 'style="display:none;"';
   $show_user = 'style="display:contents;"';
 
   ?>
-  </head>
 <!DOCTYPE html>
 <html lang="en">
 <head>

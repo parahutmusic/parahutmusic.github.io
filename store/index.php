@@ -107,7 +107,7 @@ while($rs = mysqli_fetch_array($result)) {
                     <span class="badge"> <?php echo $pro_view;?></span> ครั้ง
                         </div>
                         <div class="product-option-shop">
-<a href="single-product.php?pro_id=<?php echo $id; ?>&<?php echo $pro_name; ?>&size_name=S" class="btn btn-info btn-md" onclick="document.getElementById('id01').style.display='block'">รายละเอียด</a> 
+<a href="single-product.php?pro_id=<?php echo $id; ?>&<?php echo $pro_name; ?><?php if($cat_id == "1"){echo "&size_name=S";} ?>" class="btn btn-info btn-md" onclick="document.getElementById('id01').style.display='block'">รายละเอียด</a> 
                 		</div>                       
             		</div>
                   </div>
