@@ -81,7 +81,7 @@ include "wg/menu.php";
     รายละเอียดสินค้า :<br>
      <textarea class="admin-prh" name="detail" align="middle" cols="60" rows="5"type="text-area" size="80" style="width:500px;"></textarea>
 	<br><br>
-    ราคา : <input class="admin-prh" name="price" align="middle" type="text" size="80" style="width:300px; text-align:center;">
+    ราคา : <input class="admin-prh" name="price" align="middle" type="number" size="30" style="width:100px; text-align:center;">
 	<br><br>
     รูปภาพสินค้า : <input class="admin-prh" name="img" align="middle" type="file">
 	<br><br>
