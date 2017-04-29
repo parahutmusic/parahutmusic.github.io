@@ -88,7 +88,7 @@ include "wg/menu.php";
 	  			width:200px;" type="submit" name="submit1" value="บันทึก">
       </div>
 	</form>
-    <p align="center"><font size="3"><b>ตารางแสดงรูปภาพสไลด์</b>
+    <p align="center"><font size="3"><b>ตารางแสดงหมวดหมู่สินค้า</b>
 <?php
 	
 	$rows = 5;

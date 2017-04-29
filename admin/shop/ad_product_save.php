@@ -68,7 +68,7 @@ $cat_id = $_GET['cat_id'];
 		$sql2="INSERT INTO products( pro_id , cat_id , pro_name , price , detail , img) VALUES ('$pro_id','$cat_id','$pro_name','$price','$detail','$pro_pic_file1')";
 
 		$sql4="INSERT INTO pro_size( size_id , size_name , pro_id ) VALUES ('','','$pro_id')";
-	 $link_query4 = mysqli_query($link, $sql4);
+	 	$link_query4 = mysqli_query($link, $sql4);
 
 
 	 		$link_query2 = mysqli_query($link, $sql2);

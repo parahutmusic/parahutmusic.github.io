@@ -86,7 +86,7 @@
                         </div>
                         <div class="form-group">
                           <div class="col-sm-12">
-                            <input type="text"  name="money" class="form-control" required placeholder="จำนวนเงิน" />
+                            <input type="number"  name="money" class="form-control" required placeholder="จำนวนเงิน" style="width:150px;" />
                           </div>
                         </div>
                         <div class="form-group">
