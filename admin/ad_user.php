@@ -90,12 +90,12 @@ $perpage = 5;
 	echo "รายการทั้งหมด $num_rows รายการ";
 ?>
 </font></p>
-<table width="50%" border="1" align="center" cellpadding="0" cellspacing="0">
+<table width="70%" border="1" align="center" cellpadding="0" cellspacing="0">
   <tr align="center" bgcolor="#FFCC00">
     <td width="5%"><font size="3">ที่</font></td>
     <td width="10%"><font size="3">Username</font></td>
     <td width="30%"><font size="3">ชื่อ</font></td>
-    <td width="5%"><font size="3">สถานะ</font></td>
+    <td width="10%"><font size="3">สถานะ</font></td>
     <td width="5%"><font size="3">แก้ไข</font></td>
 	<td width="10%"><font size="3">ลบ</font></td>
   </tr>
