@@ -69,9 +69,10 @@ include "wg/menu.php";
   <tr align="center" bgcolor="#FFCC00">
     <td width="10%"><font size="3">รหัสสั่่งซื้อ</font></td>
     <td width="20%"><font size="3">ชื่อลูกค้า</font></td>
-    <td width="20%"><font size="3">เบอร์โทร</font></td>
+    <td width="20%"><font size="3">ที่อยู่การจัดส่ง</font></td>
+    <td width="10%"><font size="3">เบอร์โทร</font></td>
 	<td width="10%" id="hid" ><font size="3">ดูรายการสั่งซื้อ</font></td>
-    <td width="20%"><font size="3">วันที่สั่งซื้อ</font></td>
+    <td width="10%"><font size="3">วันที่สั่งซื้อ</font></td>
     <td width="10%"><font size="3">การจัดส่ง</font></td>
     <td width="5%" <?php  
   if($user_level == "1"){
@@ -95,28 +96,45 @@ include "wg/menu.php";
 		$name 	= $rs['name'];
 		$phone = $rs['phone'];
 		$status = $rs['status'];
+    $address = $rs['address'];
 		$order_date = $rs['order_date'];
     $yes = 'ชำระเงินแล้ว';
     $no = 'ค้างชำระเงิน';
+    $yes2 = 'จัดส่งสินค้าแล้ว';
 	?> 
   <tr>
     <td align="center" style="background-color:#abf7af"><font size="3"><?=$order_id;?></font></td>
     <td align="center"><font size="3"><?=$name;?></font></td>
+    <td align="center"><font size="3"><?=$address;?></font></td>
     <td align="center"><font size="3"><?=$phone;?></font></td>
     <td align="center" id="hid"><font size="3"><a href="ad_order_detail.php?order_id=<?php echo $order_id ;?>&<?php echo $name; ?>"  class="btn btn-info btn-xs">รายละเอียด</a></font></td>
     <td align="center"><font size="3"><?=$order_date;?></font></td>
-    <td align="center" <?php if($status == $yes) echo 'style="background-color:#abf7af"'; if($status == $no) echo 'style="background-color:#ff8585"';?> ><font size="3"><?=$status;?></font></td>
-    <td align="center" <?php  
-  if($user_level == "1"){
-    echo $show_user;
-  } else {
-      if($user_level == "2"){
-      echo $hidden_user;
-      } else {
-        echo $hidden_user;
+    <td align="center" <?php if($status == $yes) echo 'style="background-color:#abf7af"'; if($status == $yes2) echo 'style="background-color:#005afd;color:#fff"'; if($status == $no) echo 'style="background-color:#ff8585"';?> ><font size="3"><?=$status;?></font></td>
+    <td align="center"> <?php if($status == 'ค้างชำระเงิน'){?><font size="3" ><a href="del_order.php?order_id=<?=$order_id;?>" OnClick="return chkdel();" onclick= "return del()" class="btn btn-danger btn-xs" 
+      
+         >ลบ</a></font>
+         <?php 
       }
-  }
-  ?>><font size="3" ><a href="del_order.php?order_id=<?=$order_id;?>" OnClick="return chkdel();" onclick= "return del()" class="btn btn-danger btn-xs">ลบ</a></font></td>
+      ?>
+      <?php 
+      if($status == 'ชำระเงินแล้ว'){
+        ?>
+
+<font size="3"><a href="ad_track.php?order_id=<?php echo $order_id ;?>&<?php echo $name; ?>"  class="btn btn-success btn-xs">ส่งของ</a></font>
+
+      <?php 
+      }
+      ?>
+      <?php 
+      if($status == 'จัดส่งสินค้าแล้ว'){
+        ?>
+
+<font size="3"><a href="update_track.php?order_id=<?php echo $order_id ;?>&<?php echo $name; ?>"  class="btn btn-success btn-xs">แก้ไขเลขพัสดุ</a></font>
+
+      <?php 
+      }
+      ?>
+      </td>
   </tr>
   <?php
   	$i++;

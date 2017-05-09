@@ -118,7 +118,7 @@ include "wg/menu.php";
     </div>
     <p align="center"><font size="3"><b>ตารางแสดงการโอนเงิน</b>
 <?php
-	$sql = "SELECT *  FROM payments";
+	$sql = "SELECT *  FROM payments INNER JOIN tb_order_detail ON(payments.order_id = tb_order_detail.order_id)";
 	$db_query = mysqli_query($link, $sql);
 	$num_rows  = mysqli_num_rows($db_query);
 	echo "รายการทั้งหมด $num_rows รายการ";
@@ -128,8 +128,9 @@ include "wg/menu.php";
   <tr align="center" bgcolor="#FFCC00">
     <td width="5%"><font size="3">รหัสสั่่งซื้อ</font></td>
     <td width="20%"><font size="3">ชื่อลูกค้า</font></td>
-    <td width="20%"><font size="3">โอนจากธนาคาร</font></td>
+    <td width="15%"><font size="3">โอนจากธนาคาร</font></td>
 	<td width="10%"><font size="3">หลักฐานการโอนเงิน</font></td>
+    <td width="10%"><font size="3">ราคารวม</font></td>
     <td width="10%"><font size="3">จำนวนเงิน</font></td>
     <td width="10%"><font size="3">เบอร์โทร</font></td>
     <td width="5%"><font size="3">การยืนยัน</font></td>
@@ -151,12 +152,14 @@ include "wg/menu.php";
 		$img_bank = $rs['img_bank'];
     $no = "btn-danger";
     $yes = "btn-success";
+    $total = $rs['total'];
 	?> 
   <tr>
     <td align="center"><font size="3"><?=$order_id;?></font></td>
     <td align="center"><font size="3"><?=$name;?></font></td>
     <td align="center"><font size="3"><?=$bank;?></font></td>
     <td align="center"><font size="3"><img id="myImg" src="../../store/<?=$img_bank;?>" width="80"></font></td>
+    <td align="center"><font size="3"><?=$total;?></font></td>
     <td align="center"><font size="3"><?=$money;?></font></td>
     <td align="center"><font size="3"><?=$phone;?></font></td>
     <td align="center"><font size="3"><button class="btn <?=$$confirm;?> btn-sm" id="btn" disabled><?=$confirm;?></button></font></td>
@@ -165,8 +168,20 @@ include "wg/menu.php";
     	 <input name="confirm" value="yes" type="hidden">
        <input name="order_id" value="<?=$order_id;?>" type="hidden">
         <input name="pay_id" value="<?=$pay_id;?>" type="hidden">
+      <?php 
+      if($confirm == 'no'){
+
+        ?>
         <a href="del_bank.php?pay_id=<?=$pay_id;?>" id="hidden" class="btn btn-danger btn-sm" OnClick="return chkdel();" onclick= "return del()">ลบ</a>
-    	<button type="submit" class="btn btn-primary btn-sm" id="btn">ยืนยัน</button>
+        <?php 
+      }
+      ?>
+    	<button type="submit" class="btn btn-primary btn-sm" id="btn" <?php 
+      if($confirm == 'yes'){
+
+        ?>disabled=""<?php 
+      }
+      ?>> ยืนยัน</button>
     </form>
     </font></td>
   </tr>
