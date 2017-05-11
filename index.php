@@ -145,13 +145,13 @@
                   </div><!-- /.post-meta -->
                 </div><!-- /.post-top -->
                 <div class="post-content">
-                  <h2 class="entry-title"><a href="news_detail.php?news_id=<?=$news_id4;?>&news_name=<?=$news_name4;?>">
+                  <h2 class="entry-title"><a href="news_detail.php?news_id=<?=$news_id4;?>">
 				  <?php echo "$news_name4";?></a></h2>
                   <p class="entry-text">
                     <?php 
 					echo mb_substr($news_detail4,0,200,"UTF-8");
 					?>
-                    <a href="news_detail.php?news_id=<?php echo $news_id4;?>&news_name=<?=$news_name4;?>"><red>.... อ่านต่อ</red></a>
+                    <a href="news_detail.php?news_id=<?php echo $news_id4;?>"><red>.... อ่านต่อ</red></a>
                   </p>
                 </div><!-- /.post-content -->
               </article>
@@ -175,13 +175,13 @@
                 </div><!-- /.post-meta -->
               </div><!-- /.post-top -->
               <div class="post-content">
-                <h2 class="entry-title"><a href="news_detail.php?news_id=<?php echo $news_id5;?>&news_name=<?=$news_name5;?>">
+                <h2 class="entry-title"><a href="news_detail.php?news_id=<?php echo $news_id5;?>">
 				  <?php echo "$news_name5";?></a></h2>
                 <p class="entry-text">
                   <?php 
 					echo mb_substr($news_detail5,0,200,"UTF-8");
 					?>
-                    <a href="news_detail.php?news_id=<?=$news_id5;?>&news_name=<?=$news_name5;?>"><red>.... อ่านต่อ</red></a>.
+                    <a href="news_detail.php?news_id=<?=$news_id5;?>"><red>.... อ่านต่อ</red></a>.
                 </p>
                 <a class="btn" href="news.php">
                     <span class="btn-icon" style="float:left;"><i class="fa fa-arrow-circle-right"></i></span>
