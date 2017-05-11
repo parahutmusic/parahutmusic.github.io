@@ -34,7 +34,7 @@
                         <li><a href="payment.php">วีธีการสั่งซื้อ</a></li>
                         <li><a href="check-order-detail.php">แจ้งการโอนเงิน</a></li>
                         <li><a href="ad_check_bill.php">ใบแจ้งชำระเงิน</a></li>
-                        <li><a href="tracking.php">แจ้งเลขการส่งของ</a></li>
+                        <li><a href="tracking.php">แจ้งเลขพัสดุ</a></li>
                     </ul>
                 </div>  
             </div>
