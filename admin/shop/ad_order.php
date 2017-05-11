@@ -74,17 +74,7 @@ include "wg/menu.php";
 	<td width="10%" id="hid" ><font size="3">ดูรายการสั่งซื้อ</font></td>
     <td width="10%"><font size="3">วันที่สั่งซื้อ</font></td>
     <td width="10%"><font size="3">การจัดส่ง</font></td>
-    <td width="5%" <?php  
-  if($user_level == "1"){
-    echo $show_user;
-  } else {
-      if($user_level == "2"){
-      echo $hidden_user;
-      } else {
-        echo $hidden_user;
-      }
-  }
-  ?>><font size="3">ลบ</font></td>
+    <td width="5%"><font size="3">ลบ</font></td>
   </tr>
   <?php
 	$i = 0;
