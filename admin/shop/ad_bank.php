@@ -45,6 +45,7 @@ include "dblink.php";
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    max-width: 20%;
 }
 
 #myImg:hover {opacity: 0.7;}
@@ -66,7 +67,7 @@ include "dblink.php";
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
+    width: 20%;
     max-width: 700px;
 }
 .modal-content, #caption {    
