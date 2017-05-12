@@ -33,7 +33,7 @@
 ?>
       <div class="col-sm-3 col-xs-6">
         <div class="item-image">
-         <a href="band_detail.php?band_id=<?=$band_id;?>"><img src="admin/<?=$band_pic;?>" width="200" alt="parahut" style="box-shadow: #4caf50 0px 14px 23px -9px;"></a>
+         <a href="band_detail.php?band_id=<?=$band_id;?>&band_name=<?=$band_name;?>"><img src="admin/<?=$band_pic;?>" width="200" alt="parahut" style="box-shadow: #4caf50 0px 14px 23px -9px;"></a>
         </div>
         <span class="item-title"><?=$band_name;?></span>
       </div>
