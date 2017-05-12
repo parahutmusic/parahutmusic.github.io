@@ -1,5 +1,5 @@
 <meta charset="UTF-8">
-  <title>Parahut Music พาราฮัทมิวสิค</title>
+  <title>Parahut Music | พาราฮัทมิวสิค</title>
   <link rel="shortcut icon" href="images/icon.png">
   <meta name="description" content="เสียงเพลงจากสวนยาง เราเด็กบ้านๆ เด็กตัดยาง เด็กเลี้ยงวัว พาราฮัทมิวสิค วงพัทลุง โอพารา วงแบเบาะ แตพาราฮัท ช้างชาลี วงคนตัดยาง วงสาคู วงกล้วยไม้ จักร บูดู พงศ์ วงพัทลุง เพลงใต้ เพลงใหม่ล่าสุด เพลงเพราะๆ มหาลัยวัวชน พาราฮัท ค่ายพาราฮัท ค่ายเพลงใต้ ป่าบอน พัทลุง" >
   <meta property="og:image"  content="http://parahutmusic.com/images/logo.png"/>
