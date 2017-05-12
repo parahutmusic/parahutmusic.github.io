@@ -32,10 +32,10 @@ $query  = mysqli_query($link ,$sql6);
     $news_view = $rsm2['news_view'];
       
   ?>
-<title><?php echo $news_name2; ?></title>
+<title>พาราฮัทมิวสิค | <?php echo $news_name2; ?></title>
 <meta name="description" content="<?php echo mb_substr($news_detail2,0,100,"UTF-8");?>">
   <meta property="og:url"           content="http://parahutmusic.com/news_detail.php?news_id=<?=$news_id2;?>" />
-  <meta property="og:title"         content="<?php echo $news_name2; ?>" />
+  <meta property="og:title"         content="พาราฮัทมิวสิค | <?php echo $news_name2; ?>" />
   <meta property="og:description"   content="<?php echo mb_substr($news_detail2,0,150,"UTF-8");?>" />
   <meta property="og:image"         content="http://parahutmusic.com/admin/<?php echo $photo_name2;?>"/>
   <?php include "wg/scriptheader.php" ?>
