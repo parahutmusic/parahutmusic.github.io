@@ -229,7 +229,7 @@
 ?>
       <div class="item">
         <div class="item-image">
-         <a href="band_detail.php?band_id=<?=$band_id;?>"><img src="admin/<?=$band_pic;?>" width="200" alt="parahut"></a>
+         <a href="band_detail.php?band_id=<?=$band_id;?>&band_name=<?=$band_name;?>"><img src="admin/<?=$band_pic;?>" width="200" alt="parahut"></a>
         </div>
         <span class="item-title"><?=$band_name;?></span>
       </div>
